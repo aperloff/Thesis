@@ -22,6 +22,7 @@ latex/TAMUTemplate.pdf
 *-blx.aux
 *-blx.bib
 *.run.xml
+*.bak
 
 ## Build tool auxiliary files:
 *.fdb_latexmk
