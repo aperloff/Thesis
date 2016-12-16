@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"path": "/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text",
+			"file_exclude_patterns": [
+			"*.xwm",
+			"*.aux",
+			"*.gz",
+			"*.nav",
+			"*.fdb*",
+			"*.snm",
+			"*.log",
+			"*.out",
+			"*.pdf",
+			"*.fls",
+			"*.lof",
+			"*.lot",
+			"*.toc",
+			"*.blg",
+			"*.bbl",
+			"*.dvi"
+			]
+		}
+	]
+}

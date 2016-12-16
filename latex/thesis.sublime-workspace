@@ -1,0 +1,2697 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"h",
+				"h"
+			],
+			[
+				"Inter",
+				"Interpolate"
+			],
+			[
+				"gsl_int",
+				"gsl_interp_accel"
+			],
+			[
+				"gsl_interp",
+				"gsl_interp2d_type"
+			],
+			[
+				"print",
+				"printGraph"
+			],
+			[
+				"index_",
+				"index_x"
+			],
+			[
+				"sor",
+				"px_sorted"
+			],
+			[
+				"ind",
+				"index_x"
+			],
+			[
+				"evt",
+				"evt_fill"
+			],
+			[
+				"hist",
+				"histogram_in_range"
+			],
+			[
+				"vari",
+				"variable"
+			],
+			[
+				"make",
+				"make_full_range"
+			],
+			[
+				"summe",
+				"summed_histograms"
+			],
+			[
+				"his",
+				"histogram_names_added"
+			],
+			[
+				"TSpline",
+				"TSplineSteffen"
+			],
+			[
+				"TSpl",
+				"TSplineSteffen"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"TS",
+				"TS3"
+			],
+			[
+				"spline",
+				"spline_type"
+			],
+			[
+				"splin",
+				"spline_type"
+			],
+			[
+				"nse",
+				"nSectionsBeforeFunction"
+			],
+			[
+				"nSe",
+				"nSectionsBeforeFunction"
+			],
+			[
+				"graph",
+				"graphs"
+			],
+			[
+				"histogr",
+				"histogramMetric"
+			],
+			[
+				"Clos",
+				"ClosureMaker"
+			],
+			[
+				"histo",
+				"histogramMetric"
+			],
+			[
+				"Form",
+				"FormulaEvaluator"
+			],
+			[
+				"chek",
+				"checkFormulaEvaluator"
+			],
+			[
+				"root",
+				"root_func"
+			],
+			[
+				"l2l3",
+				"l2l3"
+			],
+			[
+				"check",
+				"checkFormulaEvaluator"
+			],
+			[
+				"output",
+				"outputFilename"
+			],
+			[
+				"bran",
+				"branchJetPUPPI"
+			],
+			[
+				"branch",
+				"branchVertex"
+			],
+			[
+				"Del",
+				"DelphesNtupleToJRANtuple_x"
+			],
+			[
+				"file",
+				"fileList"
+			],
+			[
+				"inpu",
+				"inputFilePath"
+			],
+			[
+				"TTreeR",
+				"TTreeReaderArray"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"vabscor_",
+				"vabscor_eta_spline"
+			],
+			[
+				"do",
+				"doPenalized"
+			],
+			[
+				"double",
+				"double"
+			],
+			[
+				"mak",
+				"makeCanvas"
+			],
+			[
+				"spline_",
+				"spline_func"
+			],
+			[
+				"spl",
+				"spline_func"
+			],
+			[
+				"makeCa",
+				"makeCanvasVariable"
+			],
+			[
+				"ssc",
+				"sscname"
+			],
+			[
+				"makeC",
+				"makeCanvasVariable"
+			],
+			[
+				"GetN",
+				"GetNpar"
+			],
+			[
+				"num",
+				"num_spline_pars"
+			],
+			[
+				"GetX",
+				"GetXmin"
+			],
+			[
+				"find",
+				"findNext"
+			],
+			[
+				"high",
+				"highest"
+			],
+			[
+				"fin",
+				"findNext"
+			],
+			[
+				"L2",
+				"L2Creator"
+			],
+			[
+				"mer",
+				"merge_points"
+			],
+			[
+				"getN",
+				"getNSections"
+			],
+			[
+				"set",
+				"setPartialFunction"
+			],
+			[
+				"par",
+				"partial_function"
+			],
+			[
+				"is",
+				"isFifthOrder"
+			],
+			[
+				"fitr",
+				"fitrange_min"
+			],
+			[
+				"numb",
+				"number_filled_bins"
+			],
+			[
+				"no",
+				"normToAll"
+			],
+			[
+				"SetParameters",
+				"SetParameters"
+			],
+			[
+				"bes",
+				"bestIter"
+			],
+			[
+				"fitRes",
+				"fitResultPtrs"
+			],
+			[
+				"l2",
+				"l2pffit"
+			],
+			[
+				"pari",
+				"pari_lim"
+			],
+			[
+				"outputDir",
+				"outputDirectory"
+			],
+			[
+				"out",
+				"outputFilename"
+			],
+			[
+				"modi",
+				"modifiedHandkerchief"
+			],
+			[
+				"function",
+				"functionType"
+			],
+			[
+				"mapTr",
+				"mapTreePU"
+			],
+			[
+				"fitfn",
+				"fitfnc"
+			],
+			[
+				"string",
+				"stringstream"
+			],
+			[
+				"anima",
+				"animationCmd"
+			],
+			[
+				"outp",
+				"output"
+			],
+			[
+				"writ",
+				"writeCmd"
+			],
+			[
+				"prin",
+				"printCmd"
+			],
+			[
+				"anim",
+				"animated_names"
+			],
+			[
+				"cont",
+				"containsGIF"
+			],
+			[
+				"Single",
+				"SingleEl_WlnuJets"
+			],
+			[
+				"compar",
+				"compared"
+			],
+			[
+				"save",
+				"saveHistograms"
+			],
+			[
+				"filena",
+				"filename"
+			],
+			[
+				"load",
+				"loadHists"
+			],
+			[
+				"loa",
+				"loadHists"
+			],
+			[
+				"compa",
+				"compareFiles"
+			],
+			[
+				"JetT",
+				"JetType"
+			],
+			[
+				"Jet",
+				"JetType"
+			],
+			[
+				"max",
+				"maxEvents"
+			],
+			[
+				"JECNtuple_MiniAOD_JER",
+				"JECNtuple_MiniAOD_JERUncertaintyDown"
+			],
+			[
+				"if",
+				"ifilename_suffix"
+			],
+			[
+				"ifilen",
+				"ifilename_suffix"
+			],
+			[
+				"ifile",
+				"ifilename_suffix"
+			],
+			[
+				"jet",
+				"jetcollection"
+			],
+			[
+				"JERUn",
+				"JERUncertainty"
+			],
+			[
+				"apply",
+				"applyDBFile"
+			],
+			[
+				"jer",
+				"jerfile"
+			],
+			[
+				"glob",
+				"GlobalTag"
+			],
+			[
+				"MCHI",
+				"MCHist_reweighted"
+			],
+			[
+				"err",
+				"errorBandWeight"
+			],
+			[
+				"dta",
+				"dataHists"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"error",
+				"errorBandData"
+			],
+			[
+				"weigh",
+				"weightHists"
+			],
+			[
+				"erro",
+				"errorBandWeight"
+			],
+			[
+				"MC",
+				"MCHist"
+			],
+			[
+				"ey_",
+				"ey_up"
+			],
+			[
+				"da",
+				"dataHists"
+			],
+			[
+				"hPU",
+				"hPUWeightsDown"
+			],
+			[
+				"hPUW",
+				"hPUWeightsCentral"
+			],
+			[
+				"JERU",
+				"JERUncertainty_"
+			],
+			[
+				"JERUN",
+				"JERUncertaintyFile_"
+			],
+			[
+				"JER",
+				"JERUncertaintyFile_"
+			],
+			[
+				"JERL",
+				"JERLegacy_"
+			],
+			[
+				"seq",
+				"theSequence"
+			],
+			[
+				"JES",
+				"JESUncertainty"
+			],
+			[
+				"JetTa",
+				"JetTagOut"
+			],
+			[
+				"use",
+				"useUpdater"
+			],
+			[
+				"S",
+				"Sequence"
+			],
+			[
+				"doJe",
+				"doJetToolbox"
+			],
+			[
+				"Gen",
+				"GenJetsNoNu"
+			],
+			[
+				"Jes",
+				"JESUncertainty"
+			],
+			[
+				"srcP",
+				"srcPileupInfo_"
+			],
+			[
+				"mini",
+				"doMiniAOD"
+			],
+			[
+				"pu",
+				"pu_method"
+			],
+			[
+				"jetCor",
+				"jetCorrectionsParameter"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "TAMUTemplate.tex",
+			"settings":
+			{
+				"buffer_size": 6706,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/abstract.tex",
+			"settings":
+			{
+				"buffer_size": 964,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/acknowledgements.tex",
+			"settings":
+			{
+				"buffer_size": 806,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/nomenclature.tex",
+			"settings":
+			{
+				"buffer_size": 2012,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/nomen.csv",
+			"settings":
+			{
+				"buffer_size": 2339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/contributors.tex",
+			"settings":
+			{
+				"buffer_size": 3233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section1.tex",
+			"settings":
+			{
+				"buffer_size": 867,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section2.tex",
+			"settings":
+			{
+				"buffer_size": 843,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section3.tex",
+			"settings":
+			{
+				"buffer_size": 673,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section4.tex",
+			"settings":
+			{
+				"buffer_size": 669,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section5.tex",
+			"settings":
+			{
+				"buffer_size": 2261,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/section6.tex",
+			"settings":
+			{
+				"buffer_size": 550,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/appendix1.tex",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/appendix2.tex",
+			"settings":
+			{
+				"buffer_size": 620,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/appendix3.tex",
+			"settings":
+			{
+				"buffer_size": 647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/appendix4.tex",
+			"settings":
+			{
+				"buffer_size": 535,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/myReference.bib",
+			"settings":
+			{
+				"buffer_size": 13901,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Edit Server…"
+			],
+			[
+				"latextoo",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
+			[
+				"insal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX Beamer"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"snippe",
+				"Snippet: Using statement"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"C++",
+				"Set Syntax: C++"
+			],
+			[
+				"Snippet: using",
+				"Snippet: using-namespace"
+			],
+			[
+				"un",
+				"Snippet: using-namespace"
+			],
+			[
+				"create",
+				"Create Xiki Buffer"
+			],
+			[
+				"packageconint",
+				"Package Control: Install Package"
+			],
+			[
+				"sideb",
+				"View: Toggle Side Bar"
+			],
+			[
+				"SFTP",
+				"Preferences: SFTP Settings"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Packag",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: In",
+				"Package Control: Install Package"
+			],
+			[
+				"FindKey",
+				"FindKeyConflicts: (Direct) Conflicts to Buffer"
+			],
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"packinst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/data/dedication.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/tamuconfig.sty",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/data/appendices.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Research-RicardoEusebi/JetMET/JERC/2014_08_18~22-Alexx-BOOST/2014_08_04-Alexx.bib",
+		"/Users/aperloff/Documents/TAMU-Graduate/Research-RicardoEusebi/JetMET/JERC/2014_08_25~27-Alexx-JetMETWorkshop-Vienna/2014_08_19-Alexx.bib",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/data/bibliography.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/thesis.sublime-project",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text2/TAMUTemplate.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text2/data/titlepage.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/references.bib",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text2/tamuconfig.sty",
+		"/Users/aperloff/Documents/TAMU-Graduate/PreliminaryExamination/PreliminaryExamPresentation.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/tamuthesis.tex",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1476048879/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/JetMETAnalysis/JetAnalyzers/macros/compareJEC.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1476047980/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/jecsys/test/compareJEC.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1476046523/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/JetMETAnalysis/JetAnalyzers/macros/compareJEC.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1476045323/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/jecsys/test/compareJEC.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1474900191/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/JetMETAnalysis/JetAnalyzers/python/QCD_Pt-15to7000_Flat_pythia8_RunIISummer16DR80-NoPU_80X_TrancheIV_cff.py",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1474900224/brazos/home/aperloff/JEC/CMSSW_8_0_20/src/JetMETAnalysis/JetAnalyzers/python/QCD_Pt-15to7000_Flat_pythia8_RunIISummer16DR80-PUFlat0to70_80X_TrancheIV_cff.py",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473143189/brazos/home/aperloff/fdata/JEC/81X_StudyHighPtClosure/spline.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473658010/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472832747/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_l2_correction_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472804464/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/L2Creator.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472804434/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/L2Creator.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472835787/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/HistogramUtilities.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472835070/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/HistogramUtilities.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473657997/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_correction_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473448835/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/bin/jet_add_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473461635/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473652574/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ObjectLoader.h",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473462959/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ObjectLoader.icc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473462684/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ObjectLoader.icc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473451893/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ObjectLoader.icc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473451867/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ObjectLoader.h",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473461405/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_fitter_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473461298/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_fitter_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473460569/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473450075/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_fitter_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473448856/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472805301/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_correction_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472860718/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/ClosureMaker.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472860748/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/ClosureMaker.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473122046/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/TSplineSteffen.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473122040/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/TSplineSteffen.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473116814/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/TSpline4.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1473116796/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/interface/TSpline4.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472803354/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/L2Creator.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472802993/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/src/L2Creator.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472798895/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_draw_corrections_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472516625/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_correction_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472765203/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_draw_closure_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471037173/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/StudyHighPtClosure/spline.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472766290/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/ClosureMaker.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472516590/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/src/ClosureMaker.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472230272/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/DelphesNtupleToJRANtuple_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472573336/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472573949/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472511896/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/src/L2Creator.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472512056/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/L2Creator.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472511923/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_l2_correction_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470692620/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_l2_correction_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472153959/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/src/JRAEvent.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472157994/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/DelphesNtupleToJRANtuple_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472159335/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/delphes/examples/Example4.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472158263/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/delphes/examples/Example1.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472158004/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/DelphesNtupleToJRANtuple_modified_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472158227/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/delphes/examples/Example1.cpp",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472149453/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/DelphesNtupleToJRANtuple_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472153893/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472153624/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/interface/JetResponseAnalyzer.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472153602/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetAnalyzers/src/JetResponseAnalyzer.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471281680/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/L2Creator.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470689349/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/src/L2Creator.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470952116/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_create_flavor_weights_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471016452/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_fitter_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470953354/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1472064574/brazos/home/aperloff/JEC/CMSSW_8_1_0_pre9/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470684639/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/StudyHighPtClosure/plotL1.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471315974/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_draw_l2_correction_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471448294/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471380940/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471380057/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/Style.h",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471377026/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471374050/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470255743/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchfit_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471374340/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1471017296/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/ProgressBar.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470690611/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/interface/L2Creator.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470249781/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchtest_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470249074/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchplot_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1470257372/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/interface/Settings.h",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469718453/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchfit_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469546754/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/ConfigFiles/Official/FileLocation_pretag.txt",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469546996/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/Tools/bin/plotter_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469686862/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/DefaultValues.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469739149/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/Defs.cc",
+		"/Users/aperloff/Downloads/tryFunctions.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469730163/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_histos_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469743033/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_inspect_graphs_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469737084/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_make_animation_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469738135/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/BuildFile.xml",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469729945/brazos/home/aperloff/JEC/CMSSW_8_0_1/src/JetMETAnalysis/JetUtilities/bin/jet_make_animation_x.cc",
+		"/Users/aperloff/Downloads/param.C",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469562438/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/Tools/bin/SkimTPUDist_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469629107/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/Defs.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469552340/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/interface/Defs.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469552294/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/Defs.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469551561/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/DefaultValues.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469550838/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/Tools/bin/SkimTPUDist_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469552184/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/SpecialTools/src/Defs.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469549157/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/Tools/src/Plots.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1469549146/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_22_patch1/src/TAMUWW/Tools/src/PlotFiller.cc",
+		"/Users/aperloff/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/brazos",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468367400/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/src/JetResponseAnalyzer.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468367361/cmslpc/uscms/home/aperloff/.rootlogon.C",
+		"/Users/aperloff/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/aperloff/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468266100/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchtest_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468261555/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/bin/jet_synchplot_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468264115/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetUtilities/src/SynchFittingProcedure.hh",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468267389/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/bin/jet_apply_jec_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468269141/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/bin/jet_response_analyzer_x.cc",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468268876/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetUtilities/src/JetInfo.cc",
+		"/Users/aperloff/Documents/TAMU-Graduate/PreliminaryExamination/sortsecondcolumn.tex",
+		"/Users/aperloff/Documents/TAMU-Graduate/PreliminaryExamination/sortfirstcolumn.sty",
+		"/Users/aperloff/Documents/TAMU-Graduate/PreliminaryExamination/sortsecondcolumn.sty",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468185953/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/python/RelValMinBias_14TeV_2023tilted_PU140_cff.py",
+		"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1468185982/cmslpc/uscms_data/d2/aperloff/YOURWORKINGAREA/JEC/gitty/CMSSW_8_1_0_pre8/src/JetMETAnalysis/JetAnalyzers/python/RelValMinBias_14TeV_2023tilted_PU200_cff.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			",",
+			".*\\n.*\\n",
+			"	",
+			"\\DTLnewdbentry{mynomen}{full}{",
+			"\\DTLnewdbentry{mynomen}{abbr}",
+			"\\DTLnewrow{mynomen}%",
+			"subsection",
+			"hyperref",
+			"subsubsec",
+			"subsub",
+			"setcounte",
+			"subsubsec",
+			"setcoun",
+			"cacc",
+			"ieta",
+			"_ieta",
+			"_pt",
+			"setrange",
+			"8",
+			"maxtr",
+			"l2l3",
+			"l1!=",
+			"l1==",
+			"res",
+			"strVec[istr]",
+			"strpath",
+			"jetcorr",
+			"getfactorizedcorrector",
+			"jectcorr",
+			"_jec",
+			"factorized",
+			"g1d_e",
+			"fill",
+			"jec2",
+			"simplejet",
+			"ksquare",
+			"mod14_ia",
+			"ksquar",
+			"[i]",
+			"/\"",
+			"\"",
+			"cid",
+			"CondF",
+			"checkform",
+			"checkfor",
+			"writete",
+			"checkformula",
+			"writetext",
+			"checkformul",
+			"writete",
+			"writetextfileforcurrentalgorithm_spl",
+			"0.50",
+			"0.25",
+			"double*",
+			"if(debug",
+			"g->",
+			"g-",
+			"g->GetN()",
+			"(size_t)g->GetN()",
+			"g->GetN()",
+			"kred",
+			"bicubi",
+			"point_count",
+			"N",
+			"index",
+			"(1",
+			"ymax",
+			"ymin",
+			"xmax",
+			"xmin",
+			"zxymaxmax",
+			"zxymaxmin",
+			"zymaxmax",
+			"zymaxmin",
+			"zxmaxmax",
+			"zxmaxmin",
+			"zmaxmax",
+			"zmaxmin",
+			"t3",
+			"u3",
+			"u2",
+			"u1",
+			"u0",
+			"t3",
+			"t2",
+			"t1",
+			"t0",
+			"zxyminmax",
+			"zxyminmin",
+			"zyminmax",
+			"zyminmin",
+			"zxminmax",
+			"zxminmin",
+			"zminmax",
+			"zminmin",
+			" ",
+			"gethistogrammetric",
+			"median",
+			"pthatdistri",
+			"pthat",
+			"fill_histo",
+			"pthat",
+			"pthatmin",
+			"pthat",
+			"suffix",
+			"weightFile",
+			"refpt",
+			"weightfile",
+			"algs",
+			"alg",
+			"weightfile",
+			"weightgile",
+			"weight",
+			"weightfile",
+			"weighthist",
+			"flavors",
+			"weightfile",
+			"usewei",
+			"weight",
+			"weightfile",
+			"tree->getentries()",
+			"xsection",
+			"convert",
+			"ihisto",
+			"sumw2",
+			"get_applic",
+			"sranges",
+			"get_applic"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"[19]",
+			"[18]",
+			"[17]",
+			"[16]",
+			"[15]",
+			"[14]",
+			"[13]",
+			"[12]",
+			"[11]",
+			"[10]",
+			"[9]",
+			"[8]",
+			"pow((x-xmin)/(xmax-xmin),3)",
+			"pow((y-ymin)/(ymax-ymin),3)",
+			"pow((y-ymin)/(ymax-ymin),2)",
+			"pow((y-ymin)/(ymax-ymin),1)",
+			"pow((y-ymin)/(ymax-ymin),0)",
+			"pow((x-xmin)/(xmax-xmin),2)",
+			"pow((x-xmin)/(xmax-xmin),1)",
+			"pow((x-xmin)/(xmax-xmin),0)",
+			"[7]",
+			"[6]",
+			"[5]",
+			"[4]",
+			"[3]",
+			"[2]",
+			"[0]",
+			"",
+			"options.jerfile",
+			"options.era",
+			"options.applyDBFile",
+			"options.doMiniAOD",
+			"options.useUpdater",
+			"options.doReclustering",
+			"options.doJetToolbox",
+			"(GeV)",
+			"y",
+			"phi",
+			"pt",
+			"refpt",
+			"refpt[iref]",
+			"pdgid",
+			"jtpt",
+			"refpdgid[iref]",
+			"pdgid",
+			"JRAEvt->rho,",
+			"iref",
+			"rho,",
+			"pfcand_id",
+			"MakeZJetsToLLLepResSmearingFactor",
+			"ZJetsToLL",
+			"jbin",
+			"",
+			".root',",
+			"    '/store/user",
+			"V[",
+			"",
+			"electron",
+			"root://cmseos.fnal.gov//store",
+			"->push_back",
+			"->at(iref)",
+			"JRAEvent",
+			"it->",
+			"10_29",
+			", make_pair",
+			"updateValue(",
+			"\"))",
+			"values.at(DEFS::",
+			"values.at(QCD_Enum)",
+			"vecCombined",
+			"[DEFS::PhysicsProcess::getProcessType(\"ZJets\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WW\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"TTbar\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopTW_Tbar\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopTW_T\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopT_Tbar\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopT_T\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopS_Tbar\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"STopS_T\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WZ\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"TTH_HToWW_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"ZH_HToWW_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WH_HToWW_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"TTH_HToBB_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WH125_HToBB\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"TTH_HToZZ_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"ZH_HToZZ_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WH_HToZZ_M125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"qqH125\")]",
+			"[6]",
+			"[DEFS::PhysicsProcess::getProcessType(\"qqH125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"ggH125\")]",
+			"[DEFS::PhysicsProcess::getProcessType(\"WJets\")]",
+			"[QCD_Enum]",
+			"QCD_Enum",
+			"#normalizeHi",
+			"normalizeHi",
+			"Difference",
+			"Calo",
+			"Closure",
+			"ibin",
+			"hvar2",
+			"hvar1",
+			"hl_",
+			"RatioMaker",
+			"denominator",
+			"_eta.",
+			"V4",
+			"ratio",
+			"ratio\n",
+			"ratio     \n",
+			"            \n",
+			"h_res",
+			"ratio",
+			"KinMEBDT",
+			"MVADiscriminator",
+			"evMap.end()",
+			"MVADiscriminator",
+			"JESUp",
+			"ntype",
+			"nype EventNtuple",
+			"include_data true",
+			"scale",
+			"jecs.png",
+			"//systematics.back().values[21]",
+			"//systematics.back().values[19]",
+			"\",\"",
+			"-outputPath ./ -outputSuffix _0"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "TAMUTemplate.tex",
+					"settings":
+					{
+						"buffer_size": 6706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2241,
+								2241
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 814.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "data/abstract.tex",
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "data/acknowledgements.tex",
+					"settings":
+					{
+						"buffer_size": 806,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "data/nomenclature.tex",
+					"settings":
+					{
+						"buffer_size": 2012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1158,
+								1158
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"spell_check": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "data/nomen.csv",
+					"settings":
+					{
+						"buffer_size": 2339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2221,
+								2221
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 737.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "data/contributors.tex",
+					"settings":
+					{
+						"buffer_size": 3233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "data/section1.tex",
+					"settings":
+					{
+						"buffer_size": 867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "data/section2.tex",
+					"settings":
+					{
+						"buffer_size": 843,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								656,
+								656
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "data/section3.tex",
+					"settings":
+					{
+						"buffer_size": 673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								673,
+								673
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "data/section4.tex",
+					"settings":
+					{
+						"buffer_size": 669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								548,
+								548
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "data/section5.tex",
+					"settings":
+					{
+						"buffer_size": 2261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1425,
+								1425
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "data/section6.tex",
+					"settings":
+					{
+						"buffer_size": 550,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "data/appendix1.tex",
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								539,
+								539
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "data/appendix2.tex",
+					"settings":
+					{
+						"buffer_size": 620,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								617,
+								617
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "data/appendix3.tex",
+					"settings":
+					{
+						"buffer_size": 647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								647,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "data/appendix4.tex",
+					"settings":
+					{
+						"buffer_size": 535,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "data/myReference.bib",
+					"settings":
+					{
+						"buffer_size": 13901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13855,
+								13855
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/LaTeXTools/BibLaTeX.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4422.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 169.0
+	},
+	"output.latextools":
+	{
+		"height": 100.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"plo",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1460565795/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_2_patch5/src/TAMUWW/Tools/bin/plotter_x.cc"
+			],
+			[
+				"dra",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1426464123/brazos/home/aperloff/JEC/CMSSW_7_3_3/src/JMEAnalysis/JMEValidator/macros/particleDrawer.C"
+			],
+			[
+				"run",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1426464338/brazos/home/aperloff/JEC/CMSSW_7_3_3/src/JMEAnalysis/JMEValidator/test/runValidator.py"
+			],
+			[
+				"par",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1426464123/brazos/home/aperloff/JEC/CMSSW_7_3_3/src/JMEAnalysis/JMEValidator/macros/particleDrawer.C"
+			],
+			[
+				"event",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1414446841/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_2_patch4/src/TAMUWW/Tools/bin/EventNtupleToUVaNtuple_x.cc"
+			],
+			[
+				"form",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1412375393/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/VHbb/CMSSW_7_1_0_pre9/src/VHbb/HbbAnalyzer/bin/format_plots_x.cc"
+			],
+			[
+				"plot",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1409671503/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_2_patch4/src/TAMUWW/Tools/bin/plotter_x.cc"
+			],
+			[
+				"plott",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1409671503/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_2_patch4/src/TAMUWW/Tools/bin/plotter_x.cc"
+			],
+			[
+				"hbb",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1410537533/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/VHbb/CMSSW_7_1_0_pre9/src/VHbb/HbbAnalyzer/plugins/HbbAnalyzer.cc"
+			],
+			[
+				"hbban",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1410537533/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/VHbb/CMSSW_7_1_0_pre9/src/VHbb/HbbAnalyzer/plugins/HbbAnalyzer.cc"
+			],
+			[
+				"cfi",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1410537997/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/VHbb/CMSSW_7_1_0_pre9/src/VHbb/HbbAnalyzer/python/HbbAnalyzer_cfi.py"
+			],
+			[
+				"cfg",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1410538007/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/VHbb/CMSSW_7_1_0_pre9/src/VHbb/HbbAnalyzer/python/HbbAnalyzer_cfg.py"
+			],
+			[
+				"",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1412203431/cmslpc/uscms/home/aperloff/nobackup/YOURWORKINGAREA/MatrixElement/gitty/CMSSW_5_3_2_patch4/src/TAMUWW/MVA/src/TAMUWWMVA.cc"
+			],
+			[
+				"un",
+				"untitled"
+			],
+			[
+				"inc",
+				"/Users/aperloff/Library/Application Support/Sublime Text 2/Packages/User/C++/include-stl.sublime-snippet"
+			],
+			[
+				"unti",
+				"untitled"
+			],
+			[
+				"mico",
+				"/var/folders/x8/04k4m4d161nckqr1f2ncqxkm0000gn/T/sublime-sftp-browse-1384972849/cmslpc/uscms/home/aperloff/MatrixElement/gitty/CMSSW_5_3_2_patch4/src/TAMUWW/Tools/src/MicroNtupleMaker.cc"
+			],
+			[
+				"jn",
+				"kjfnvldjf"
+			],
+			[
+				"jv",
+				"kjfnvldjf"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true
+}

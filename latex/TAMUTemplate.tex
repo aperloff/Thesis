@@ -1,0 +1,200 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%
+%
+%  Author: Sean Zachary Roberson
+%  Version 3.16.10
+%  Last Updated: 9/29/2016
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{report}
+
+%These next lines change the font. Fixes for certain
+%fonts will be implemented in a future release.
+
+%Comment this line if you do not wish to use Times
+%New Roman. The font used will then be the LaTeX
+%default of Computer Modern.
+\usepackage{times}
+%\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+
+%Do not change these settings. The geometry package
+%Adjusts the margins to those specified by the Thesis
+%Manual. 
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1.25in,bmargin=1.25in,lmargin=1.4in,rmargin=1.15in}
+ \usepackage[doublespacing]{setspace}
+ \usepackage{tocloft}
+ \usepackage[rm, tiny, center, compact]{titlesec}
+ \usepackage{indentfirst}
+ \usepackage{etoolbox}
+
+\usepackage{tocvsec2}
+ \usepackage[titletoc]{appendix}
+ \usepackage{appendix}
+ \usepackage{tamuconfig}
+
+\usepackage{rotating}
+
+%These are common AMS packages. Many LaTeX documents
+%have these packages declared in their preambles.
+\usepackage{amsmath, amsthm}
+
+%This package allows for the use of graphics in the
+%document.
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%If you have JPEG format images, add .jpg as an
+%allowed file extension below. Same for Bitmaps (.bmp).
+\DeclareGraphicsExtensions{.png,.jpg,.pdf,.eps}
+
+%It is best practice to keep all your pictures in
+%one folder inside the main directory in which your
+%TeX file is kept. Here the folder is named "graphic."
+%Replace the name here with your folder's name, if needed.
+%The period is needed due to relative referencing.
+\graphicspath{ {./graphic/} }
+\newcommand\figpath{/Users/aperloff/Documents/TAMU-Graduate/Thesis/Text/figures/}
+
+%If needed, this will allow you to add the word "Page"
+%to extra pages on your front matter lists.
+\usepackage{afterpage}
+
+%This is from the mdwtools package; it fixes some
+%footnote commands and allows you to have footnotes in
+%tables via the savenotes environment.
+\usepackage{footnote}
+
+%This is for sorting tables and displaying their content
+\usepackage{datatool}
+\usepackage{dataplot}
+\usepackage{datapie}
+\usepackage{databar}
+\usepackage{longtable}
+\usepackage{xtab}
+
+\usepackage{cmscommands}
+
+% Added to fix issues with pdf searching in some versions of LaTeX
+%\usepackage[T1]{fontenc}\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Hyperref setup below.  You should be able to get away with using uncommenting just the first line.
+%\usepackage[hidelinks]{hyperref}
+
+% if \usepackage[hidelinks]{hyperref} doesn't work try this.
+% \usepackage{hyperref}  % Hidelinks is an option that removes link visiability.  TAMU Thesis Offices prefers to not see the links. But often doesn't work.  
+% 
+% \hypersetup{
+%     colorlinks=true,
+%     linkcolor=black,
+%     citecolor=black,
+%     filecolor=black,
+%     urlcolor=black,
+% }
+%%%%%%%  End of hyperref setup.  One of these two options should work, but my motto with hyperref is when in doubt, comment it out!
+%%%%%%%%%  This hopefully fixes the problem with vertical spacing of section headings at the top of the page..  Commented out in 1.0.7
+% \preto\section{%
+% \ifnum\value{section}>0\addtocontents{toc}{\vskip-6pt}\fi
+% }
+% \preto\subsection{%
+% \ifnum\value{subsection}=0\addtocontents{toc}{\vskip-6pt}\fi
+% \ifnum\value{subsection}>0\addtocontents{toc}{\vskip-6pt}\fi
+% } 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%The title of your document goes here.
+%Spacing may need to be adjusted if your title is long
+%and pushes the copyright off the page.
+\newcommand\hidemath{125 GeV}
+\newcommand\hidemathtwo{$H{\rightarrow}WW{\rightarrow}l{\nu}jj$}
+\newcommand\hidemaththree{$\sqrt{s}=$\ 8 TeV}
+\renewcommand{\tamumanuscripttitle}{Search for a \protect\hidemath\ Standard Model Higgs decaying via \protect\hidemathtwo\ at \protect\hidemaththree}
+
+%Type only Thesis, Dissertation, or Record of Study.
+\renewcommand{\tamupapertype}{Dissertation}
+
+%Your full name goes here, as it is in university records. Check your student record on Howdy if there is any mismatch.
+\renewcommand{\tamufullname}{Alexx S. Perloff}
+
+%The degree title goes here. See the OGAPS site for more info.
+\renewcommand{\tamudegree}{Doctor of Philosophy}
+\renewcommand{\tamuchairone}{Ricardo Eusebi}
+
+
+% Uncomment out the next line if you have co-chairs.  You will also need to edit the titlepage.tex file.
+%\newcommand{\tamuchairtwo}{Additional Chair Name}
+\renewcommand{\tamumemberone}{Alexei Safonov}
+\newcommand{\tamumembertwo}{Bhaskar Dutta}
+\newcommand{\tamumemberthree}{Sherry J. Yennello}
+\renewcommand{\tamudepthead}{Peter McIntyre}
+
+%Type only May, August, or December.
+\renewcommand{\tamugradmonth}{May}
+\renewcommand{\tamugradyear}{2017}
+%Your department name goes here.
+\renewcommand{\tamudepartment}{Physics}
+
+
+\include{data/titlepage} % This is simply a file that formats and adds your titlepage, please do not edit this unless you have a specific need. .
+\include{data/abstract}
+\include{data/dedication}
+\include{data/acknowledgements}
+%\include{data/contributors}
+\include{data/nomenclature}
+
+\include{data/lists}  % This is simply a file that formats and adds your toc, lof, and lot, please do not edit this unless you have a specific need.
+
+\include{data/section1}
+\include{data/section2}
+\include{data/section3}
+\include{data/section4}
+\include{data/section5}
+\include{data/section6}
+%The next line is the format for inserting new sections.
+%Replace the name "newsection"  with the name of your
+%new section file.
+%\include{data/newsection}
+
+%fix spacing in bibliography, if any...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\oldbibitem\bibitem
+\renewcommand{\bibitem}{\setlength{\itemsep}{0pt}\oldbibitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The bibliography style declared is the IEEE format. If
+%you require a different style, see the document
+%bibstyles.pdf included in this package. This file,
+%hosted by the University of Vienna, shows several
+%bibliography styles and examples of in-text citation
+%and a references page.
+\bibliographystyle{ieeetr}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{REFERENCES}
+
+\renewcommand{\bibname}{{\normalsize\rm REFERENCES}}
+
+%This file is a .bib database that contains the sources.
+%This removes the dependency on the previous file
+%bibliography.tex.
+\bibliography{data/myReference}
+
+
+
+
+%This next line includes appendices. The file
+%appendix.tex contains commands pointing to
+%the appendix files; be sure to change these
+%pointers if you end up changing the filenames.
+%Leave this commented if you will not need
+%appendix material.
+\include{data/appendices}
+
+
+\end{document}

@@ -1,0 +1,52 @@
+%!TEX root = ../TAMUTemplate.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%
+%  Author: Sean Zachary Roberson
+%	 Version 3.16.09
+%  Last updated 9/12/2016
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                           NOMENCLATURE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{NOMENCLATURE}
+\addcontentsline{toc}{chapter}{NOMENCLATURE}  % Needs to be set to part, so the TOC doesnt add 'CHAPTER ' prefix in the TOC.
+
+\DTLloaddb{mynomen}{data/nomen.csv}
+\dtlsort{abbr=ascending}{mynomen}{\dtlcompare}
+
+\makeatletter
+%http://groups.google.com/group/comp.text.tex/msg/7e812e5d6e67fcc5
+\def\convertto#1#2{\strip@pt\dimexpr #2*65536/\number\dimexpr 1#1}
+\makeatother
+
+%A note about aligning: These entries will align
+%themselves according to the ampersand (&).
+%No extra spaces are needed, as seen in some of
+%the entries below.
+\vspace{-0.5in}
+	%next two lines remove a problem of adding too much space to the first line
+	%\vspace{-\baselineskip}
+	\vspace{-\convertto{in}{2ex}in} 
+    \begin{longtable}{@{}p{0.33\textwidth} p{0.62\textwidth}@{}}
+    \DTLforeach*{mynomen}{}{%
+    \\[2ex]\gdef\doamp{\gdef\doamp{&}}%
+    \DTLforeachkeyinrow{\thisValue}{\doamp\thisValue}}%
+    \end{longtable}%
+
+	%\begin{table}[htbp]
+	%    \begin{tabular}{@{}p{0.33\textwidth} p{0.62\textwidth}@{}}
+	%	OGAPS	&	Office of Graduate and Professional Studies at Texas A\&M University\\	[2ex]
+	%	B/CS		&	Bryan and College Station\\	[2ex] %[2ex] provides double space between each row
+	%	TAMU			&	Texas A\&M University\\	[2ex]
+	%	AOD     & Analysis Object Data\\ [2ex]
+	%	%XXXXXXXX		&	This is an optional page. Random word to test how long the sentence can be? This is just for test purpose. The current setting aims to align left/right margin same as all other pages.\\	[2ex]
+	%    \end{tabular}%
+	%\end{table}
+
+\pagebreak{}
