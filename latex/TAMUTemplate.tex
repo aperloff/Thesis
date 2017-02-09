@@ -41,7 +41,9 @@
 
 %These are common AMS packages. Many LaTeX documents
 %have these packages declared in their preambles.
-\usepackage{amsmath, amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
 
 %This package allows for the use of graphics in the
 %document.
@@ -76,8 +78,9 @@
 \usepackage{databar}
 \usepackage{longtable}
 \usepackage{xtab}
-
-\usepackage{cmscommands}
+\renewcommand{\dtldisplaystarttab}{\hline}
+\renewcommand{\dtldisplayafterhead}{\\\hline}
+\renewcommand{\dtldisplayendtab}{\\\hline}
 
 % Added to fix issues with pdf searching in some versions of LaTeX
 %\usepackage[T1]{fontenc}\usepackage{lmodern}
@@ -106,6 +109,11 @@
 % \ifnum\value{subsection}>0\addtocontents{toc}{\vskip-6pt}\fi
 % } 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
+\usepackage{xspace}
+\usepackage{ptdr-definitions}
+%\usepackage{cmscommands}
 
 \begin{document}
 
@@ -154,9 +162,9 @@
 \include{data/section1}
 \include{data/section2}
 \include{data/section3}
-\include{data/section4}
-\include{data/section5}
-\include{data/section6}
+%\include{data/section4}
+%\include{data/section5}
+%\include{data/section6}
 %The next line is the format for inserting new sections.
 %Replace the name "newsection"  with the name of your
 %new section file.
@@ -194,7 +202,7 @@
 %pointers if you end up changing the filenames.
 %Leave this commented if you will not need
 %appendix material.
-\include{data/appendices}
+%\include{data/appendices}
 
 
 \end{document}
