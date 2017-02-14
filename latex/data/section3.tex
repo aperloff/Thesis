@@ -41,7 +41,7 @@ The ECAL and HCAL RecHits contain information about the energy deposited, the po
 
 The next step is to process this information in a global manner, where the subsystems within each sub-detector are combined.
 Pattern recongnition algorithms are run on the tracker RecHits to reconstruct the path that the particles take through the sub-detector (a.k.a tracks).
-The ECAL and HCAL RecHits within a tower are summed to form ``CaloTowers'' which have a projective $\eta-\phi$ geometry.
+The ECAL and HCAL RecHits within a tower are summed to form ``CaloTowers'' which have a projective $\eta-\varphi$ geometry.
 The muon system creates ``standalone'' muons by associating RecHits and track segments with compatible radial trajectories.
 This process takes into account the bending a muon undergoes before reaching and within the muon system due to the magnetic field.
 
@@ -53,11 +53,105 @@ Additional information about the reconstruction process beyond the scope of this
 \section{Tracks and Vetices}
 \label{sec:tracks_and_vertices}
 
+While CMS analyses cover a wide range of final states, a majority of them will include jets in some fashion, including this one.
+It's important that the particle flow algorithm identify and measure each particle inside a jet in order to improve the jet energy response and resolution.
+Section~\ref{sec:jets} will cover the reconstruction and properties of jets in more detail, but it is important to note that two thirds of the constituents inside of a jet are charged particles.
+This motivates the need for excellent tracking capabilities.
+Tracks are created from the RecHits using the Combinatorial Track Finder (CTF) algorithm, which is an iterative process~\cite{TrackingJINST}.
+This process seeks to find the appropriate balance between high reconstruction efficiency and low fake rate (see fig~\ref{fig:efficiency_vs_fake_rate})~\cite{CMS-PAS-PFT-09-001}.
+
+\begin{figure}[!hbt]
+	\centering
+	\begin{tikzpicture}[node distance = 2cm, auto]
+		\tikzstyle{myarrows}=[line width=1mm,-triangle 45,postaction={draw, line width=3mm, shorten >=4mm, -}]
+	
+		\node (up) at (0,2) {};
+		\node (center) at (0,0) {};
+		\node (down) at (0,-2) {};
+	
+		\draw[myarrows,green!50!black] (center) -- node[right,black,xshift=5mm] {Reconstruction Efficiency} ++ (up);
+		\draw[myarrows,red] (center) -- node[right,black,xshift=5mm] {Fake Rate} ++ (down);
+	
+		\node (smiley) at (-1,1)  {\Smiley[3][green!50!black]};
+		\node (sadey)  at (-1,-1) {\Sadey[3][red]};
+	\end{tikzpicture}
+	\caption{A diagram showing the goals of the iterative tracking process.}
+	\label{fig:efficiency_vs_fake_rate}
+\end{figure}
+
+The track finding proceedure begins by finding track seeds using only a few hits and very tight criteria.
+A track is built by extrpolating from the trajectory of the seed and adding new hits that match this trajectory, keeping in mind that charged particles will bend in the presence of the magnetic field.
+The tight requirements on this first step lead to a moderate tracking efficiency, vanishingly small fake rate.
+After a track is found, all of the hits are used in a fit to determine the track parameters (i.e. \pt, $\chi^{2}$, etc.), which are then used to judge the quality of the track.
+If a track doesn't meet certain quality requirments, it isn't kept.
+The hits which are unambiguaously assigned to the tracks found are removed from consideration in the next iteration and their tracks saved for later use.
+
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics[width=0.75\textwidth]{\figpath/Chapter3/RadiusOfCurvature}
+	\caption{Schematic view of a particle track with hits labeled.}
+	\label{fig:radius_of_curvature}
+\end{figure}
+
+In each subsequent iteration the track seeding criteria is loosened and the same proceedure occurs.
+The looser seeding requirments boosts the tracking efficiency, while the removal of the hits from the previous iteration keeps the fake rate low due to the reduced combinatorics.
+The specific seeding criteria for each iteration can be found in table~\ref{tab:track_seeding}.
+After three iterations 90\% of charged hadron tracks are reconstructed and 99.5\% of muons in the tracker acceptance are found.
+Subsequent iterations loosen the constraints on the origin vertex, which allows for the reconstructions of tracks associated with a secondary vertex (i.e. $\gamma\rightarrow$\Pep\Pem~conversions, long-lived particles, nuclear interactions in the tracker material).
+Tracks meeting this set of criteria can be reconstructed with as little as three hits, a \pt as low as 150\mev, and a vertex  more than 50\unit{cm} away from the beam axis.
+Nevertheless, the fake rate is still kept on the order of 1\%~\cite{CMS-PAS-PFT-09-001}.
+
+\begin{table}[htbp]
+	\caption{The seed and track criteria used in each iteration during the 2012 run. The seed types, pair and triplet, indicate if two or three RecHits are used, respectively. The $\sigma$ in the $z_0$ criteria indicated the length of the beam spot in the $z$-direction as determined by a Gaussian fit~\cite{Tracking2012}.}
+	\centering
+    \begin{tabular}{llllll}
+		\hline
+		step  & seed type & seed subdetectors & \pt $[\GeVcns]$ & $d_0$ [cm] & $|z_0|$ \\
+		\hline
+		0     & triplet   & pixel             & ${>}0.6$     & ${<}0.02$  & ${<}4.0\sigma$ \\
+		1     & triplet   & pixel             & ${>}0.2$     & ${<}0.02$  & ${<}4.0\sigma$ \\
+		2     & pair      & pixel             & ${>}0.6$     & ${<}0.015$ & ${<}0.09\cm$ \\
+		3     & triplet   & pixel             & ${>}0.3$     & ${<}1.5$   & ${<}2.5\sigma$ \\
+		4     & triplet   & pixel/TIB/TID/TEC & ${>}0.5$--0.6 & ${<}1.5$   & ${<}10.0\cm$ \\
+		5     & pair      & TIB/TID/TEC       & ${>}0.6$     & ${<}2.0$   & ${<}10.0\cm$ \\
+		6     & pair      & TOB/TEC           & ${>}0.6$     & ${<}2.0$   & ${<}30.0\cm$ \\
+		\hline
+    \end{tabular}
+	\label{tab:track_seeding}
+\end{table}
+
+The tracks found will have a helical shape of with a given radius of curvature as in fig~\ref{fig:radius_of_curvature}.
+The softest, low \pt particle trajectories can form small rings, while the higher \pt particles will be bent less.
+The momentum of each track can be extracted from the radius of curviture (R), given by a circular fit to the track, the magnetic field strength, as well as $\eta$ and $\varphi$ of the track at the interaction point\footnote{The $\eta$ of the track is determined as if the interaction point was at the center of the detector.}.
+The following system of equations can be used to determine the particles 3-momenta at the interaction point:
+\begin{equation}
+	\begin{aligned}
+		p_{x}&=p_{T}\cos\varphi\\
+		p_{y}&=p_{T}\sin\varphi\\
+		p_{z}&=p_{T}\sinh\eta\\
+		p_{T}&=0.3\cdot{B}\cdot{R}
+	\end{aligned}
+\end{equation}
+
+After the collection of high purity tracks is created, CMS uses these to reconstruct the location of the vertices where proton-proton interactions occured~\cite{TrackingJINST}.
+The vertex finding algorithm is agnostic to whether or not the verteces come from the main hard scatter vertex of interest or any of the pileup vertices from additional proton-proton interactions.
+
 
 
 \section{Particle Flow}
 \label{sec:particle_flow}
 
+The CMS experiment has decided to use a holistic approach to reconstucting the event produced by a proton-proton collision.
+The particle flow (PF) event reconstuction algorithm uses information from all of the sub-detectors in order to reconstruct (direction and energy) and identify as accurately as possible each individual particle in the event as descibed in the first part of this chapter~\cite{CMS-PAS-PFT-09-001}.
+The CMS detector, with its extremely granular sub-detectors and high magnetic field, is ideally suited for a particle flow approach.
+With the current algorithm, charged-particle tracks out to \absetalt{2.6} can be reconstucted even with a \pt as low as 150\mev, all while maintaining a high reconstruction efficiency and low fake rate.
+Photons can be separated from charged-particle energy deposits even in high multiplicity environments like jets.
+Although the HCAL is 25 times coarser than the ECAL, the energy resolution is enough to detect neutral hadrons as an energy excess above that deposited by charged hadrons.
+Fig~\ref{fig:particle_flow} show, in graphical terms, how the reconstruction algorithm can classify a particle based on the sub-detectors with which it interacts.
+The PF algorithm's performance and commisioning is discussed in~\cite{CMS-PAS-PFT-10-002,CMS-PAS-PFT-10-003} using early CMS data and again using newer data and a slightly updated algorithm in~\cite{Beaudette:2014cea}.
+All three of these papers indicate a significant improvement in particle identification and object reconstruction over simpler approaches.
+
+The inputs to the PF algorithm come from the local reco products, RecHits, as described at the start of chapter~\ref{ch:event_reconstruction}. More specifically the RecHits are turned into either tracks or energy clusters, which are then used by the algorithm. The tracks may come from the tracker, as described in section~\ref{sec:tracks_and_vertices}, or from the muon system. The clusters are created by the calorimeter RecHits and are treated slightly different than the CaloTowers previously discussed. A local energy maxima
 
 
 
@@ -67,10 +161,34 @@ Additional information about the reconstruction process beyond the scope of this
 
 
 
+The output of the PF algorithm is a list of particles known as ``PF candidates,'' which are used to build the higher level objects that physicists analyze, such as jets, taus, and \ETmiss. Other quantities that can be determined from a particle level reconstruction algorithm are the charged lepton isolation and the likelihood that a jet was initiated by a B hadron.
 
 
 
 
+
+\begin{figure}[!hbt]
+	\centering
+	\begin{subfigure}[t]{0.53\textwidth}
+		\includegraphics[width=\textwidth,angle=90]{\figpath/Chapter3/PFT-09-001_001_a.pdf}
+		\caption{An $(x,y)$ view of the detector.}
+		\label{fig:PF_linking_a}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.4655\textwidth}
+		\includegraphics[width=\textwidth]{\figpath/Chapter3/PFT-09-001_001_b.pdf}
+		\caption{An $(\eta,\varphi)$ view of the ECAL.}
+		\label{fig:PF_linking_b}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.4655\textwidth}
+		\includegraphics[width=\textwidth]{\figpath/Chapter3/PFT-09-001_001_c.pdf}
+		\caption{An $(\eta,\varphi)$ view of the HCAL.}
+		\label{fig:PF_linking_c}
+	\end{subfigure}
+	\caption{These three figures show a representation of how the PF algorithm sees a hadronic jet. (a) An $(x,y)$ view of the detector with elements from the tracker, ECAL, and HCAL shown. The ECAL and HCAL surfaces shown in (b) and (c) are represented by the concentric circles centered around the interaction point in (a). (b) shows the energy clusters from the \PKzL, \Pgpm, and the two photons from the \Pgpz decay. While the \Pgpp doesn't deposit any energy in the ECAL, it does show up as a cluster in the HCAL along with the \Pgpm (c). The tracks from these charged particles show up as vertical lines in the $(\eta,\varphi)$ plane, but as curved lines in the $(x,y)$ plane. The cluster positions are represented by dots, the simulated particles by dashed lines, and the position at which the particles impact the calorimeter surfaces by the open markers~\cite{CMS-PAS-PFT-09-001}.}
+\end{figure}
+
+\clearpage
 
 
 
@@ -108,6 +226,7 @@ The dielectron mass resolution for $\Z \rightarrow \Pe \Pe$ decays when both ele
 \section{Muons}
 
 \section{Jets}
+\label{sec:jets}
 
 When combining information from the entire detector, the jet energy resolution amounts typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV, to be compared to about 40\%, 12\%, and 5\% obtained when the ECAL and HCAL calorimeters alone are used.
 
