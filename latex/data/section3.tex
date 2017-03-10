@@ -57,7 +57,7 @@ While CMS analyses cover a wide range of final states, a majority of them will i
 It's important that the particle flow algorithm identify and measure each particle inside a jet in order to improve the jet energy response and resolution.
 Section~\ref{sec:jets} will cover the reconstruction and properties of jets in more detail, but it is important to note that two thirds of the constituents inside of a jet are charged particles.
 This motivates the need for excellent tracking capabilities.
-Tracks are created from the RecHits using the Combinatorial Track Finder (CTF) algorithm, which is an iterative process~\cite{TrackingJINST}.
+Tracks are created from the RecHits using the Combinatorial Track Finder (CTF) algorithm, which is an iterative process~\cite{TRK-11-001}.
 This process seeks to find the appropriate balance between high reconstruction efficiency and low fake rate (see fig~\ref{fig:efficiency_vs_fake_rate})~\cite{CMS-PAS-PFT-09-001}.
 
 \begin{figure}[!hbt]
@@ -81,10 +81,18 @@ This process seeks to find the appropriate balance between high reconstruction e
 
 The track finding proceedure begins by finding track seeds using only a few hits and very tight criteria.
 A track is built by extrpolating from the trajectory of the seed and adding new hits that match this trajectory, keeping in mind that charged particles will bend in the presence of the magnetic field.
-The tight requirements on this first step lead to a moderate tracking efficiency, vanishingly small fake rate.
+The tight requirements on this first step lead to a moderate tracking efficiency and a vanishingly small fake rate.
 After a track is found, all of the hits are used in a fit to determine the track parameters (i.e. \pt, $\chi^{2}$, etc.), which are then used to judge the quality of the track.
-If a track doesn't meet certain quality requirments, it isn't kept.
-The hits which are unambiguaously assigned to the tracks found are removed from consideration in the next iteration and their tracks saved for later use.
+If a track doesn't meet certain quality requirments on the \pt, the transverse impact parameter $d_{0}$, and the longitudinal impact parameter $z_{0}$, it isn't kept.
+Additionally, a trajectory cleaning step to remove duplicate tracks is applied to each iteration and to the final track collection.
+A duplicate track can form either from different seeds or from the same seed which forms two very similar tracks.
+If a pair of any two tracks share more than 19\% of hits as determined by equation~\ref{eq:trajectory_cleaning}, where $N^{hits}_{1}$ and $N^{hits}_{2}$ are the number of hits used in forming the tracks and 19\% is an empirically determined value, then the track with the fewest number of hits or the largest $\chi^{2}$ is removed.
+The hits which are unambiguaously assigned to the tracks are removed from consideration in the next iteration and their tracks saved for later use.
+
+\begin{equation}
+\label{eq:trajectory_cleaning}
+f_{shared}=\frac{M^{hits}_{shared}}{min\left(N^{hits}_{1},N^{hits}_{2}\right)}
+\end{equation}
 
 \begin{figure}[!hbt]
 	\centering
@@ -95,18 +103,18 @@ The hits which are unambiguaously assigned to the tracks found are removed from 
 
 In each subsequent iteration the track seeding criteria is loosened and the same proceedure occurs.
 The looser seeding requirments boosts the tracking efficiency, while the removal of the hits from the previous iteration keeps the fake rate low due to the reduced combinatorics.
-The specific seeding criteria for each iteration can be found in table~\ref{tab:track_seeding}.
-After three iterations 90\% of charged hadron tracks are reconstructed and 99.5\% of muons in the tracker acceptance are found.
+The specific seeding criteria for each iteration can also be found in table~\ref{tab:track_seeding}.
+After three iterations, 90\% of charged hadron tracks within jets are reconstructed and 99.5\% of muons in the tracker acceptance are found.
 Subsequent iterations loosen the constraints on the origin vertex, which allows for the reconstructions of tracks associated with a secondary vertex (i.e. $\gamma\rightarrow$\Pep\Pem~conversions, long-lived particles, nuclear interactions in the tracker material).
 Tracks meeting this set of criteria can be reconstructed with as little as three hits, a \pt as low as 150\mev, and a vertex  more than 50\unit{cm} away from the beam axis.
 Nevertheless, the fake rate is still kept on the order of 1\%~\cite{CMS-PAS-PFT-09-001}.
 
 \begin{table}[htbp]
-	\caption{The seed and track criteria used in each iteration during the 2012 run. The seed types, pair and triplet, indicate if two or three RecHits are used, respectively. The $\sigma$ in the $z_0$ criteria indicated the length of the beam spot in the $z$-direction as determined by a Gaussian fit~\cite{Tracking2012}.}
+	\caption{The seed criteria used in each iteration during the 2012 run. The seed types, pair and triplet, indicate if two or three RecHits are used, respectively. The $\sigma$ in the $z_0$ criteria indicated the length of the beam spot in the $z$-direction as determined by a Gaussian fit~\cite{Tracking2012}.}
 	\centering
     \begin{tabular}{llllll}
 		\hline
-		step  & seed type & seed subdetectors & \pt $[\GeVcns]$ & $d_0$ [cm] & $|z_0|$ \\
+		step  & seed type & seed sub-detectors & \pt $[\GeVcns]$ & $d_0$ [cm] & $|z_0|$ \\
 		\hline
 		0     & triplet   & pixel             & ${>}0.6$     & ${<}0.02$  & ${<}4.0\sigma$ \\
 		1     & triplet   & pixel             & ${>}0.2$     & ${<}0.02$  & ${<}4.0\sigma$ \\
@@ -122,7 +130,7 @@ Nevertheless, the fake rate is still kept on the order of 1\%~\cite{CMS-PAS-PFT-
 
 The tracks found will have a helical shape of with a given radius of curvature as in fig~\ref{fig:radius_of_curvature}.
 The softest, low \pt particle trajectories can form small rings, while the higher \pt particles will be bent less.
-The momentum of each track can be extracted from the radius of curviture (R), given by a circular fit to the track, the magnetic field strength, as well as $\eta$ and $\varphi$ of the track at the interaction point\footnote{The $\eta$ of the track is determined as if the interaction point was at the center of the detector.}.
+The momentum of each track can be extracted from the radius of curvature (R), given by a circular fit to the track, the magnetic field strength, as well as $\eta$ and $\varphi$ of the track at the interaction point\footnote{The $\eta$ of the track is determined as if the interaction point was at the center of the detector.}.
 The following system of equations can be used to determine the particles 3-momenta at the interaction point:
 \begin{equation}
 	\begin{aligned}
@@ -133,10 +141,50 @@ The following system of equations can be used to determine the particles 3-momen
 	\end{aligned}
 \end{equation}
 
-After the collection of high purity tracks is created, CMS uses these to reconstruct the location of the vertices where proton-proton interactions occured~\cite{TrackingJINST}.
-The vertex finding algorithm is agnostic to whether or not the verteces come from the main hard scatter vertex of interest or any of the pileup vertices from additional proton-proton interactions.
+After the collection of high purity tracks is created, CMS uses these to reconstruct the location of the vertices where proton-proton interactions occurred~\cite{TRK-11-001}.
+The vertex finding algorithm is agnostic to whether or not the vertices come from the main hard scatter vertex of interest or any of the pileup vertices from additional proton-proton interactions.
+However, there is a need to select prompt tracks occuring near the interaction point instead of tracks from secondary vertices.
+CMS requires that the signifigance of the transverse impact parameter $d_{0}<5$, the number of pixel hits be $\geq2$, the number of pixel and stip hits be $\geq5$, and the track $\chi^{2}<20$.
+Once there is a collection of prompt tracks they are clustered together in $z$ at their closest approach to the beam spot.
+A balance must be struck between vertex finding efficiency and the splitting of good vertices.
+To do this, a deterministic annealing (DA) algorithm is used, which is used in cases where one wants to find the approximate global minimum of a problem with many degrees of freedom; specifically where an approximate global minimum is prefered over a more accurate local minimum.
+More information about DA can be found in~\cite{Rose1998}, but simply put the process is similar to what happens when one heats a system and then slowly cools it to minimize the ``free energy,'' which in this analogy is the $\chi^{2}$ of the vertices.
+In this case there is a system of $z^{T}_{i}$ with uncertainty $\sigma^{z}_{i}$ and an unknown number of vertices $z^{V}_{k}$.
+There is a probability $0\leq{p_{ik}}\leq1$ for any track $i$ to be assigned to verted $k$ and in the beginning, the algorithm assumes that every possible assignment is equally likely.
+The free energy to be minimized can be found in equation~\ref{eq:DA_free_energy}, where $p_{i}$ is a constant weight for each tracks representing their consitency with originating from the beam spot and $z_{k}^{V}$ are the vertices with weights $\rho_{k}$.
+\begin{equation}
+	\label{eq:DA_free_energy}
+	F=-T\sum_{i}^{\#tracks}p_{i}\log\sum_{k}^{\#vertices}\rho_{k}\exp\left[-\frac{1}{T}\frac{\left(z_{i}^{T}-z_{k}^{V}\right)^{2}}{{\sigma_{i}^{z}}^{2}}\right]
+\end{equation}
 
+The number of vertices can be arbitrarily large, but any extra vertices used in the method will overlap with the effective vertices already found at distinct positions.
+The probability that a given track corresponds to a specific vertex is given by equation ~\ref{eq:DA_assignment_probability}.
+\begin{equation}
+	\label{eq:DA_assignment_probability}
+	p_{ik}=\frac{\rho_{k}\exp\left[-\frac{1}{T}\frac{\left(z_{i}^{T}-z_{k}^{V}\right)^{2}}{{\sigma_{i}^{z}}^{2}}\right]}{\sum_{k'}\rho_{k'}\exp\left[-\frac{1}{T}\frac{\left(z_{i}^{T}-z_{k'}^{V}\right)^{2}}{{\sigma_{i}^{z}}^{2}}\right]}
+\end{equation} 
+At high temperature all tracks belong to a single vertex and all $p_{ik}$ are equal.
+As $T\rightarrow0$ the each track become compatible with exactly one vetex.
+The number of vertices grows each time the temperature falls below the critical temperature of a given vertex, $T_{c}^{k}$, given by equation~\ref{eq:DA_critical_temperature}, where that vertex is replaced by two nearby vertices.
+As this happens the tracks are reassigned according to their probabilities before the temperature is lowered again.
+The starting temperature of the whole process is chosen to be above the first critical temperature where $\rho_{1}=p_{i1}=1$.
+The temperature is lowered by a cooling factor of 0.6 down to $T_{min}=4$, which balances the need to resolve all true vertices with the risk of splitting a true vertex.
+\begin{equation}
+	\label{eq:DA_critical_temperature}
+	T_{c}^{k}=2\sum_{i}\frac{p_{i}p_{ik}}{{\sigma_{i}^{z}}^{2}}\left(\frac{z_{i}^{T}-z_{k}^{V}}{\sigma_{i}^{z}}\right)/\sum_{i}\frac{p_{i}p_{ik}}{{\sigma_{i}^{z}}^{2}}
+\end{equation}
+By the time the $T_{min}$ condition is reached it is still possible for a track to be assigned to multiple vertices.
+Thus, for the final track assignment, the temperature is cooled to $T=1$, without more splitting of the vertices.
+For a track to be assigned to a given vertex it must have a minimum probability of $0.5$ and have passed the outlier mitigation criteria.
 
+After all of the candidate vertices are found using the DA method, the candidates with at least two tracks assigned to them are passed through the adaptive vertex fitter (AVF) to compute all of the vertex parameters.
+Key among those parameters are the spacial coordinates and the number of degrees of freedom given by equation~\ref{eq:AVF_ndof}, where $w_{i}$ is a weight, between 0 and 1, given to each track depending on the likelihood that the track actually belongs to that vertex.
+\begin{equation}
+	\label{eq:AVF_ndof}
+	n_{dof}=-3+2\sum_{i=1}^{\#tracks}w_{i}
+\end{equation}
+
+The methodology above is a simplification of the actual track and vertex finding algorithms, but is sufficiently detailed for the purposes of this document. The subsequent sections will discuss how these most basic detector objects are used to reconstruct particles.
 
 \section{Particle Flow}
 \label{sec:particle_flow}
