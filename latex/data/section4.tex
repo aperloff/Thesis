@@ -18,6 +18,7 @@
 
 \section{Data and Monte Carlo Samples}
 \subsection{Data}
+\label{sec:data}
 \subsection{Monte Carlo}
 \subsection{QCD Data-Driven Sample}
 
@@ -32,8 +33,38 @@
 \section{MC Corrections}
 \subsection{MC Pileup Reweighting}
 \subsection{Jet Energy Corrections and Resolution}
-\subsection{MET Phi Corrections}
+\subsection{\VETslash Phi Corrections}
+\label{sec:met_phi_corrections}
+This is a correction of the \ETslash modulation and some pileup effects.
+\VETslash should be independent of $\varphi$ because the pp collisions are rotationally symetric around the beam axis.
+Observed a sinasoidal modulation of period $2\pi$ in the $\varphi_{\ETslashAsSub}$ after reconstruction.
+Causes: anisotropic detector responses, inactive calorimeter cells, detector misalignment, displacement of the beam spot.
+Amplitude of modulation increases linearly with pileup and can be reduced by using the transformation in equation~\ref{eq:METPhi_transformation}.
+\begin{equation}
+\label{eq:METPhi_transformation}
+{\vec{p}_{T}}^{\text{ }i}\rightarrow{\vec{p}_{T}}^{\text{ }i}-\vec{c}
+\end{equation}
+Thus the \VETslash becomes:
+\begin{equation}
+    \label{eq:METPhi}
+    \begin{aligned}
+\VETslashxy={}&-\sum_{i \in \textrm{all}}\left(\ptvecsub{i}-\vec{c}\right) \\
+={}&-\sum_{i \in \textrm{all}}\ptvecsub{i}+\sum_{i \in \textrm{all}}\vec{c} \\
+={}&\VETslashraw+n\vec{c} \\
+={}&\VETslashraw+{\vec C}_{\mathrm{T}}^{\mathrm{xy}}
+    \end{aligned}
+\end{equation}
+However, instead of applying this correction based on the number of particles, the correction is parameterized based on the number of vertices as a proxy for the number of particles.
+\begin{equation}
+\label{eq:METPhi_correction}
+{\vec C}_{\mathrm{T}}^{\mathrm{xy}}=\vec{c}_{A}+n_{vtx}\vec{c}_{B}
+\end{equation}
+$\vec{c}_{A}$ and $\vec{c}_{B}$ are constant vectors and $n_{vtx}$ is the number of reconstructed primary vertices.
+
 \subsection{CSV Reweighting}
+Ben: A comparison of the efficiency in data and Monte Carlo is shown in Figure 4.4. The scale factors shown in the figure are applied to the Monte Carlo to correct for the small differences. Scale factors are also applied to correct for differences in the mistag rate.
+
+
 \subsection{TTbar Reweighting}
 \subsection{cos(theta$_l$) Reweighting}
 \subsection{QCD Reweighting}

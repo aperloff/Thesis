@@ -148,8 +148,20 @@
 \newcommand{\MET}{\ETm}
 \newcommand{\ETmiss}{\ETm}
 \newcommand{\ETslash}{\ensuremath{E_{\mathrm{T}}\hspace{-1.1em}/\kern0.45em}\xspace}
+\newcommand{\ETslashAsSub}{\ensuremath{E_{\mathrm{T}}\hspace{-0.9em}/\kern0.45em}\xspace}
 \newcommand{\VEtmiss}{\ensuremath{{\vec E}_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\VETslash}{\ensuremath{{\vec E}_{\mathrm{T}}\hspace{-1.1em}/\kern0.45em}\xspace}
+\newcommand{\VETslashsup}[1]{\ensuremath{{\vec E}_{\mathrm{T}}^{\mathrm{#1}}\hspace{-2.95em}/\kern2.30em}\xspace}
+\newcommand{\VETslashUncorr}{\VETslashsup{uncorr.}}
+\newcommand{\VETslashsupnarrow}[1]{\ensuremath{{\vec E}_{\mathrm{T}}^{\mathrm{#1}}\hspace{-1.80em}/\kern1.30em}\xspace}
+\newcommand{\VETslashsupwide}[1]{\ensuremath{{\vec E}_{\mathrm{T}}^{\mathrm{#1}}\hspace{-4.05em}/\kern3.5em}\xspace}
+\newcommand{\VETslashraw}{\VETslashsupnarrow{raw}}
+\newcommand{\VETslashxy}{\VETslashsupnarrow{xy\hspace{0.4em}}}
+\newcommand{\ptsup}[1]{\ensuremath{{p}_{\mathrm{T}}^{\mathrm{#1}}}\xspace}
 \newcommand{\ptvec}{\ensuremath{{\vec p}_{\mathrm{T}}}\xspace}
+\newcommand{\ptvecsup}[1]{\ensuremath{{\vec p}_{\mathrm{T}}^{\mathrm{#1}}}\xspace}
+\newcommand{\ptvecsub}[1]{\ensuremath{{\vec p}_{\mathrm{T,\,#1}}}\xspace}
+\newcommand{\ptvecsubsup}[2]{\ensuremath{{\vec p}_{\mathrm{T,\,#1}}^{\mathrm{#2}}}\xspace}
 
 % roman face derivative
 \newcommand{\dd}[2]{\ensuremath{\frac{\cmsSymbolFace{d} #1}{\cmsSymbolFace{d} #2}}}
@@ -395,9 +407,11 @@
 \newcommand{\muA}{\ensuremath{\,\mu\text{A}}\xspace}
 \newcommand{\degC}{\ensuremath{\,\de\text{C}}\xspace}
 \newcommand{\absetalt}[1]{\ensuremath{\abs{\eta}<\text{#1}}\xspace}
+\newcommand{\absetaltss}[2]{\ensuremath{\abs{\eta_\text{#2}}<\text{#1}}\xspace}
 \newcommand{\absetagt}[1]{\ensuremath{\abs{\eta}>\text{#1}}\xspace}
 \newcommand{\absetaeq}[1]{\ensuremath{\abs{\eta}=\text{#1}}\xspace}
 \newcommand{\abseta}[2]{\ensuremath{\text{#1}<\abs{\eta}<\text{#2}}\xspace}
+\newcommand{\absetass}[3]{\ensuremath{\text{#1}<\abs{\eta_\text{#3}}<\text{#2}}\xspace}
 \newcommand{\ptrange}[2]{\ensuremath{\text{#1}<\pt<\text{#2}}\xspace}
 \newcommand{\PbWO}{$\text{PbWO}_{\text{4}}$}
 \newcommand{\mytimes}[2]{\ensuremath{\text{#1}\times\text{#2}}\xspace}

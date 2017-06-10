@@ -14,10 +14,62 @@
 %%                           APPENDIX B 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{\uppercase{Boosted Decision Tree}}
+\phantomsection
 
-\section{Inputs}
-\section{Outputs}
-\section{Correlations}
-\section{Architecture Variables}
+\chapter{\uppercase{\VETslash Performance and Corrections}}
+\label{appendix:MET}
 
+\section{Type-0 \VETslash Correction}
+Pileup interactions typically produce visible particles, with only a few processes, like neutrinos from Kaon decays, producing invisible particles.
+If CMS were able to perfectly measure all of the visible particles then pileup would have little effect on the \VETslash reconstruction.
+However, as discussed in section~\ref{sec:MET}, the \VETslash reconstruction does degrade as the number of pileup interactions increases.
+The type-0 correction is an attempt to remove this pileup effect for the \VETslash calculated using PF candidates, as opposed to calorimeter towers or tracks.
+
+In essence, the type-0 correction is an application of CHS (see~\ref{sec:jets} for a discussion of CHS), but also removes a portion of the \VETslash estimated to come from neutral pileup. The neutral pileup estimate is necessary because removing only charged particles might cause the \VETslash to move further from its true value. In this section the pileup particles will be broken up as being neutral (neuPU) or charges (chPU). Furthermore, the correction makes three assumptions about the pileup particles as spelled out in equation~\ref{eq:MET_type0_assumptions}. The first assumption is that the sum of \pt for the neutral and charged components of the \VETslash due to pileup are equal and opposite. At the truth level this cancellation is very nearly exact. The part of~\ref{eq:MET_type0_assumptions} says that the charged particles can be measured exactly, which is also a good assumption for low \ptvec tracks. The last assumption says that the direction of the neutral pileup can be measured exactly, but that the energy is off by the same amount for each particle. The directionality is measured using the position of the calorimeter cells, but the energy measurement calibration was done using high \ptvec particles so that the system systematically mismeasures low \ptvec particles.
+\begin{equation}
+\begin{aligned}
+	\label{eq:MET_type0_assumptions}
+\sum_{i \in \textrm{neuPU}}\ptvecsubsup{i}{true}+\sum_{i \in \textrm{chPU}}\ptvecsubsup{i}{true}=0 \\
+\sum_{i \in \textrm{chPU}}\ptvecsubsup{i}{true}=\sum_{i \in \textrm{chPU}}\ptvecsub{i} \\
+\sum_{i \in \textrm{neuPU}}\ptvecsub{i}=R^{0}\sum_{i \in \textrm{neuPU}}\ptvecsub{i}
+\end{aligned}
+\end{equation}
+The assumptions can then be combined into equation~\ref{eq:MET_type0_replace}.
+\begin{equation}
+\begin{aligned}
+	\label{eq:MET_type0_replace}
+\sum_{i \in \textrm{neuPU}}\ptvecsub{i}=-R^{0}\sum_{i \in \textrm{chPU}}\ptvecsub{i}
+\end{aligned}
+\end{equation}
+
+The raw \VETslash components can be broken up as coming from either the hard scatter (HS) vertex or from pileup (PU) interactions. The pileup can then be further boken down into the neutral and charged components as previously specified. This categorization is shown in equation~\ref{eq:MET_type0_raw}.
+\begin{equation}
+\begin{aligned}
+	\label{eq:MET_type0_raw}
+\VETslashraw={}&-\sum_{i \in \textrm{HS}}\ptvecsub{i}-\sum_{i \in \textrm{PU}}\ptvecsub{i} \\
+={}&-\sum_{i \in \textrm{HS}}\ptvecsub{i}-\sum_{i \in \textrm{neuPU}}\ptvecsub{i}-\sum_{i \in \textrm{chPU}}\ptvecsub{i}
+\end{aligned}
+\end{equation}
+CHS is able to remove the third sum, but is not able to separate the first and second sums.
+
+The type-0 corrections is the estimate of the neutral pileup shown in equation~\ref{eq:MET_type0_replace} plus the sum over the charged particles from pileup.
+\begin{equation}
+	\label{eq:MET_type0_correction}
+\vec{C}_{\mathrm{T}}^{Type-0}=\left(1-R^{0}\right)\sum_{i \in \mathrm{chPU}}\ptvecsub{i}
+\end{equation}
+This corrections added to the raw \VETslash yields the type-0 corrected \VETslash. To also propogate the JEC to the pileup corrected \VETslash one can add type-1 correction to the type-0 corrected \VETslash. This process can be seen in equation~\ref{eq:MET_type0}. 
+\begin{equation}
+\begin{aligned}
+	\label{eq:MET_type0}
+\VETslashsup{Type-0\hspace{-0.22em}}\hspace{0.37em}={}&\VETslashraw+\vec{C}_{\mathrm{T}}^{\mathrm{Type-0}} \\
+\VETslashsupwide{Type-0-1}={}&\VETslashsup{Type-0\hspace{-0.22em}}\hspace{0.37em}+\vec{C}_{\mathrm{T}}^{\mathrm{Type-1}}
+\end{aligned}
+\end{equation}
+
+
+
+\section{\VETslash Filters}
+Besides interesting physics processes, high values of \ETslash can be caused by cosmic rays, detector noise, and particles from the beam-halo.
+In addition to the previous corrections used to make sure the \VETslash is reconstructed correctly, CMS has also developed several algorithms for identifying and removing sources of fake \VETslash.
+False \VETslash is a problem because is causes a discrepancy between the data and MC, where the sources of fake \VETslash are not explicitly simulated.
+After several of these filters are used this agreement will typically improve.

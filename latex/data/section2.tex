@@ -542,7 +542,7 @@ This entire process takes 3.2\mus, an equivalent of $\mathcal{O}(100)$ bunch cro
 Meanwhile, the high resolution data used for offline analysis is stored in memory. In 2012, the L1 Trigger rate was as high as 100\unit{kHz} with a dead time of only 3\%~\cite{Brooke:2013hnf}.
 
 After the L1A decision, the High Level Trigger (HLT), a farm of more than 13000 central processing units (CPUs), further analyzes the events. The HLT 
-system uses a form of the full offline reconstruction algorithms described in chapter~\ref{ch:event_reconstruction}, but also includes several optimizations to make the process faster. This is needed because, in contrast to offline processing, the HLT is limited by the number of events that can be stored in the pipeline. These optimizations include making the fasted algorithm run first, skipping a trigger path after the first failing quality filter, and considering smaller regions of the detector based on the L1 candidates. The menu of triggers to be run changes as the LHC and MC conditions change, even while CMS is operational. In 2012, the HLT had an output rate of 100\unit{kHz} and took 200\unit{ms} per event, $\mathcal{O}(100)$ times faster than the offline reconstruction~\cite{Trocino:2014jya}. Events that pass the HLT are then sorted into primary datasets (PDs) according to the passed triggers with as little overlap as possible.
+system uses a form of the full offline reconstruction algorithms described in chapter~\ref{ch:event_reconstruction}, but also includes several optimizations to make the process faster. This is needed because, in contrast to offline processing, the HLT is limited by the number of events that can be stored in the pipeline. These optimizations include making the fasted algorithm run first, skipping a trigger path after the first failing quality filter, and considering smaller regions of the detector based on the L1 candidates. The menu of triggers to be run changes as the LHC and Monte Carlo (MC) simulation conditions change, even while CMS is operational. In 2012, the HLT had an output rate of 100\unit{kHz} and took 200\unit{ms} per event, $\mathcal{O}(100)$ times faster than the offline reconstruction~\cite{Trocino:2014jya}. Events that pass the HLT are then sorted into primary datasets (PDs) according to the passed triggers with as little overlap as possible.
 
 \subsection{Luminosity Measurement}
 
@@ -552,7 +552,7 @@ Both the pixel detector (section~\ref{sec:tracker_and_pixel}) and the HF (sectio
 The pixel detector has a very small granularity, which means that any given pixel is activated by at most one track per bunch crossing.
 We can then create cluster by grouping nearby activated pixels, with the typical cluster containing an average of 5 pixels.
 A minimum bias event typically creates 200 clusters~\cite{CMS-PAS-LUM-12-001}.
-Even for events with 100 pileup interactions, a number significantly higher than was reached in 2012, the total pixel detector occupancy could be as low as 0.1\%.
+Even for events with 100 pileup (PU) interactions, a number significantly higher than was reached in 2012, the total pixel detector occupancy could be as low as 0.1\%.
 This means that the number of pixel hits should scale linearly with the number of interactions per bunch crossing, which is shown in equation~\ref{eq:pixel_luminosity_measurement}~\cite{CMS-PAS-LUM-13-001}.
 
 \begin{equation}
