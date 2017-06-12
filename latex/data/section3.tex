@@ -19,7 +19,7 @@
 
 The CMS detector is designed to identify the various particle species which travel through it after a proton-proton collision.
 As discussed in chapter~\ref{ch:LHC_CMS}, the sub-detector technologies were chosen so that particles could be identified by where they deposit their energy as well as how their trajectories change in a magnetic field.
-Fig~\ref{fig:particle_flow} shows how various types of particles interact with the CMS detector.
+Fig.~\ref{fig:particle_flow} shows how various types of particles interact with the CMS detector.
 All of the charged particles (\ie electrons, muons, and charged hadrons) will deposit some energy in the tracker, while neutral particles (\ie photons and neutral hadrons) will not.
 Electrons and photons will deposit all of their energy inside of the ECAL while hadrons, both charged and neutral, will deposit most of their energy in the HCAL.
 Muons are the only visible particle which will be able to travel to the muon chambers.
@@ -58,7 +58,7 @@ It's important that the particle flow algorithm identify and measure each partic
 Section~\ref{sec:jets} will cover the reconstruction and properties of jets in more detail, but it is important to note that two thirds of the constituents inside of a jet are charged particles.
 This motivates the need for excellent tracking capabilities.
 Tracks are created from the RecHits using the Combinatorial Track Finder (CTF) algorithm, which is an iterative process~\cite{TRK-11-001}.
-This process seeks to find the appropriate balance between high reconstruction efficiency and low fake rate (see fig~\ref{fig:efficiency_vs_fake_rate})~\cite{CMS-PAS-PFT-09-001}.
+This process seeks to find the appropriate balance between high reconstruction efficiency and low fake rate (see fig.~\ref{fig:efficiency_vs_fake_rate})~\cite{CMS-PAS-PFT-09-001}.
 
 \begin{figure}[!hbt]
     \centering
@@ -128,7 +128,7 @@ Nevertheless, the fake rate is still kept on the order of 1\%~\cite{CMS-PAS-PFT-
     \label{tab:track_seeding}
 \end{table}
 
-The tracks found will have a helical shape of with a given radius of curvature as in fig~\ref{fig:radius_of_curvature}.
+The tracks found will have a helical shape of with a given radius of curvature as in fig.~\ref{fig:radius_of_curvature}.
 The softest, low \pt particle trajectories can form small rings, while the higher \pt particles will be bent less.
 The momentum of each track can be extracted from the radius of curvature (R), given by a circular fit to the track, the magnetic field strength, as well as $\eta$ and $\varphi$ of the track at the interaction point\footnote{The $\eta$ of the track is determined as if the interaction point was at the center of the detector.}.
 The following system of equations can be used to determine the particles 3-momenta at the interaction point:
@@ -202,7 +202,7 @@ With the current algorithm, charged-particle tracks out to \absetalt{2.6} can be
 The algorithm can even identify the difference between photons and charged-particles in high multiplicity environments like jets.
 This is largely due to the tracking information, which more accurately determines the \pt than the calorimeter system for for charged particles up to several hundred \gev.
 Additionally, the tracker can measure the direction of a charged particle before its trajectory can be changed in the magnetic field.
-Fig~\ref{fig:particle_flow} shows, in graphical terms, how the reconstruction algorithm can classify a particle based on the sub-detectors with which it interacts.
+Fig.~\ref{fig:particle_flow} shows, in graphical terms, how the reconstruction algorithm can classify a particle based on the sub-detectors with which it interacts.
 
 The inputs to the PF algorithm come from the local reconstruction products, RecHits, as described at the start of chapter~\ref{ch:event_reconstruction}.
 More specifically the RecHits are turned into either tracks or energy clusters, which are then used by the algorithm.
@@ -222,7 +222,7 @@ If one of these tangents falls within an ECAL cluster then the cluster is marked
 Linking between calorimeter systems (i.e. HCAL and ECAL or ECAL and PS) is done similarly, but the cluster position in the more granular system must be within the envelope of the less granular system.
 A track and muon track are linked when an acceptable $\chi^{2}$ is returned by a global fit between two tracks.
 If there are multiple track matches for a single muon track, then the match with the minimum $\chi^{2}$ is chosen to form a ``global muon.''
-Fig~\ref{fig:PF_linking} shows a graphical representation of what the linking algorithm sees and how the links between tracks and clusters are made.
+Fig.~\ref{fig:PF_linking} shows a graphical representation of what the linking algorithm sees and how the links between tracks and clusters are made.
 
 \begin{figure}[!hbt]
     \centering
@@ -304,7 +304,7 @@ Similarly, table~\ref{tab:electron_id_mva} lists the requirements for the MVA ba
 In addition to the identification requirements, selected electrons must have a $\pt>27\gev$ and be in the barrel, \absetaltss{1.4442}{sc}, or endcap, \absetass{1.566}{2.5}{sc}.
 The must also pass a conversion veto to make sure the aren't produced by a converted photon.
 Loose electrons have the same $eta$ and conversion requirements, but are only required to have a $\pt>15\gev$.
-The \pt requirements are selected to match the HLT requirements of the PD listed in section~ref{sec:data}.
+The \pt requirements are selected to match the HLT requirements of the PD listed in section~\ref{sec:data}.
 
 \begin{table}[htbp]
     \caption{Cut based electron identification requirements for the tight and loose working points.}
@@ -453,7 +453,7 @@ Collinear safety means that if there is a splitting which results in two paralle
 When an algorithm obeys these two properties, they are referred to as being IRC safe.
 Simply put, the anti-k\textsubscript{T} algorithm results in jets which have physical properties (i.e. \pt, mass, etc.) that are representative of the partons in the event.
 
-The use of PF candidate, with their built in tracking information, provides a huge benefit to the reconstruction and clustering of jets in CMS. About 65\% of the energy within a jet is carried by the charged particles and thus a lot of information about a jet comes from the tracker.\footnote{25\% of the energy is carried by photons and the remaining 10\% is carried by neutral hadrons.} An alternative to clustering PF candidates is to cluster the energy deposits in the calorimeter towers, but that provides both less spacial information as well as a lower response, where jet response is defined as $\left<\left(\ptsup{reco}-\ptsup{gen}\right)/\ptsup{gen}\right>$ and $\ptsup{reco}$ ($\ptsup{gen}$) is the reconstructed (generated) \pt. Fig~\ref{fig:PFVsCaloJetResponse} shows a comparison of the PF based jet response (PF jets) versus calorimeter based jet responses (calo jets). The use of tracking information also improves the jet resolution, where typical values for a PF jet are 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV. This is compared to about 40\%, 12\%, and 5\% when using calo jets~\cite{CMS-PAS-PFT-09-001}. A comparison of the resolution curves can be see in fig~\ref{fig:PFVsCaloJetResolution}.
+The use of PF candidate, with their built in tracking information, provides a huge benefit to the reconstruction and clustering of jets in CMS. About 65\% of the energy within a jet is carried by the charged particles and thus a lot of information about a jet comes from the tracker.\footnote{25\% of the energy is carried by photons and the remaining 10\% is carried by neutral hadrons.} An alternative to clustering PF candidates is to cluster the energy deposits in the calorimeter towers, but that provides both less spacial information as well as a lower response, where jet response is defined as $\left<\left(\ptsup{reco}-\ptsup{gen}\right)/\ptsup{gen}\right>$ and $\ptsup{reco}$ ($\ptsup{gen}$) is the reconstructed (generated) \pt. Fig.~\ref{fig:PFVsCaloJetResponse} shows a comparison of the PF based jet response (PF jets) versus calorimeter based jet responses (calo jets). The use of tracking information also improves the jet resolution, where typical values for a PF jet are 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV. This is compared to about 40\%, 12\%, and 5\% when using calo jets~\cite{CMS-PAS-PFT-09-001}. A comparison of the resolution curves can be see in fig.~\ref{fig:PFVsCaloJetResolution}.
 
 \begin{figure}[!hbt]
     \centering
@@ -470,7 +470,7 @@ The use of PF candidate, with their built in tracking information, provides a hu
     \caption{Jet response (left) and resolution (right) as a function of \pt for jets made by clustering PF candidates and those clustering calorimeter towers. These figures were made using a MC sample with a center-of-mass energy of 10\tev, requiring the jets' \pt to be less than 750\gev, and that the jets are within \absetalt{1.5}~\cite{CMS-PAS-PFT-09-001}.}
 \end{figure}
 
-Before clustering the PF candidates, a pileup mitigation algorithm called charged hadron subtraction (CHS) is performed. As discussed in section~\ref{sec:tracks_and_vertices}, CMS can associate a track to a specific vertex. If these tracks are unambiguously associated to a pileup vertex, they are removed from the collection of PF candidates used to cluster jets and calculate the \VETslash. As shown in fig~\ref{fig:PFJet_PileupComposition}, the CHS algorithm is able to remove about 50\% of the pileup energy produced during the same bunch crossing as the primary vertex. Any remaining energy from charged hadrons is coming from tracks that are not associated with a high quality vertex or which simply have too large a $\chi^{2}/N_{dof}$. Some of this is explained by the vertex reconstruction and identification inefficiency of about 30\%~\cite{Khachatryan:2198719}.
+Before clustering the PF candidates, a pileup mitigation algorithm called charged hadron subtraction (CHS) is performed. As discussed in section~\ref{sec:tracks_and_vertices}, CMS can associate a track to a specific vertex. If these tracks are unambiguously associated to a pileup vertex, they are removed from the collection of PF candidates used to cluster jets and calculate the \VETslash. As shown in fig.~\ref{fig:PFJet_PileupComposition}, the CHS algorithm is able to remove about 50\% of the pileup energy produced during the same bunch crossing as the primary vertex. Any remaining energy from charged hadrons is coming from tracks that are not associated with a high quality vertex or which simply have too large a $\chi^{2}/N_{dof}$. Some of this is explained by the vertex reconstruction and identification inefficiency of about 30\%~\cite{Khachatryan:2198719}.
 
 \begin{figure}[!hbt]
     \centering
@@ -486,7 +486,7 @@ The anti-\textsubscript{T} algorithm is achieved when $p=-1$, whereas if $p=1$ (
 If $d_{ij}<d_{iB}$, then entity $i$ and $j$ are combined vectorially.
 However, if $d_{ij}>d_{iB}$, then entity $i$ is classified as a jet and is removed from further clustering.
 This process continues until all PF candidates have been clustered~\cite{Cacciari:2008gp} and the momentum of the jet is the vectorial sum of all of the PF candidate momenta.
-The result of this process can be seen in fig~\ref{fig:anti-kT_jets}.
+The result of this process can be seen in fig.~\ref{fig:anti-kT_jets}.
 
 \begin{subequations}
     \label{eq:antikt_distance_parameter}
@@ -587,9 +587,9 @@ In this case, $f_{BG}\left(c\right)=0.25$ and $f_{BG}\left(q\right)=0.75$ are we
 
 Working points for this discriminator are defined using probability to mis-identify a light quark or gluon jet as a b-jet~\cite{CMS-PAS-BTV-13-001}.
 The loose, medium, and tight working points have a 10\%, 1\%, and 0.1\% mistag rate, respectively. 
-This analysis uses the medium working point ($d_{CSV}>0.679$), which has a tagging efficiency of $\geq60\%$ as shown in fig~\ref{fig:bDiscriminator_efficiency}.
+This analysis uses the medium working point ($d_{CSV}>0.679$), which has a tagging efficiency of $\geq60\%$ as shown in fig.~\ref{fig:bDiscriminator_efficiency}.
 For example, a b-jet with a \pt of 80\gev has a tagging efficiency of 75\%
-Fig~\ref{fig:bDiscriminator} shows the CSV discriminator distribution in both a QCD dominated and \ttbar dominated sample.
+Fig.~\ref{fig:bDiscriminator} shows the CSV discriminator distribution in both a QCD dominated and \ttbar dominated sample.
 The MC simulation is separated by jet flavor to show the discrimination power of the CSV algorithm.
 \begin{figure}[!hbt]
     \centering
@@ -623,7 +623,7 @@ Examples of this are a particle which is beyond and $\eta$ of 5.0 or a neutrino,
 Furthermore, there may be additional particles in the event due to pileup which can can lead to fake \VETslash due to calorimeter thresholds and response nonlinearities.
 Because the proton beams have near zero momentum in the $x$ and $y$ directions, only traveling in the $z$ direction, any imbalance in the momentum in the transverse plane indicates additional, missing, or mis-measured particles.
 This imbalance is called missing transverse momentum and is the negative vector sum of \ptvec for all PF candidates in the event as seen in equation~\ref{eq:MET_uncorr_simple}.
-The magnitude of this quantity is known as missing transverse energy and is represented as \ETslash~\cite{METperf2012}. A schematic of these two quantities is shown in fig~\ref{fig:MET_schematic}.
+The magnitude of this quantity is known as missing transverse energy and is represented as \ETslash~\cite{METperf2012}. A schematic of these two quantities is shown in fig.~\ref{fig:MET_schematic}.
 \begin{equation}
 \label{eq:MET_uncorr_simple}
 \VETslashUncorr=-\sum_{i}{\vec{p}_{T}}^{\text{ }i}
@@ -676,10 +676,10 @@ In addition to propagating the JEC to the \VETslash, CMS also filters events and
 In the search for new physics, a signal will generally appear as a small deviation from the SM prediction.
 In order to disentangle the SM background from a rare signal the SM and new physics prediction must be extremely accurate.
 The predictions are samples made by Monte Carlo (MC) event generators which are broken up by physics process and final state and then recombined during the analysis~\cite{Siegert:2010cru,Mangano:2005dj,Dobbs:2004qw}.
-These generators are able to simulate a full event (bunch crossing) at the parton level, which is nicely illustrated in fig~\ref{fig:ttH_event}.
+These generators are able to simulate a full event (bunch crossing) at the parton level, which is nicely illustrated in fig.~\ref{fig:ttH_event}.
 The image shows a $t\bar{t}h$ final state including final state gluons (QCD) and hadronization.
 While the entire event from hard scatter production to hadronization cannot be described using perturbation theory, the hard process can be calculated using fixed order perturbation theory and matrix elements (ME).
-The parton showers, red lines in fig~\ref{fig:ttH_event}, then connect the hard process with the hadronization scale.
+The parton showers, red lines in fig.~\ref{fig:ttH_event}, then connect the hard process with the hadronization scale.
 Phenomenological models are used to simulate the hadronization into stable particles and the underlying event (UE), which is the usually softer interactions by the constituents of the protons which did not take part in the hard scatter process.
 Photon and gluon emission from the initial protons and final state partons, respectively called initial state radiation (ISR) and final state radiation (FSR), must also be simulated.
 
@@ -702,7 +702,7 @@ The parton distribution function (PDF) of the form $f_{a,b}\left(x_{a,b},\mu^{2}
 PDFs cannot be obtained using perturbative nor lattice QCD calculations.
 Instead they are measured within the resolution of the existing experiments.
 CMS makes use of the Martin-Stirling-Thorne-Watt (MSTW)~\cite{Martin:2009iq} and Coordinated Theoretical-Experimental Project on QCD (CTEQ) PDFs.
-Fig~\ref{fig:mstw} shows the NLO MSTW PDFs calculated for two different momentum scales.
+Fig.~\ref{fig:mstw} shows the NLO MSTW PDFs calculated for two different momentum scales.
 Other terms include the center-of-mass energy of the interaction $\sqrt{\hat{s}}=\sqrt{x_{a}x_{b}s}$ where $\sqrt{s}$ is the center-of-mass energy of the proton-proton system and $\hat{\sigma}_{ab\rightarrow{X}}\left(\hat{s},\mu^{2}\right)$, which is the cross section for having a given set of initial state partons. The full form of the partonic cross section is given by 
 \begin{equation}
 \begin{split}\label{eq:event_generation_partonic_cross_section}
@@ -749,6 +749,11 @@ For more accurate tau lepton decays CMS often uses the \textsc{tauola}~\cite{WAS
 \section{Detector Simulation}
 \label{sec:detector_simulation}
 
-
-
-
+Event generation simulates the particle kinematics for a given event, but doesn't examine how the particles will interact with the detector and it's constituent materials or how the readout electronics will behave.
+To simulate the response of the CMS detector, the generators are interfaced with a sophisticated detector simulation based on the \textsc{Geant4}~\cite{geant4nim,geant4ieee} software package, which takes into account the exact detector geometry as well as all materials used.
+The alignment, calibration, and other conditions which may change over time are periodically checked and are stored in a database.
+These conditions are used both for offline simulation and reconstruction as well as for online activities.
+The final state particles from the event generator are sent to the detector simulation, which tracks the particles as they move through the detector depositing energy into what are called simulated hits (SimHits).
+While the models of electromagnetic interactions are extremely precise, the hadronic interactions have a greater uncertainty associated with them.
+The simulation goes through the data acquisition process, event simulating the responses of the photodetectors and readout electronics.
+The resulting information is then analyzed by the same reconstruction process that the real data goes through and is stored using the ROOT~\cite{Brun199781} software library.
