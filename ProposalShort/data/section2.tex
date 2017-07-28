@@ -1,0 +1,91 @@
+%!TEX root = ../TAMUTemplate.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.
+%
+%  Author: Sean Zachary Roberson
+%	 Version 3.16.09
+%  Last updated 9/12/2016
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                           SECTION IV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{\uppercase {Analysis Strategy}}
+
+\section{Samples \& Selection}
+We make use of the full, $\sim$19.2\fbinv 2012 dataset at 8\tev as well as many Monte Carlo (MC) samples.
+The background samples considered in this analysis are V+jets (V=W or Z), VV, single-top, \ttbar, and QCD. 
+Rather than relying on MC for the QCD background sample, a data-driven sample was created by using the same trigger requirements as the data, but removing the isolation requirement for the lepton and inverting the lepton particle flow isolation cut during selection.
+This process provides a completely orthogonal sample of QCD events from data.
+The normalization of this background is found by doing a two component fit to the data, allowing only the W+jets and QCD fractions to float.
+Signal MC samples from all Higgs production modes are considered.
+Significant effort is put into post-generation corrections of the MC such that it accurately represents the data, but does not cover any potential signal (i.e. pileup reweighting and jet energy scale corrections).
+
+This analysis is searching for a Higgs boson which decays to two W bosons, one of which decays hadronically and the other which decays leptonically.
+Therefore the signal region for the search includes a final state with one well reconstructed (tight) particle-flow (PF) lepton (l=e or $\mu$), two or more PF jets, and some missing transverse energy (\ETslash) coming exclusively from the unreconstructed neutrino. The search is broken up into six channel by lepton flavor (electron or muon) and the number of jets (two, three, and four or more).
+The vertex, jets, and lepton requirements all meet the object requirements as defined by CMS.
+As the hadronic W decay will have at least two jets, that is the minimum number of jets needed to make it into the signal region, but we do not veto on additional jets which might come from ISR or FSR.
+A minimum \ETslash requirement is set because of the neutrino from the leptonic decay of the W, but is set to a value on the higher side to remove as much QCD as possible without cutting out too much signal.
+Additionally, a b-tag veto is implemented for two reasons.
+The first is because hadronically decaying W only rarely decay to b-jets, but the \ttbar background includes at least two b-jets in its final state.
+The second reason is to keep this analysis orthogonal to the VH(H$\rightarrow${bb}) search~\cite{PhysRevD.89.012003}.
+
+Two main control regions are defined based on the aforementioned signal selection criteria.
+The first includes all of the same cuts as the signal region, but only one jets.
+This region is used for the normalization of the data-driven QCD sample.
+A second control region requires there to be exactly 1 b-jet.
+This region is used to check the volunteer signal contribution and the efficacy of the b-tag veto.
+
+\section{Matrix Elements}
+
+Even after all of the cuts to remove background, the total signal, in every channel, is smaller than even the statistical uncertainty of the background.
+A cut and count experiment will not lead to any significant results.
+The previous \HWWlnujj analyses have performed a fit to sensitive distributions like the 4-body mass, the mass of the two jet plus lepton plus \ETslash system.
+However, this approach only includes a small amount of information available, leaving out additional sensitive kinematic distributions.
+A multivariate analysis using only kinematic variable would be sub-optimal because shallow classifiers are not robust against non-linear correlations and are only as good as the input variables.
+
+Instead, this analysis uses a matrix element method (MEM), which starts from the differential cross section calculation from quantum field theory to classify how likely and event is to come from a given process~\cite{Canelli2003,Dong2008}.
+The probability $P\left(x;\alpha\right)=P_{evt}$ of a signal is proportional to the differential production cross section, where $\alpha$ is the parameter we wish to measure and x is a set of physical variables.
+This is true if the detector resolution is sufficiently small and the beam energies are well known, as it is in the case of CMS.
+In general the differential cross section can be written as~\cite{Olive:2016xmw}:
+\begin{equation}\label{eq:differential_production_cross_section}
+d\sigma=\frac{\left(2\pi\right)^{4}|\mathcal{M}|^{2}}{4\sqrt{\left(q_{1}\cdot{q_{2}}\right)^{2}-m_{q_{1}}^{2}m_{q_{2}}^{2}}}d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right)
+\end{equation}
+where $|\mathcal{M}|$ is the Lorentz invariant ME; $q_{1}$, $q_{2}$ and $m_{1}$, $m_{2}$ are the 4-momenta and masses of the incident particles; $p_{i}$ are the 4-momenta of the final state particles; and $d\Phi_{n}$ is the n-body phase space.
+The phase space term is written as:
+\begin{equation}
+d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right)=\delta^{4}\left(q_{1}+q_{2}-\sum_{i=1}^{n}p_{i}\right)\prod_{i=1}^{n}\frac{d^{3}p_{i}}{\left(2\pi\right)^{3}2E_{i}}
+\end{equation}
+After accounting for unmeasured or mis-measured particles and normalizing to the total cross section to form an event probability, equation~\ref{eq:differential_production_cross_section} becomes:
+\begin{equation}
+P(x;\alpha)=\frac{1}{\sigma}\int2\pi^{4}|\mathcal{M}|^{2}\frac{f\left(x_{1}\right)}{|E_{q_{1}}|}\frac{f\left(x_{2}\right)}{|E_{q_{2}}|}W\left(y,x\right)d\Phi_{4}dE_{q_{1}}dE_{q_{2}}
+\end{equation}
+where $f\left(x_{i}\right)$ are the PDFs, $x_{i}=E_{q_{i}}/E_{beam}$ is the fraction of the proton momentum carried by the incident parton $i$, and $W\left(y,x\right)$ is the transfer function mapping measured jet energies $x$ to the parton energies $y$ (accounts for the jet resolution of CMS).
+
+Fifteen probabilities $P(x;\alpha)$, corresponding to the leading order diagrams of the major background and signal processes, are computed for each event. 
+This computation is by far the most time consuming aspect of this analysis, taking $\sim$12 million CPU hours.
+The information contained in these 15 probabilities must be combined in order to discriminate signal from background.
+
+\section{Signal Extraction \& Systematics}
+
+In order to combine the complimentary information from the kinematic variables and the MEs, with the purpose of discriminating a Higgs event from a background event, we used several Boosted Decision Trees (BDTs).
+An initial BDT was computed which combined the information from 15 of the computed MEs.\footnote{A BDT was used rather than combining the ME into a likelihood as in the Matrix Element Likelihood Analysis (MELA) used by H$\rightarrow$ZZ$\rightarrow$4l or using some basic ratios of signal over background probabilities as was done by CDF.}
+%This gives a less discriminating shallow network the ability to create a better performing network because the inputs are already non-linear variables.
+The output of this BDT, along with several carefully selected kinematic variables, is then used as the input to a new BDT in order to combine all of this complimentary information.
+While it may seem that the MEs should encode all of the event information perfectly, only the leading MEs were used and the permutations of the jets and partons degrades the discrimination power of the MEs.
+The combined BDT has more discrimination power than either the MEs or the kinematic variables alone.
+A distribution of the combined BDT discriminant is produced for every signal, background, and data sample.
+
+Given that this is a shape analysis, it is important to consider systematic uncertainties that may change the expected yields (rate changes), the shape of the discriminating variable, or both.
+This analysis considers all three of these, but decouples the rate and shape changes during limit setting.
+Systematic uncertainties will come from luminosity measurements, cross section calculations, pileup reweighting, the jet energy scale measurements, and 11 other sources to be detailed in the thesis.
+
+\section{Limits \& Plans}
+
+The endpoint to this analysis will be expected and observed limits and p-values, including systematic uncertainties, calculated using the Higgs Combine Tool~\cite{CombineToolTwiki}.
+Given that this analysis has a relatively high number of events in the expected yields we make use of the asymptotic method\footnote{If there had been a lower number of expected events we may have needed to use the full frequentist method rather than the asymptotic method.} for limit setting along with the CL\textsubscript{s} test statistic~\cite{Read:2002hq}.
+This will be presented in the thesis and during the thesis defense examination.
