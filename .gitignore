@@ -13,7 +13,7 @@
 # *.ps
 # *.eps
 # *.pdf
-latex/TAMUTemplate.pdf
+*TAMUTemplate.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -105,3 +105,7 @@ sympy-plots-for-*.tex/
 
 # OSX
 .DS_Store
+
+# Sublime Text 3
+*.sublime-project
+*.sublime-workspace
