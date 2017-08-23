@@ -86,12 +86,24 @@ Baryon number is defined as $B=\frac{1}{3}\left(n_{q}-n_{\bar{q}}\right)$, where
 Quarks may interact through the electromagnetic and weak interactions, but unlike the lepton, quarks can also interact via the strong force.
 This is because quarks also have color charge, which can have three values referred to as red, green, or blue. 
 Antiquarks may contain charges of anti-red, anti-green, or anti-blue.
-In the SM colorless particles are forbidden from existing on their own, which means that individual quarks, often refered to as bare quarks, have never been seen in nature.
+In the SM colorless particles are forbidden from existing on their own, which means that individual quarks, often referred to as bare quarks, have never been seen in nature.
 Instead, quarks are always found as constituents of bound states called hadrons.
 This group of composite particles may be further divided into mesons, bound states of a quark-antiquark pair, and baryons, bound states of three quarks and antiquarks.
 The hadrons contain quark and antiquark combinations such that the bound state is a color singlet, often referred to as being colorless.
 Mesons contain color-anticolor pairs while baryons consist of red, green, and blue charged quarks.
 The masses of the quarks are hard to measure due to their confinement in hadrons, however, global averages have been made.
+
+So far the particle content of the SM has been introduced along with the various force carriers.
+The next few sections will go into greater detail about the specifics of the particle-particle interactions.
+It will be helpful to keep in mind figure~\ref{fig:sm-interactions}, which shows all of the leading order SM interactions.
+
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{figures/Chapter2/Elementary_particle_interactions_in_the_Standard_Model.png}
+		\caption{A diagram illustrating the leading order interactions between particles in the standard model, including self-interactions~\cite{Drexler}.}
+		\label{fig:sm-interactions}
+	\end{center}
+\end{figure}
 
 \section{Quantum Electrodynamics \& the Electromagnetic Interaction}
 \label{sec:QED}
@@ -114,7 +126,7 @@ Let there exist a global $U\left(1\right)$ transformation
 with constant $\alpha$.
 Then $\psi$ in the Lagrangian~\ref{eq:dirac_lagrangian_density} can be replaced by equation~\ref{eq:global_u1_transformation}, which means that $\mathcal{L}\rightarrow\mathcal{L}'=\mathcal{L}$.
 Therefore QED is invariant under this type of transformation.
-If instead we have $\alpha\rightarrow\alpha\left(x\right)$ where $\alpha$ is allowed to vary as a function of spacetime, then equation~\ref{eq:global_u1_transformation} becomes a local $U\left(1\right)$ transformation.
+If instead we have $\alpha\rightarrow\alpha\left(x\right)$ where $\alpha$ is allowed to vary as a function of space-time, then equation~\ref{eq:global_u1_transformation} becomes a local $U\left(1\right)$ transformation.
 In this case equation~\ref{eq:dirac_lagrangian_density} becomes
 \begin{equation}\label{eq:local_transformation}
 	\mathcal{L}\rightarrow\mathcal{L}'=\mathcal{L}+\bar{\psi}\gamma^{\mu}\left(\partial_{\mu}\alpha\left(x\right)\right)\psi
@@ -129,7 +141,7 @@ This new gauge field transforms as
 \begin{equation}\label{eq:photon_transformation}
 	A_{\mu}{\rightarrow}A_{\mu}'=A_{\mu}+\partial_{\mu}\chi\left(x\right)
 \end{equation}
-, where $\chi\left(x\right)$ is an arbitrary function of spacetime.
+, where $\chi\left(x\right)$ is an arbitrary function of space-time.
 When the transformation in equation~\ref{eq:global_u1_transformation} is made to a lepton field, the photon field transforms as in equation~\ref{eq:photon_transformation}, and $\chi\left(x\right)=\alpha\left(x\right)/q$, the covariant derivative transforms in the same way as $\psi\left(x\right)$, namely $D_{\mu}\psi\rightarrow\left(D_{\mu}\psi\right)'=e^{-i\alpha}D_{\mu}\psi$.
 After the changes listed above, equation~\ref{eq:dirac_lagrangian_density} will take the locally gauge invariant form
 \begin{equation}\label{eq:dirac_lagrangian_density_local_invariant}
@@ -227,7 +239,7 @@ Equation~\ref{eq:ew_kinetic_term_lagrangian} is invariant under the global $SU\l
 	e_{R}{\rightarrow}e_{R}'=e^{2i\theta}e_{R}\hspace{1em}\forall\hspace{1em}\theta\in\mathbb{R}
 \end{equation}
 where $U=e^{-i\alpha^{k}\sigma^{k}}$ and $\alpha^{k}$ is a real number.
-However, the Lagrangian is not invariant under a local $SU\left(2\right)_{L}{\times}U\left(1\right)_{Y}$ transformation where $\theta$ and $\alpha^{k}$ are allowed to vary as a function of spacetime.
+However, the Lagrangian is not invariant under a local $SU\left(2\right)_{L}{\times}U\left(1\right)_{Y}$ transformation where $\theta$ and $\alpha^{k}$ are allowed to vary as a function of space-time.
 
 To make Lagrangian~\ref{eq:ew_kinetic_term_lagrangian} invariant we introduce a $U\left(1\right)$ gauge field $B_{\mu}\left(x\right)$ and three $SU\left(2\right)$ gauge fields $W_{\mu}\left(x\right)=W_{\mu}^{k}\left(x\right)\sigma_{k}$ which transform as
 \begin{equation}
@@ -254,7 +266,7 @@ Combining the kinetic and gauge interaction terms of the Lagrangian yields
 \end{equation}
 where $B_{\mu\nu}=\partial_{\mu}B_{\nu}-\partial_{\nu}B_{\mu}$ and $W_{\mu\nu}=\left[\partial_{\mu}+\left(i\frac{g_{2}}{2}\right)W_{\mu}\right]W_{\nu}-\left[\partial_{\nu}+\left(i\frac{g_{2}}{2}\right)W_{\nu}\right]W_{\mu}$ are the field strength tensors.
 This Lagrangian, without any mass terms, is now locally invariant.
-The addition of the mass terms and electroweak symmetry breaking will be covered in section~\ref{sec:higgs_mechanism}, but given that the mediators of the weak force are massive, its range is limited to about $10^{-18}\unit{m}$.
+The addition of the mass terms and electroweak symmetry breaking (EWSB) will be covered in section~\ref{sec:higgs_mechanism}, but given that the mediators of the weak force are massive, its range is limited to about $10^{-18}\unit{m}$.
 
 The observed electroweak gauge bosons are actually combinations of the $B$ and $W$ fields as shown in equation~\ref{eq:electroweak_bosons}
 \begin{align}\label{eq:electroweak_bosons}
@@ -334,7 +346,7 @@ where $q_{i}$ represents one of the six quark flavors.
 This Lagrangian will be invariant under a transformation of the form $q_{i}{\rightarrow}q_{i}'=Uq_{i}$ where $U$ is a member of $SU\left(3\right)$.
 However, when using a local $SU\left(3\right)$ transformation where $U{\rightarrow}U\left(x\right)$, Lagrangian~\ref{eq:qcd_quark_lagrangian_global_invariant} is no longer invariant.
 To return invariance, we must introduce eight gauge fields ($G_{\mu}\left(x\right)$), which represent the gluons, and the appropriate covariant derivative.
-The transformation of the qauge fields and the covariant derivative will take the form
+The transformation of the gauge fields and the covariant derivative will take the form
 \begin{align}
 	G_{\mu}{\rightarrow}G_{\mu}'&=UG_{\mu}U^{\dagger}+\frac{i}{g_{s}}\left(\partial_{\mu}U\right)U^{\dagger}\\
 	D_{\mu}q_{i}&=\left(\partial_{\mu}+ig_{s}G_{\mu}\right)q_{i}
@@ -349,10 +361,10 @@ and the locally $SU\left(3\right)$ gauge invariant QCD Lagrangian is given as
 	\mathcal{L}_{QCD}^{q}=\sum_{i=1}^{6}\left(\bar{q}_{i}i\gamma^{\mu}D_{\mu}q_{i}\right)-\frac{1}{4}\sum_{i=1}^{8}G_{\mu\nu}^{i}G^{i\mu\nu}
 \end{equation}
 
-\begin{figure}[hbt]
+\begin{figure}[!hbt]
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{figures/Chapter2/StrongCouplingConstant.png}
-		\caption{Summary of measurements of $\alpha_{s}$ as a function of the energy scale $Q$. The respective degree of QCD perturbation theory used in the extraction of $\alpha_{s}$ is indicated in brackets (NLO: next-to-leading order; NNLO: next-to-next-to leading order; res. NNLO: NNLO matched with resummed next-to-leading logs; N\textsuperscript{3}LO: next-to-NNLO). Figure and caption taken from~\cite{Olive:2016xmw}.}
+		\caption{Summary of measurements of $\alpha_{s}$ as a function of the energy scale $Q$. The respective degree of QCD perturbation theory used in the extraction of $\alpha_{s}$ is indicated in brackets (NLO: next-to-leading order; NNLO: next-to-next-to leading order; res. NNLO: NNLO matched with re-summed next-to-leading logs; N\textsuperscript{3}LO: next-to-NNLO). Figure and caption taken from~\cite{Olive:2016xmw}.}
 		\label{fig:strong_coupling_constant}
 	\end{center}
 \end{figure}
@@ -363,7 +375,7 @@ Additionally, the strong force has a range of about $10^{-15}\unit{m}$, which is
 Lastly, QCD is a strongly coupled theory at low energies and large distance scales and weakly interacting at high energies and small distance scales.
 Quarks are confined particles, meaning that the attractive force between them does not decrease as they move farther apart.
 Instead the force decreases as the particles move closer and increases as they move farther apart, a behavior called asymptotic freedom~\cite{PhysRevLett.30.1343}.
-When in the high energy regime the typical perturbative calculation can be made, but in the low energy regime theorists must use more advanced techniques such as lattice gauge theory~\cite{Rothe2005}.
+When in the high energy regime the typical perturbative calculation can be made\footnote{The leading order (LO) terms can be calculated perturbatively. Corrections must be added to account for the next-to-leading order (NLO) effects, with further corrections for the next-to-next-to leading order (NNLO) effects, and so on.}, but in the low energy regime theorists must use more advanced techniques such as lattice gauge theory~\cite{Rothe2005}.
 
 \section{Brout-Englert-Higgs Mechanism \& The Higgs Boson}
 \label{sec:higgs_mechanism}
@@ -402,19 +414,30 @@ and the covariant derivatives for the left- and right-handed leptons are
 	D_{\mu}L_{L}&=\left(\partial_{\mu}-ig_{2}T_{a}W_{\mu}^{a}-ig_{1}YB_{\mu}\right)L_{L}\\
 	D_{\mu}e_{R}&=\left(\partial_{\mu}-ig_{1}YB_{\mu}\right)e_{R}
 \end{align}
-where $T_{a}$ are the generators of the $SU\left(2\right)_{}L$ gauge group and $g_{1}$, $g_{2}$ are the coupling constants for the electroweak interaction.
+where $T_{a}$ are the generators of the $SU\left(2\right)_{L}$ gauge group and $g_{1}$, $g_{2}$ are the coupling constants for the electroweak interaction.
 
 By adding the scalar field in equation~\ref{eq:higgs_scalar_field} we must add an additional scalar part to the Lagrangian
-\begin{equation}
-	\mathcal{L}_{Higgs}=\left(D^{\mu}\Phi\right)^{\dagger}\left(D_{\mu}\Phi\right)-V\left(\Phi\right)
+\begin{equation}\label{eq:higgs_scalar_lagrangian}
+	\mathcal{L}_{S}=\left(D^{\mu}\Phi\right)^{\dagger}\left(D_{\mu}\Phi\right)-V\left(\Phi\right)
 \end{equation}
-where the first term is the kinetic term and the second term is the scalar potential, also known as thr ``Mexican Hat'' potential.
+where the first term is the kinetic term and the second term is the scalar potential, also known as the ``Mexican Hat'' potential.
 While the form of the scalar potential is not known from first principles, we can make the assumption that it takes the simplest form possible which has the desired properties of spontaneous symmetry breaking and the ability to be renormalized
 \begin{equation}
 	V\left(\Phi\right)=\mu^{2}\Phi^{\dagger}\Phi+\lambda\left(\Phi^{\dagger}\Phi\right)^{2}
 \end{equation}
 The value of $\lambda$ must be positive in order for the vacuum to be stable.
-The sign of $\mu^{2}$ specified one of two cases for the potential, both of which are illustrated in figure 
+The sign of $\mu^{2}$ specified one of two cases for the potential, both of which are illustrated in figure~\ref{fig:higgs_vev}. 
+When $\mu^{2}>0$, the potential $V\left(\Phi\right)$ is always positive and has a minimum at
+\begin{equation}
+	\bra{0}\Phi\ket{0}\equiv\Phi_{0}=\doublet[r]{0}{0}
+\end{equation}
+where no spontaneous symmetry breaking can occur.
+In contrast, when $\mu^{2}<0$ the potential takes its namesake ``Mexican hat'' shape with a minimum value not located at the origin.
+In this case, the neutral component of the scalar field can acquire a vacuum expectation value (vev) $v$, a process known as electroweak symmetry breaking (EWSB).
+\begin{equation}
+	\bra{0}\Phi\ket{0}=\Phi_{0}=\frac{1}{\sqrt{2}}\doublet[r]{0}{v},\text{ }v=\sqrt{\frac{-\mu^{2}}{\lambda}}
+\end{equation}
+By only adding a vev to the neutral component of the scalar field electromagnetism is unbroken and the $U\left(1\right)_{EM}$ symmetry keeps a conserved electric charge of $Q=T_{3}+\frac{Y}{2}$.
 
 \begin{figure}[hbt]
 	\begin{center}
@@ -424,126 +447,139 @@ The sign of $\mu^{2}$ specified one of two cases for the potential, both of whic
 	\end{center}
 \end{figure}
 
-
-
-
-
-
-\begin{comment}
-Higgs responsible for electroweak symmetry breaking (EWSB), discussed more in section~\ref{sec:higgs_mechanism}
-	For electroweak interaction to be gauge invariant the gauge bosons corresponding to this force must be massless, which they aren't.
-	Higgs mechanism solves this.
-	Short version is that Higgs field causes a spontaneuous EWSB due to its non-zero vacuum expectation value (VEV)
-	\begin{equation}
-	\label{eq:spontaneous_symmetry_breaking}
-	SU_{L}\left(2\right){\times}U_{Y}\left(1\right){\rightarrow}U_{EM}\left(1\right)
-	\end{equation}
-	allows fermion field to aquire mass, which it was forbidden to do from eqn.~\ref{eq:standard_model_groups}
-	Higgs field contains a doublet of scalar bosons, two charged particles and two neutral particles.
-		Two charged and one neutral combine with W$^{\pm}$ and Z to produce their masses
-		Other neutral particle is the Higgs boson H
-	Higgs boson 
-
-
-
-SM Lagrangian density
-\begin{equation}
-\label{eq:SM_Lagrangian_density}
-\ell_{SM}=\ell_{kinetic}+\ell_{Yukawa}+\ell_{Higgs}
+At this point we can expand the scalar field $\Phi$ around the minimum $\Phi_{0}$ to get
+\begin{equation}\label{eq:scalar_field_with_higgs}
+	\Phi\left(x\right)=\frac{1}{\sqrt{2}}\doublet[r]{0}{v+h\left(x\right)}
 \end{equation}
-$\ell_{kinetic}$ = kintetic terms plus gauge interactions
-\ell_{Yukawa} = contains terms coupling fermion fields to Higgs fields
-\ell_{Higgs} = related to Higgs potential $V\left(\phi\right)$, through $\ell_{Higgs}=-V\left(\phi\right)$ where
+where $h\left(x\right)$ is a new scalar field.
+Next we insert this field into the kinetic part of the Lagrangian~\ref{eq:higgs_scalar_lagrangian} and redefine the gauge fields as
+\begin{align}
+	\label{eq:massive_W}W_{\mu}^{\pm}&=\frac{1}{\sqrt{2}}\left(W_{\mu}^{1}{\mp}iW_{\mu}^{2}\right)\\
+	\label{eq:massive_Z}Z_{\mu}&=\frac{1}{\sqrt{g_{1}^{2}+g_{2}^{2}}}\left(g_{2}W_{\mu}^{3}-g_{1}B_{\mu}\right)\\
+	\label{eq:massless_gamma}A_{\mu}&=\frac{1}{\sqrt{g_{1}^{2}+g_{2}^{2}}}\left(g_{2}W_{\mu}^{3}+g_{1}B_{\mu}\right)
+\end{align}
+which correspond to the observed gauge bosons.
+After this the covariant derivative becomes
 \begin{equation}
-\label{eq:Higgs_potential}
-V\left(\phi\right)=-\mu^{2}|\phi^{\dagger}\phi|+\lambda\left(|\phi^{\dagger}\phi|\right)^{2}
+	|D_{\mu}\Phi|^{2}=\frac{1}{2}\left(\partial_{\mu}H\right)^{2}+\frac{1}{2}g_{2}^{2}\left(v+H\right)^{2}W_{\mu}^{+}W^{{\mu}-}+\frac{1}{8}\left(v+H\right)^{2}\left(g_{1}^{2}+g_{2}^{2}\right)Z_{\mu}Z^{\mu}
 \end{equation}
-with $\mu^{2}>0$ and $\lambda>0$
-Higgs potential minimized at non-zero value of Higgs field
-	nonzero ground state or vacuum expectation value (vev)
-	may be chosen so that real, enutral componenet is non-zero
-	\begin{equation}
-	\left<\phi\right>=\frac{1}{\sqrt{2}}\left(\begin{array}{c}0 \\\nu\end{array}\right)
-	\end{equation}
-	where $\nu^{2}=\frac{\mu^{2}}{\lambda}$
-	vev is source of electroweak symmetry breaking.
-
-If forces weak enough, can QFT calculations use perturbative method to calculate leading order (LO) term.
-next-to-leading order (NLO) corretions added in, then next-to-next-to leading order (NNLO) and so on
-\end{comment}
-
-
-
-
-\begin{comment}
-\begin{figure}[!hbt]
-    \centering
-    \begin{subfigure}[t]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{\figpath/Chapter2/HgammagammaPeak.png}
-        \caption{}
-        \label{fig:HgammagammaPeak}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{\figpath/Chapter2/10052_2015_3351_Fig4_HTML.pdf}
-        \caption{}
-        \label{fig:HiggsSignalStrength}
-    \end{subfigure}
-    \caption{(Left) The $H\rightarrow\gamma\gamma$ signal peak as seen in 2012~\cite{Hgammagamma}. (Right) Best-fit $\sigma/\sigma_{SM}$ grouped by predominant decay mode. The vertical band is the overall combined analysis value and the horizontal bars show the $\pm$1 uncertainties (statistical and systematic)~\cite{Khachatryan2015}.}
-    \label{fig:HiggsIn2012}
-\end{figure}
-\end{comment}
-
-%, as seen in figure~\ref{fig:Higgs_WW_lnujj_feynman}
-
-%While at 125\gev the gluon-gluon fusion (ggF) production cross section\footnote{This analysis is independent of production mode, but selects for a specific decay channel.} and $l\nu{qq}$ branching ratio are high, as seen in figure~\ref{fig:Higgs_XS_and_BR}, there are significant experimental challenges to overcome.
-
-\begin{comment}
-\begin{figure}[bt]
-	\centering
-	\begin{subfigure}[t]{0.415\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/ggH.eps}
-		\label{fig:ggH}
-	\end{subfigure}%
-	\begin{subfigure}[t]{0.415\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/qqH.eps}
-		\label{fig:qqH}
-	\end{subfigure}
-
-	\begin{subfigure}[t]{0.415\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/ttH.eps}
-		\label{fig:ttH}
-	\end{subfigure}%
-	\begin{subfigure}[t]{0.415\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/WH.eps}
-		\label{fig:WH}
-	\end{subfigure}
-	\caption{Feynman diagrams for the four Higgs production mechanisms with associated $l{\nu}qq$ decays: gluon-gluon fusion (upper left), vector-boson fusion (upper right), \ttbar fusion (lower left), and associated production (lower right).}
-	\label{fig:Higgs_WW_lnujj_feynman}
-\end{figure}
-
-\begin{figure}[!hbt]
-	\centering
-	\begin{subfigure}[t]{0.54\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/Chapter2/Higgs_XS_8TeV.png}
-		\label{fig:Higgs_XS_8TeV}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.41\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/Chapter2/Higgs_BR_4fermion.png}
-		\label{fig:Higgs_BR_4fermion}
-	\end{subfigure}
-	\caption{The Standard Model Higgs production cross sections at 8\tev (left) and WW branching ratios to four fermion final states (right).}
-	\label{fig:Higgs_XS_and_BR}
-\end{figure}
-\end{comment}
+From this we see that the photon $A_{\mu}$ remains massless, but that the mass terms for the $W$ and $Z$ bosons take the general forms $M_{W}^{2}W_{\mu}W^{\mu}$ and $\frac{1}{2}M_{Z}^{2}Z_{\mu}Z^{\mu}$ respectively.
+Thus the masses of the electroweak gauge bosons are
+\begin{align}
+	\label{eq:mass_W}M_{W}&=\frac{1}{2}vg_{2}\\
+	\label{eq:mass_Z}M_{Z}&=\frac{1}{2}v\sqrt{g_{1}^{2}+g_{2}^{2}}\\
+	\label{eq:mass_gamma}M_{A}&=0
+\end{align}
+Three of the degrees of freedom from the scalar field, which would have been two charged and one neutral Goldstone boson, have been absorbed by the gauge bosons in order to give them mass.
+These appear as \textit{flat} directions in the scalar potential.
+There is one remaining degree of freedom, an oscillation in the radial direction, which corresponds to the neutral Higgs boson and can be seen in fig~\ref{fig:higgs_potential_radial} where the potential is concave.
 
 \begin{figure}[hbt]
 	\begin{center}
-		\includegraphics[width=0.95\textwidth]{figures/Chapter2/Elementary_particle_interactions_in_the_Standard_Model.png}
-		\caption{A diagram illustrating the leading order interactions between particles in the standard model, including self-interactions~\cite{Drexler}.}
-		\label{fig:sm-interactions}
+		\includegraphics[width=0.95\textwidth]{figures/Chapter2/Higgs-Potential-radial.png}
+		\caption{The Higgs boson corresponds to an oscillation of the scalar field in the radial direction~\cite{Tanedo}}
+		\label{fig:higgs_potential_radial}
 	\end{center}
 \end{figure}
 
+Several relationships can be formed between the various bosons.
+The Weinberg angle also known as the weak mixing angle $\theta_{W}$, defined as $\sin\theta_{W}=\frac{g_{1}}{\sqrt{g_{1}^{2}+g_{2}^{2}}}$, can be used to describe the photon an Z as
+\begin{align}
+	A_{\mu}&=\cos\theta_{W}B_{\mu}+\sin\theta_{W}W_{\mu}^{3}\\
+	Z_{\mu}&=-\sin\theta_{W}B_{\mu}+\cos\theta_{W}W_{\mu}^{3}
+\end{align}
+Equation~\ref{eq:weinber_wz} shows a relationship between the masses of the $W$ and $Z$ at tree level, which is one reason why measurements of their masses are so important.
+\begin{equation}\label{eq:weinber_wz}
+	\frac{M_{W}}{M_{Z}}=\frac{g_{2}}{\sqrt{g_{1}^{2}+g_{2}^{2}}}=\cos\theta_{W}
+\end{equation}
+There also exists a relationship between the coupling strength of the weak and electromagnetic interactions which makes use of the weak mixing angle,
+\begin{equation}
+	e=g_{2}\sin\theta_{W}
+\end{equation}
+
+By substituting equation~\ref{eq:scalar_field_with_higgs} into Lagrangian~\ref{eq:higgs_scalar_lagrangian}, using $v^{2}=-\frac{\mu^{2}}{\lambda}$, and looking at only the pieces involving the Higgs we can study the mass and couplings of the Higgs itself.
+This section of the Lagrangian will take the form
+\begin{equation}
+	\mathcal{L}_{H}=\frac{1}{2}\left(\partial_{\mu}H\right)\left(\partial^{\mu}H\right)-{\lambda}v^{2}H^{2}-{\lambda}vH^{3}-\frac{\lambda}{4}H^{4}
+\end{equation}
+Since scalar masses have the general form $\frac{1}{2}m\phi^{2}$ we find that the Higgs boson mass is
+\begin{equation}\label{eq:higgs_boson_mass}
+	m_{H}=2{\lambda}v^{2}=-2\mu^{2},
+\end{equation}
+where $\lambda$, and thus the Higgs mass, needs to be determined experimentally.
+We can also see that the Higgs couples to vector bosons, fermions, and itself, all interactions which are shown in figure~\ref{fig:higgs_boson_couplings}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter2/HiggsBosonCouplings.png}
+    \caption{Tree level Feynman diagrams showing how the Higgs couples to vector bosons (a,b), fermions (c), and to itself (d).}
+    \label{fig:higgs_boson_couplings}
+\end{figure}
+
+Besides having massive bosons, the SM also has a whole host of massive fermions.
+These particles can be shown to acquire mass by adding Yukawa couplings between the fermion fields and the scalar field to the SM Lagrangian.
+The part of the Lagrangian that corresponds to the first generation fermions is given by
+\begin{equation}\label{eq:higgs_fermion_lagrangian}
+	\mathcal{L}_{F}=-G_{e}\bar{L}{\Phi}e_{R}-G_{d}\bar{Q}{\Phi}d_{R}-G_{u}\bar{Q}\tilde{\Phi}u_{R}+h.c.
+\end{equation}
+where $\tilde{\Phi}=i\tau_{2}\Phi^{*}$ is the conjugate of $\Phi$ with negative hypercharge.
+There are additional terms added to the full Lagrangian which correspond to the second and third generations which are not shown here.
+By substituting equation~\ref{eq:scalar_field_with_higgs} into Lagrangian~\ref{eq:higgs_fermion_lagrangian} we find
+\begin{align}
+	%\phantom{\mathcal{L}_{F}}
+	\begin{split}
+		\mathcal{L}_{F}={}&-\frac{1}{\sqrt{2}}\left[G_{e}\rdoublet[r]{\bar{\nu}}{\bar{e}}_{L}\doublet[r]{0}{v+H}e_{R}+G_{d}\rdoublet[r]{\bar{u}}{\bar{d}}_{L}\doublet[r]{0}{v+h}d_{R}\right.\\
+		&\qquad \left. +G_{u}\rdoublet[r]{\bar{u}}{\bar{d}}_{L}\doublet[r]{v+h}{0}u_{R}\right]+h.c.
+	\end{split}\\
+	\begin{split}
+		={}&-\frac{1}{\sqrt{2}}\left(v+h\right)\left(G_{e}\bar{e}_{L}e_{R}+G_{d}\bar{d}_{L}d_{R}+G_{u}\bar{u}_{L}u_{R}\right)+h.c.
+	\end{split}
+\end{align}
+where $h.c.$ is a placeholder for the hermitian conjugate terms.
+The fermion masses take the form $m\bar{f}_{L}f_{R}+h.c.$, which means that the fermion masses for the first generation are
+\begin{equation}
+	m_{e}=\frac{G_{e}v}{\sqrt{2}},\hspace*{1cm}m_{u}=\frac{G_{u}v}{\sqrt{2}},\hspace*{1cm}m_{d}=\frac{G_{d}v}{\sqrt{2}}
+\end{equation}
+The second and third generations have similar mass terms.
+Since there is no right handed neutrino in the SM the neutrinos that do exist remain massless.
+As the coupling constants, G, and the fermion masses are not predicted by the SM they must be measured and added to the model.
 
 \section{Beyond the Standard Model}
 \label{sec:BSM}
+
+While the standard model has been an incredibly successful theory (see appendix~\ref{appendix:standard_model_history}), it too has limitations.
+These shortcoming manifest themselves as either observations which are not covered by SM or characteristics of SM for which there is no fundamental explanation.
+In order to combat these shortcomings, a plethora of new theories have been created with the guiding principle that the new theories must be a superset of the standard model.
+That is, they must be able to reproduce all of the SM observations that have been so thoroughly tested.
+The following is a non-exhaustive list of shortcomings.
+\begin{itemize}
+	\item \textbf{Gravity} is not included as either a field or particle within the Standard Model. In addition, there is no explanation as to why gravity is a much weaker force when compared to the electroweak or strong forces. Nevertheless, we expect that quantum gravity effects will become important at the Planck scale, $m_{P}\sim10^{19}\gev$. There have been attempts to create supergravity theories~\cite{VANNIEUWENHUIZEN1981189,Freedman2012,Nastase:2011aa}, but these have not yet been unified with the rest of the Standard Model. Most of these theories include a particle called the graviton, which is the quantum of a spin-2 field.
+	\item According to cosmological experiments such as Planck, the universe is made of only about 5\% ordinary, visible matter. Part of this remainder, about 26\%, is made of what is termed \textbf{dark matter} (DM)~\cite{Ade:2015xua,Clowe:2006eq}. We know that this gravitationally interacting substance must exist because of astrophysical measurements of galactic rotation curves and galaxy cluster collisions~\cite{Morrissey20121,Garrett:2010hd}. Still, the Standard Models does not provide any particle candidate.
+	While the exact nature of DM is unknown, we do know that any DM particle must be stable, electrically neutral\footnote{The term ``dark'' comes from the fact that DM does not interact with photons and therefore is not visible to the human eye.}, weakly interacting, and a have a reasonably large mass. While this may sound like the SM neutrino, we already know that neutrino masses are too small~\cite{Bertone:2004pz}. This type of particle has been termed the WIMP or weakly interacting massive particle~\cite{Morrissey20121}, but other candidates have been proposed as well~\cite{PDG}.
+	\item Besides visible and dark matter, the universe contains 69\% of something else which has been termed \textbf{dark energy} and is not included in the Standard Model. Scientists know very little about dark energy other than that it seems to be causing the acceleration of universal expansion, an action which could not come from any of the SM particles. Planck measurements indicate that dark energy is consistent with the theory of a cosmological constant. However, when there have been attempts to calculate the cosmological constant in terms of vacuum energy there have been mismatches of 100 orders of magnitude. 
+	\item Physicists expect that equal amounts of \textbf{matter and antimatter} were created during the Big Bang. Nevertheless the visible universe is filled with matter, but contains very little antimatter. The Standard Model offers no explanation for this discrepancy unless some of the symmetries were violated (i.e. baryon number conservation, CP invariance, and C conservation)~\cite{0038-5670-34-5-A08,KUZMIN198536}.
+	\item As explained in section~\ref{sec:higgs_mechanism}, Standard Model neutrinos are massless because they have no chiral right-handed counterparts and no Yukawa coupling with the scalar Higgs field. At the same time, there have been observations of \textbf{neutrinos oscillating} between flavors, which can only occur if at least two of the three neutrino types have mass~\cite{Abe:2008aa,Abe:2014ugx,Agafonova:2014ptn,Agashe:2014kda,PhysRevLett.81.1158}. To complicate matters, the physical neutrino eigenstates are mixtures of mass eigenstates $\left(\nu_{1},\nu_{2},\nu_{3}\right)$, which cannot be measured directly. There have been no direct measurements of the neutrino masses to date, but there have been upper limits placed on the masses and the squared mass differences are known.
+	\item Studies of the Z boson have shown that no fourth generation of fermions with light neutrinos exists~\cite{DECAMP1990399}. However, there is nothing in the Standard Model which forbids a \textbf{fourth generation}. Could there be a fourth family of fermions with heavy neutrinos?
+	\item Is there a reason for the Standard Model fermion couplings to the Higgs boson? In other words, why do the fermion masses vary over five orders of magnitude from 0.511\mev for the electron to 173\gev for the top quark? This is sometimes called the \textbf{fermion mass hierarchy problem}.
+	\item \textbf{Baryon and lepton conservation} are accidental symmetries without enforcement by a local gauge symmetry. Are these really conserved quantities?
+	\item Why is the $\mu^{2}$ from the Higgs potential negative? It needs to be negative to ensure EWSB, but there is no other compelling reason.
+	\item We know that there are different mass scales in the universe. The Standard Model is effective at the electroweak scale of $\mathcal{O}\left(\mathrm{100}\gev\right)$. However, at the Planck scale, $\mathcal{O}\left(\mathrm{10^{19}}\gev\right)$, the model starts to break down and requires quantum gravity effects to be valid. As a consequence of the different scales, the bare parameters of the SM can differ from their renormalized values by several orders of magnitude. This in and of itself will not invalidate the model, but one would need to accept some amount of ``fine tuning''. These types of problems are called ``hierarchy problems''. There is one problem in particular, however, which is known colloquially as \textbf{the hierarchy problem}. Observed particle masses are a combination of the ``bare'' mass at tree level and the radiative corrections from loop diagrams. The problem comes from loop corrections to the Higgs mass parameter $\mu=m_{h}/\sqrt{2}$ introduced in section~\ref{sec:higgs_mechanism}. The Higgs mass can be written in terms of the bare mass parameter $\mu_{0}$ and radiative corrections $\delta\mu$
+		\begin{equation}
+			\mu^{2}=\mu_{0}^{2}+\delta\mu^{2}
+		\end{equation}
+	The largest correction comes from the one-loop diagrams dealing with the top quark, the heaviest particle in the Standard Model. The one loop corrections to Higgs are shown in fig~\ref{fig:one_loop_corrections_to_higgs_mass}. While fermions and bosons are protected from these divergences, scalars like the Higgs have a large dependence on the ultraviolet (UV) cutoff. This means that while the observed Higgs mass is $\sim\textrm{125}\gev$, radiative corrections should drive $\mu^{2}$ and thus the mass up to very large values. If the bare mass and radiative corrections happened to cancel at such a precise level as to lead to the observed mass it would be and \textit{unnatural} amount of fine tuning~\cite{SUSSKIND1984181}. Fine tuning problems like this have traditionally been interpreted as the existence of new physics~\cite{Morrissey20121}.
+\end{itemize}
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter2/OneLoopCorrectionsToHiggsMass.png}
+    \caption{Feynman diagrams for the one-loop corrections to the Higgs boson mass. From left to right: contribution from the Yukawa interaction; two contributions from the gauge interaction; contribution from the Higgs self-interaction.}
+    \label{fig:one_loop_corrections_to_higgs_mass}
+\end{figure}
+
+In order to answer the open questions or provide a more complete theory, there have been numerous models of beyond-the-SM (BSM) physics developed. While some of these models are still being tested by the LHC and other experiments, some previous BSM models were ruled out by Higgs discovery~\cite{Cheng:2007bu}. Below I list a small selection of BSM models which have been proposed as extensions to the SM.
+\begin{itemize}
+	\item There are a whole host of little Higgs theories proposed~\cite{Cheng:2007bu,Reuter:2012sd,Schmaltz:2005ky}. In these models the Higgs boson is seen as the pseudo-Goldstone boson of a global symmetry broken around 10\tev. In addition to the current array of SM particles, a little Higgs model would include new particles with the same spin as the SM particles. An additional symmetry called T-parity would be introduced, which says that particles must be introduced in pairs. This implies that the additions to the SM would only impact observables at the loop-level.
+	\item Models of extra spatial dimensions say that the electroweak scale is the only fundamentally short distance scale and that loop corrections to the Higgs mass cut off at the electroweak scale and not the Planck scale~\cite{ArkaniHamed:1998rs}. The reduction in the cutoff scale leads to less fine tuning. A key feature of these models is that gravity, but not the other gauge interactions, permeates the new dimensions, which is why it is seen as being much weaker than the other forces. The Planck scale in $\left(4+n\right)$ dimensions is assumed to be on the order of the electroweak scale. For $n\geq2$ the size of the new dimensions is sub-millimeter, which is a scale where gravity has not been thoroughly tested.
+	\item Supersymmetry (SUSY) was first proposed by Miyazawa in 1966 in order to relate mesons and baryons for hadronic physics~\cite{doi:10.1143/PTP.36.1266,PhysRev.170.1586}. In the 1970s it was rediscovered as a QFT by several groups. In short SUSY introduces a new space-time symmetry that relates fermions to bosons and immediately provides a solution to the hierarchy problem~\cite{WESS197439,Golfand:1971iw,PhysRevLett.49.970,PhysRevD.49.6173,FAYET1975104,BARBIERI1982343,PhysRevD.27.2359,Martin:1997ns}. Each SM particle has a SUSY partner that differs in spin by 1/2. The coupling of the particles are chosen so that the Higgs mass does not diverge due to loop corrections. Additionally, SUSY causes EWSB in a different way that does not require negative $\mu^{2}$, answering another question left by the SM. Although SUSY models can cause protons to decay, many introduce R-parity to prevent this. If R-parity conserved then the lightest supersymmetric particle (LSP) is stable (i.e. the LSP can't decay without violating R-parity). SUSY is a appealing model because the LSP also provides a DM candidate as the particle would be heavy and weakly interacting. While the theory has significant promise, SUSY has not yet been observed. This however, does not mean that SUSY is wrong. It simply means that the masses of the supersymmetric partners are not the same as their SM partners (i.e. SUSY is broken somehow).
+\end{itemize}
+
