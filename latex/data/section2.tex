@@ -13,7 +13,7 @@
 %%%                           SECTION II
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{\uppercase {Theoretical Framework}}
+\chapter{\texorpdfstring{\uppercase {Theoretical Framework}}{Theoretical Framework}}
 \label{ch:theoretical_framework}
 
 Since the mid-1970s, the Standard Model (SM) of particle physics has been the leading theory describing three of the four known fundamental forces (not including gravity) as well as classifying all of the known elementary particles.
@@ -543,6 +543,276 @@ The fermion masses take the form $m\bar{f}_{L}f_{R}+h.c.$, which means that the 
 The second and third generations have similar mass terms.
 Since there is no right handed neutrino in the SM the neutrinos that do exist remain massless.
 As the coupling constants, G, and the fermion masses are not predicted by the SM they must be measured and added to the model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Higgs Production in a Proton-Proton Collider}
+\label{sec:higgs_production}
+
+The Higgs boson has several accessible productions mechanisms at a proton-proton collider.
+Fig.~\ref{fig:HiggsProductionCrossSections} shows the 8\tev production cross sections for the five production modes at the LHC.
+The production mode with the highest rate, by far, is the gluon-gluon fusion process shown in the blue curve, often abbreviated as \ggH.
+Since gluons are massless so they can't couple directly to the Higgs boson.
+Instead, this production mode proceeds through a fermion loop as shown in~\ref{fig:ggH}.
+The Higgs couplings to fermions goes as $g_{H_{f\bar{f}}}=\frac{m_{f}}{v}$, where $v$ is the vacuum expectation value for the Higgs field, $v=\left(\sqrt{2}G_{F}\right)^{1/2}\approx\text{246}\gev$, where $G_{F}$ is the Fermi coupling determined by muon decay measurements~\cite{PDG}.
+This means that the coupling is directly dependent upon the fermion mass and because of this the fermion loop in the gluon-gluon fusion diagram is dominated by top quarks, the heaviest of the fermions in the standard model.
+The cross section for this production mechanism at \CM{8}\tev and assuming a 125\gev Higgs is
+\begin{equation}
+	\sigma_{\text{ggF}}=\text{19.27}_{-\text{7.8\%}}^{+\text{7.2\%}}\left(\text{QCD Scale Unc.}\right)_{-\text{6.9\%}}^{+\text{7.4\%}}\left(\text{PDF}+\alpha_{S}\text{ Unc.}\right)\pbinv
+\end{equation}
+where QCD Scale uncertainty refers to the next to next to leading order (NNLO) radiative corrections and $\text{PDF}+\alpha_{S}$ uncertainty refers to the uncertainties on the parton distribution function and strong coupling parameters.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.95\textwidth]{\figpath/Chapter2/Higgs_XS_8TeV_LM200.eps}
+  \caption{Higgs production cross-sections at the LHC for 8\TeV proton-proton collisions}
+  \label{fig:HiggsProductionCrossSections}
+\end{figure}
+
+The production mechanism with the next highest cross section is the vector boson fusion (VBF) process (fig.~\ref{fig:qqH}) where either two oppositely charged \W bosons or two \Z bosons merge and produce a Higgs boson.
+The final state particles for this process are those from the Higgs decay as well as the two initial quarks, which will preferentially be found in the forward regions of the detector, which is why this process is often abbreviated as \qqH.
+The production cross section in this case is
+\begin{equation}
+	\sigma_{\text{VBF}}=\text{1.653}_{-\text{4.5\%}}^{+\text{4.5\%}}\left(\text{EW Unc.}\right)_{-\text{0.2\%}}^{+\text{0.2\%}}\left(\text{QCD Scale Unc.}\right)_{-\text{2.8\%}}^{+\text{2.6\%}}\left(\text{PDF}+\alpha_{S}\text{ Unc.}\right)\pbinv
+\end{equation}
+where the electroweak uncertainty is calculated at next to leading order (NLO).
+
+The other processes found in fig.~\ref{fig:HiggsProductionCrossSections} can all be grouped as associated production mechanisms.
+The Higgs is produced along with either a \Wpm boson, \Zz boson, or a \ttbar pair, often abbreviated as \WH, \ZH, or \ttH.
+The first two cases, seen in fig.~\ref{fig:WH}, are also referred to as ``Higgsstralung'' because the Higgs can be seen as being radiated from the vector bosons, similar to how a photon is radiated by an electron during bremsstrahlung.
+The latter case is seen in fig.~\ref{fig:ttH}.
+The associated production cross sections are
+\begin{align}
+\begin{split}
+	\sigma_{\text{WH}} &= \text{0.7046}_{-\text{1.0\%}}^{+\text{1.0\%}}\left(\text{QCD Scale Unc.}\right)_{-\text{2.3\%}}^{+\text{2.3\%}}\left(\text{PDF}+\alpha_{S}\text{ Unc.}\right)\pbinv \\
+	\sigma_{\text{ZH}} &= \text{0.4153}_{-\text{3.1\%}}^{+\text{3.1\%}}\left(\text{QCD Scale Unc.}\right)_{-\text{2.5\%}}^{+\text{2.5\%}}\left(\text{PDF}+\alpha_{S}\text{ Unc.}\right)\pbinv \\
+	\sigma_{\text{\ttbar{H}}} &= \text{0.1293}_{-\text{9.3\%}}^{+\text{3.8\%}}\left(\text{QCD Scale Unc.}\right)_{-\text{8.1\%}}^{+\text{8.1\%}}\left(\text{PDF}+\alpha_{S}\text{ Unc.}\right)\pbinv
+\end{split}
+\end{align}
+
+\begin{figure}[bt]
+  \centering
+  \begin{subfigure}[t]{0.415\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/ggH.pdf}
+    \caption{Gluon-gluon fusion}
+    \label{fig:ggH}
+  \end{subfigure}%
+  \hspace{0.5cm}
+  \begin{subfigure}[t]{0.415\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/qqH.pdf}
+    \caption{Vector boson fusion}
+    \label{fig:qqH}
+  \end{subfigure}
+
+  \begin{subfigure}[t]{0.415\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/WH.pdf}
+    \caption{Associated production with a vector boson}
+    \label{fig:WH}
+  \end{subfigure}
+  \hspace{0.5cm}
+  \begin{subfigure}[t]{0.415\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/ttH.pdf}
+    \caption{Associated production of a Higgs with a pair of t quarks}
+    \label{fig:ttH}
+  \end{subfigure}%
+  \caption{Feynman diagrams for the four Higgs production mechanisms at the LHC.}
+  \label{fig:Higgs_WW_lnujj_feynman}
+\end{figure}
+
+Just as the Higgs boson can be produced in several ways it can also decay in many ways.
+Fig.~\ref{fig:Higgs_XS_and_BR} shows the Higgs decay branching ratios (BR) as well as $\sigma\times\text{BR}$ for final states containing four fermions.
+It is clear from fig.~\ref{fig:Higgs_BR} that the \WW decay has one of the highest branching ratios and from fig.~\ref{fig:Higgs_XSBR_4fermion} that the \lvqq final state has the highest $\sigma\times\text{BR}$.
+
+Given the production cross sections and branching ratios discussed above, fig.~\ref{fig:ggH_WW_lvjj} shows the dominant Feynman diagram searched for in this analysis, the gluon-gluon fusion production and semi-leptonic \W decay mode.
+Nevertheless, we search for a given final state and not an exact production and decay chain, so there are several branching ratios which are useful to this analysis and are listed in table~\ref{tab:Higgs_BR}.
+The $\PH\rightarrow\ZZ$ and $\PH\rightarrow\bbbar$ BR are included because they can produce a \lvqq final state given a mis-identification or mis-reconstruction issue.
+The signal cross sections used in this analysis are listed in table~\ref{tab:Higgs_XS_BR} and present a couple of insights into our signal makeup.
+First is that the gluon-gluon fusion process is indeed dominant with $\sim$10 times higher of a cross section than the other channels.
+Additionally, the \WH channel where \Hbb is non-negligible and comparable in size to the VBF production mode, even though this is not the decay channel we are looking for.
+By using some cuts to remove b-jets I will later show how to remove this signal contamination.
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{subfigure}[t]{0.475\textwidth}
+  	\centering
+  	\begin{tikzpicture}% based on https://tex.stackexchange.com/a/9561/ (Caramdir's fantastic answer to another question)
+        \node (tiger) [anchor=south west, inner sep=0pt] {\includegraphics[width=\textwidth]{\figpath/Chapter2/Higgs_BR_LM.pdf}};
+        \begin{scope}[x={(tiger.south east)},y={(tiger.north west)}]
+          \foreach \i/\j in {{(0.43,0.95)/(0.43,0.12)}}
+            \draw [red, very thick, dashed] \i -- \j;
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Higgs branching ratios}
+    \label{fig:Higgs_BR}
+  \end{subfigure}
+  \begin{subfigure}[t]{0.475\textwidth}
+  	\centering
+    \begin{tikzpicture}% based on https://tex.stackexchange.com/a/9561/ (Caramdir's fantastic answer to another question)
+        \node (tiger) [anchor=south west, inner sep=0pt] {\includegraphics[width=\textwidth]{\figpath/Chapter2/XSBR_8TeV_SM_LM.eps}};
+        \begin{scope}[x={(tiger.south east)},y={(tiger.north west)}]
+          \foreach \i/\j in {{(0.335,0.94)/(0.335,0.15)}}
+            \draw [red, very thick, dashed] \i -- \j;
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Higgs $\sigma\times\text{BR}$ for four fermion final states}
+    \label{fig:Higgs_XSBR_4fermion}
+  \end{subfigure}
+  \caption{The dominant Higgs decay modes at the LHC. The vertical, dashed red line indicates a Higgs mass of 125\gev.}
+  \label{fig:Higgs_XS_and_BR}
+\end{figure}
+
+\begin{figure}[bt]
+  \centering
+  \includegraphics[width=0.95\textwidth]{\figpath/FeynmanDiagramsPyFeyn/ggH_WW_lvjj.pdf}
+  \caption{Feynman diagram for the gluon-gluon fusion SM Higgs production process where the Higgs decays semi-leptonically to two quarks, one lepton, and one neutrino.}
+  \label{fig:ggH_WW_lvjj}
+\end{figure}
+
+\begin{table}[htbp]
+    \caption{Useful Higgs and \W branching ratios}
+    \centering
+    \begin{tabular}{lr}
+        \hline
+        Decay & BR \\
+        \hline
+        $\PH{\rightarrow}\WW$ & $\text{0.215}_{-\text{4.20\%}}^{+\text{4.26\%}}$ \\
+        $\W{\rightarrow}l\nu$ & 0.3257 \\
+        $\W{\rightarrow}\cPq\cPq$ & 0.676 \\
+        $\WWlvqq$ & 0.2203 \\
+        $\PH\rightarrow\ZZ$ & $\text{0.0246}_{-\text{4.21\%}}^{+\text{4.28\%}}$ \\
+        $\PH\rightarrow\bbbar$ & $\text{0.577}_{-\text{3.27\%}}^{+\text{3.21\%}}$ \\
+        \hline
+    \end{tabular}
+    \label{tab:Higgs_BR}
+\end{table}
+
+\begin{table}[htbp]
+    \caption{A table of $\sigma\times\text{BR}$ for the \lvqq final state resulting from any Higgs production mode and several decay channels.}
+    \centering
+    \begin{tabular}{lr}
+        \hline
+        Channel & $\sigma\times\text{BR}$ \\
+        \hline
+        \ggH, where \HWWlvqq & 1.823\pbinv \\
+        \qqH, where \HWWlvqq & 0.1493\pbinv \\
+        \WH, where \HWW & 0.1515\pbinv \\
+        \ZH, where \HWW & 0.08929\pbinv \\
+        \ttH, where \HWW & 0.0278\pbinv \\
+        \WH, where \Hbblvqq & 0.1324\pbinv \\
+        \ttH, where \Hbblvqq & 0.0746\pbinv \\
+        \WH, where \HZZ & 0.01860\pbinv \\
+        \ZH, where \HZZ & 0.01096\pbinv \\
+        \ttH, where \HZZ & 0.00341\pbinv \\
+        \hline
+    \end{tabular}
+    \label{tab:Higgs_XS_BR}
+\end{table}
+
+In addition to the true signal events, volunteer signal events (i.e. \Hbb), this analysis must content with several other standard model processes which can produce a \lvqq final state.
+These background events can even have rates several orders of magnitude higher than that of our signal.
+There are two varieties of backgrounds which will be encountered, reducible and irreducible.
+The irreducible backgrounds, like the SM \WW process, will exactly produce the \lvqq final state.
+On the other hand, reducible backgrounds produce slightly different final states, but may still enter the signal region for a variety of reasons.
+An example of a reducible background is the \ttbar process, which will have extra (b-)jets that may be removed through additional cuts.
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{subfigure}[t]{0.46\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/ZJets.pdf}
+  	\caption{$Z^{0}$ production in association with jets}
+    \label{fig:ZJets_lvjj}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.46\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/WJets.pdf}
+    \caption{$W^{+}$ production in association with jets}
+    \label{fig:WJets_lvjj}
+  \end{subfigure}
+  \caption{Example Feynman diagrams for the standard model $\text{V}+\text{jets}$ process decaying to the $\ell\nu{jj}$ final state.}
+  \label{fig:SingleBosonBackground}
+\end{figure}
+\begin{figure}[!hbt]
+  \centering
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/WW.pdf}
+    \caption{$W^{+}W^{-}$ pair production}
+    \label{fig:WW}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/ZZ.pdf}
+    \caption{Z boson pair production}
+    \label{fig:ZZ}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/WZ.pdf}
+    \caption{Production of a $W^{+}$ and $Z$ boson}
+    \label{fig:WZ}
+  \end{subfigure}
+  \caption{Example Feynman diagrams for the standard model diboson processes decaying to the $\ell\nu{jj}$ final state.}
+  \label{fig:DibosonBackground}
+\end{figure}
+\begin{figure}[!hbt]
+  \centering
+  \begin{subfigure}[t]{0.46\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/TTbar2.pdf}
+    \caption{}
+    \label{fig:TTbar_lvlvbb}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.46\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/TTbar.pdf}
+    \caption{}
+    \label{fig:TTbar_lvjjbb}
+  \end{subfigure}
+  \caption{Two possible \ttbar Feynman diagrams which could have final states similar to the Higgs signal. Lines in gray are either mis-reconstructed or missing.}
+  \label{fig:TTbarBackground}
+\end{figure}
+\begin{figure}[!hbt]
+  \centering
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/STopS.pdf}
+    \caption{Production of a single top quark via the s-channel}
+    \label{fig:STopS}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/STopT.pdf}
+    \caption{Production of a single top quark via the t-channel}
+    \label{fig:STopT}
+  \end{subfigure}
+  \hspace{0.015\textwidth}
+  \begin{subfigure}[t]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagramsPyFeyn/STopTW.pdf}
+    \caption{Production of a single top quark via the tW-channel}
+    \label{fig:STopTW}
+  \end{subfigure}
+  \caption{Example Feynman diagrams for the standard model single top processes. The final state particles are not pictured here.}
+  \label{fig:SingleTopBackground}
+\end{figure}
+
+The backgrounds considered in this analysis are as follows:
+\begin{itemize}
+	\item \textbf{W$+$jets}: This is the production of a single \Wpm boson in association with final state quarks or gluons. If the \Wpm decays leptonically then the final state will match that of our signal. This process has an extremely high cross section and is thus the dominant background in the analysis.
+	\item \textbf{Drell-Yan Z/$\gamma^{*}+$ jets}: In this case a \Z or $\gamma$ boson is produced in association with final state quarks or gluons. In order for this process to mimic the signal one lepton from the boson decay must be lost due to being outside the acceptance region or due to some reconstruction inefficiency. Although this process also has a high cross section, the requirement of having only one lepton reduces the prevalence of these processes in our signal region.
+	\item \textbf{Diboson}: It is possible to mimic the final state signature with decays from several non-resonant diboson processes. The \WW process is an irreducible background as it can exactly mimic our signal. The \WZ process can produce the \lvqq final state in two ways: either the \W decays leptonically and the \Z decays hadronically or the \W decays hadronically and one of the leptons from the \Z decay is lost. The \ZZ process is similar in that one lepton from the leptonic \Z must be lost in order for the event to make it into the signal region.
+	\item \textbf{\ttbar}: The tops will each decays to a \cPqb quark and a \W boson via the weak interaction. If the \W bosons decay semi-leptonically then the final state will be very similar, save for the presence of two additional b-quarks. If the b-jets can be identified then the events can be removed. Still, due to inefficiencies in identifying the b-quarks some \ttbar may still pass all selection requirements.
+	\item \textbf{Single Top}: There are three production channels for this type of process: s-channel, t-channel, and the tW-channel. These processes have low cross sections and can produce reducible signatures.
+	\item \textbf{Multi-jet}: This is the production of $n$ jets where one jet is mistakenly identified as a lepton and the jet energies are mis-reconstructed enough to produce a sufficient imbalance in the event to mimic the neutrino. While this might seem improbable, the QCD cross section is quite large and thus this become a non-negligible background for this analysis.
+\end{itemize}
+The Feynman diagrams for all of these backgrounds, except for QCD, can be found in figs.~\ref{fig:SingleBosonBackground},~\ref{fig:DibosonBackground},~\ref{fig:TTbarBackground}, and~\ref{fig:SingleTopBackground}.
 
 \section{Beyond the Standard Model}
 \label{sec:BSM}

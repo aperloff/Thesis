@@ -14,123 +14,44 @@
 
 
 
-\chapter{\uppercase {Higgs Analysis}}
+\chapter{\texorpdfstring{\uppercase {Higgs Analysis}}{Higgs Analysis}}
 \label{ch:analysis}
 
-%, as seen in figure~\ref{fig:Higgs_WW_lnujj_feynman}
-
-%While at 125\gev the gluon-gluon fusion (ggF) production cross section\footnote{This analysis is independent of production mode, but selects for a specific decay channel.} and $l\nu{qq}$ branching ratio are high, as seen in figure~\ref{fig:Higgs_XS_and_BR}, there are significant experimental challenges to overcome.
-
-\section{Higgs Production in a Proton-Proton Collider}
-\label{sec:higgs_production}
-
-\begin{comment}
-\begin{figure}[!hbt]
-    \centering
-    \begin{subfigure}[t]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{\figpath/Chapter2/HgammagammaPeak.png}
-        \caption{}
-        \label{fig:HgammagammaPeak}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{\figpath/Chapter2/10052_2015_3351_Fig4_HTML.pdf}
-        \caption{}
-        \label{fig:HiggsSignalStrength}
-    \end{subfigure}
-    \caption{(Left) The $H\rightarrow\gamma\gamma$ signal peak as seen in 2012~\cite{Hgammagamma}. (Right) Best-fit $\sigma/\sigma_{SM}$ grouped by predominant decay mode. The vertical band is the overall combined analysis value and the horizontal bars show the $\pm$1 uncertainties (statistical and systematic)~\cite{Khachatryan2015}.}
-    \label{fig:HiggsIn2012}
-\end{figure}
-
-
-\begin{figure}[bt]
-  \centering
-  \begin{subfigure}[t]{0.415\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/ggH.eps}
-    \label{fig:ggH}
-  \end{subfigure}%
-  \begin{subfigure}[t]{0.415\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/qqH.eps}
-    \label{fig:qqH}
-  \end{subfigure}
-
-  \begin{subfigure}[t]{0.415\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/ttH.eps}
-    \label{fig:ttH}
-  \end{subfigure}%
-  \begin{subfigure}[t]{0.415\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/FeynmanDiagrams/WH.eps}
-    \label{fig:WH}
-  \end{subfigure}
-  \caption{Feynman diagrams for the four Higgs production mechanisms with associated $l{\nu}qq$ decays: gluon-gluon fusion (upper left), vector-boson fusion (upper right), \ttbar fusion (lower left), and associated production (lower right).}
-  \label{fig:Higgs_WW_lnujj_feynman}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \begin{subfigure}[t]{0.54\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/Chapter2/Higgs_XS_8TeV.png}
-    \label{fig:Higgs_XS_8TeV}
-  \end{subfigure}
-  \begin{subfigure}[t]{0.41\textwidth}
-    \includegraphics[width=\textwidth]{\figpath/Chapter2/Higgs_BR_4fermion.png}
-    \label{fig:Higgs_BR_4fermion}
-  \end{subfigure}
-  \caption{The Standard Model Higgs production cross sections at 8\tev (left) and WW branching ratios to four fermion final states (right).}
-  \label{fig:Higgs_XS_and_BR}
-\end{figure}
-\end{comment}
-
+Data collected by the CMS detector at the LHC is analyzed for the presence of a Higgs boson decaying to the \lvjj final state.
+Signal and background Monte Carlo (MC) samples are used to study the efficacy of various object and event selection criteria.
+While the signal samples are fully MC based, some of the background samples use data-driven techniques, which will be discussed later in this chapter.
+The matrix element probabilities for an event final state being created by a specific diagram are computed.
+Several multivariate techniques are studied and used to distinquish between signal-like and background-like events.
+We use the discriminator outputs from these mutivariate classifiers to set limits on the SM \HWW cross section.
 
 \section{Data and Monte Carlo Samples}
 
-\begin{comment}
-AN-13-132
-=========
-Full 2012 (8TeV) CMS dataset \sim19.2 fb-1
-Dataset names in table 1
-Trigger names
-Luminosity uses HF calculation 4.4\% uncertainty [6]
+%The following sections will describe the datasets collected by CMS as well as the MC samples used in this analysis.
 
+\subsection{Data}
+\label{sec:data}
 
-Kreis
-=====
-Section description
+As mentioned previously, this analysis makes use of the full 2012 CMS dataset of 8\tev data.
+Fig.~\ref{fig:int_lumi_per_day} shows the cumulative delivered, recorded, and validated luminosity versus time.
+Only fully validated data, where both the LHC and CMS are completely operational, are use used for CMS analyses~\cite{LumiPublic}.
+Table~\ref{tab:dataSamples} shows the data samples used for this analysis, which corresponds to $\sim$19.2\fbinv.
+The datasets are split by the two HLT paths used, one which selects for a single high \pt electron and one for a single high \pt muon.
+These two separate PDs correspond to the HLT\_Ele27\_WP80\_v* and HLT\_IsoMu24\_eta2p1\_v* trigger paths, respectively.
+The HLT\_Ele27\_WP80\_v* path requires a reconstructed electron with \ptgt{27}\gev along with several other criteria grouped into a working point with 80\% efficiency of selecting true electrons.
+The HLT\_IsoMu24\_eta2p1\_v* criteria requires an isolated, reconstructed muon with \ptgt{24}\gev within \absetalt{2.1}.
+The luminosities listed in the table are associated with a 2.6\% uncertainty as specified in~\cite{CMS-PAS-LUM-12-001} and were collected using the HF luminosity measurements~\cite{CMS-PAS-LUM-13-001}.
 
-Pedro
-=====
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Proposal
-========
-As mentioned previously, this analysis makes use of the full 2012 dataset of 8\tev data. Table~\ref{tab:dataSamples} shows the data samples used for this analysis, which corresponds to $\sim$19.2\fbinv. The luminosities listed in the table are associated with a 4.4\% uncertainty as specified in~\cite{CMS-PAS-LUM-12-001} and were collected using the HF luminosity measurements.
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter5/int_lumi_per_day_cumulative_pp_2012_SummerConf.png}
+    \caption{Cumulative day-by-day integrated luminosity in 2012 delivered by the LHC (blue), recorded by CMS (dark orange), and validated for physics use (light orange)~\cite{DataQuality}.}
+    \label{fig:int_lumi_per_day}
+\end{figure}
 
 \begin{table}[hbtp]\footnotesize
 \centering
-\begin{tabular}{|l|c|r|}
-\hline\hline
+\begin{tabular}{l l l}
+\hline
  Dataset & Run Range & Integrated Luminosity \\
 \hline
 /SingleMu/Run2012A-13Jul2012-v1/AOD & 190645-196531 & 0.809$\fbinv$ \\
@@ -149,121 +70,296 @@ As mentioned previously, this analysis makes use of the full 2012 dataset of 8\t
 /SingleElectron/Run2012D-PromptReco-v1/AOD & 194480-208686 & 7.238$\fbinv$\\
 {\bf Total SingleElectron} & {\bf 190645--208686} & {\bf 19.148$\fbinv$} \\
 \hline
-
-\hline\hline
 \end{tabular}
 \caption{The datasets analyzed for this analysis.}
 \label{tab:dataSamples}
 \end{table}
 
+\subsection{Monte Carlo}
+
+This analysis makes use of MC simulation to study the background processes which have similar final states to that of the \HWWlvjj signal.
+Both the kinematic distributions and the final yields are extracted from these samples.
+The MC simulation is used for all beckgrounds except for the multijet process, where a data-driven approach is used instead.
+The process of developing this sample is described in detail in the section~\ref{sec:QCD_data-driven_sample}.
+The signal sample kinematics and yields are also taken from MC.
+Tables~\ref{tab:SignalSamples} and~\ref{tab:bkgSamples} list all of the MC sample for the Higgs signals and SM background processes, respectively.
+The SM background and volunteer signal samples are centrally produced by the CMS collaboration.
+The \ggH samples were produced specifically for this analysis.
+All of the samples, reguardless of who produced them, are stored in a database called the Data Aggregation System (DAS) and organized by the ``Dataset Name'' field.
 The backgrounds were modeled by MC samples generated with \textsc{MadGraph}~\cite{Alwall:2014hca} and \textsc{pythia6}~\cite{1126-6708-2006-05-026}. 
 The signal MC samples were also generated by \textsc{pythia6}.
-Tables~\ref{tab:bkgSamples} and~\ref{tab:SignalSamples} show the background and signal MC samples used.
-Rather than relying on MC for the QCD background sample, a data-driven sample was created by using the same trigger requirements as the data, but removing the isolation requirement for the lepton and inverting the lepton particle flow isolation cut during selection.
-This process provides a completely orthogonal sample of QCD events from data.
-The normalization of this background is found by doing a two component fit to the data, allowing only the W+jets and QCD fractions to float.
+Tables~\ref{tab:bkgSamples} and~\ref{tab:SignalSamples} list all of the MC for the Higgs signal and SM background processes, respectively.
 
-\begin{table}[hbtp]\footnotesize
+\begin{sidewaystable}[hbtp]\footnotesize
 \centering
-\begin{tabular}{|c|p{0.65\textwidth}|r|}
-\hline\hline
-Sample & Dataset & Cross Sect. \\
+\begin{tabular}{l p{0.50\textwidth} l l}
 \hline
-W+jets & /WJetsToLNu\_TuneZ2Star\_8TeV-madgraph-tarball/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM\newline/WJetsToLNu\_TuneZ2Star\_8TeV-madgraph-tarball/Summer12\_DR53X-PU\_S10\_START53\_V7A-v2/AODSIM & 37509 pb\\ \hline
-$\ttbar$ & /TTJets\_MassiveBinDECAY\_TuneZ2star\_8TeV-madgraph-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 225.197 pb\\\hline
-Z+jets & /DYJetsToLL\_M-50\_TuneZ2Star\_8TeV-madgraph-tarball/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 3387.6 pb\\\hline
-WW & /WW\_TuneZ2star\_8TeV\_pythia6\_tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 54.838 pb\\\hline
-WZ & /WZ\_TuneZ2star\_8TeV\_pythia6\_tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 33.21 pb\\\hline
-ZZ & /ZZ\_TuneZ2star\_8TeV\_pythia6\_tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 17.654 pb\\\hline
-Single \cPqt & & \\
-t-Channel & /T\_t-channel\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 56.4 pb\\
-tW-Channel & /T\_tW-channel-DR\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 11.1 pb\\
-s-Channel & /T\_s-channel\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 3.79 pb\\\hline
-Single \cPaqt & & \\
-SingleTbar t-Channel & /Tbar\_t-channel\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 30.7 pb\\
-SingleTbar tW-Channel & /Tbar\_tW-channel-DR\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 11.1 pb\\
-SingleTbar s-Channel & /Tbar\_s-channel\_TuneZ2star\_8TeV-powheg-tauola/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM& 1.76 pb\\\hline
-QCD & & \\
-Electron & See table~\ref{tab:dataSamples} for a list of SingleElectron datasets & N/A \\
-Muon & See table~\ref{tab:dataSamples} for a list of SingleMu datasets & N/A \\
-
-\hline\hline
+\multicolumn{4}{c}{Signal Processes} \\
+\hline
+Production \& Decay Modes & Dataset Name & Cross Section [\unit{pb}] & BR\\  \hline
+\ggH; $\MH=\text{125}\gev$, \HWWlvjj & /LQ-ggh125\_BIG\_SIM\_ggH125\_part1/aperloff-LQ-ggh125\_AODSIM\_Summer12\_START53\_V7E-{\newline}768a14b04b0ac2af0d20e6783fbdb759/USER & 19.27 & 0.0947 \\
+  & /LQ-ggh125\_BIG\_GEN\_part2/aperloff-LQ-ggh125\_BIG\_RECO\_part2-33e909ff21293ad9fa8564de2959fe54/USER & 19.27 & 0.0947\\
+  & /LQ-ggh125\_BIG\_GEN\_part3/aperloff-LQ-ggh125\_BIG\_RECO\_part3-33e909ff21293ad9fa8564de2959fe54/USER & 19.27 & 0.0947\\
+  & /LQ-ggh125\_Part6\_SIM/goodell-LQ-qqh125\_RECO\_Part6-33e909ff21293ad9fa8564de2959fe54/USER & 19.27 & 0.0947\\
+  & /LQ-ggh125\_Part7\_SIM/goodell-LQ-qqh125\_RECO\_Part7-33e909ff21293ad9fa8564de2959fe54/USER & 19.27 & 0.0947\\
+  & /LQ-ggh125\_Part8\_GENSIM/goodell-LQ-ggh125\_Part8\_RECO-33e909ff21293ad9fa8564de2959fe54/USER & 19.27 & 0.0947\\
+\qqH; $\MH=\text{125}\gev$, \HWWlvjj & /LQ-vbf125\_GENSIM/ajkumar-LQ-qqh125\_AODSIM\_Summer12\_{\newline}START53\_V7A-c8f8ed334db8a7d6f56c62266b1dfa5b/USER & 1.578 & 0.0947\\
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HWW, inclusive & /WH\_ZH\_TTH\_HToWW\_M-125\_8TeV-pythia6 & 1.249 & 0.215\\\hline
+\multicolumn{4}{c}{Non signal Higgs Production} \\ \hline
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HZZ, inclusive & /WH\_ZH\_TTH\_HToZZ\_M-125\_8TeV-pythia6 & 1.249 & 0.0264\\
+\WH; $\MH=\text{125}\gev$, \Hbb, \Wlv & /WH\_WToLNu\_HToBB\_M-125\_8TeV-powheg-herwigpp & 0.7046 & 0.1879\\
+\ttH; $\MH=\text{125}\gev$, \Hbb & /TTH\_HToBB\_M-125\_8TeV-pythia6 & 0.1293 & 0.577\\
+\hline
 \end{tabular}
-\caption{List of background MC datasets and cross sections used for normalization.}
-\label{tab:bkgSamples}
-\end{table}
+\caption{List of signal datasets and cross sections. All of the centrally produced sample names are followed by /Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM.}
+\label{tab:SignalSamples}
+\end{sidewaystable}
 
-Several corrections are made to the MC before use.
-When MC is made it is generated with an assumption of what the pileup (PU) distribution will look like in data.
-However, this guess is rarely accurate and the MC must be reweighted such that the correct PU distribution is reflected in the MC.
-The weights are created by using special measurements in CMS which measure the true number of PU interactions in data and dividing this histogram by the number of true interactions coming from MC.
-This provides the weights as a function of the true number of proton-proton interactions.
-Each MC sample has this weight applied.
+\begin{sidewaystable}[hbtp]\footnotesize
+\centering
+\begin{tabular}{l p{0.65\textwidth} l}
+\hline
+\multicolumn{3}{c}{Background Processes} \\
+\hline
+Process & Dataset Name & Cross Section [\unit{pb}] \\
+\hline
+\Wjets & /WJetsToLNu\_TuneZ2Star\_8TeV-madgraph-tarball & 37509 \\
+\ttbar & /TTJets\_MassiveBinDECAY\_TuneZ2star\_8TeV-madgraph-tauola & 225.197 \\
+\Zjets & /DYJetsToLL\_M-50\_TuneZ2Star\_8TeV-madgraph-tarball & 3387.6 \\
+\WW & /WW\_TuneZ2star\_8TeV\_pythia6\_tauola & 54.838 \\
+\WZ & /WZ\_TuneZ2star\_8TeV\_pythia6\_tauola & 33.21 \\
+\ZZ & /ZZ\_TuneZ2star\_8TeV\_pythia6\_tauola & 17.654 \\
+$\cPqt\rightarrow\cPqb\ell\nu$ (\cPqs-channel) & /T\_s-channel\_TuneZ2star\_8TeV-powheg-tauola & 3.79 \\
+$\cPqt\rightarrow\cPqb\ell\nu$ (\cPqt-channel) & /T\_t-channel\_TuneZ2star\_8TeV-powheg-tauola & 56.4 \\
+$\cPqt\rightarrow{X}$ (\cPqt\W-channel) & /T\_tW-channel-DR\_TuneZ2star\_8TeV-powheg-tauola & 11.1 \\
+$\cPaqt\rightarrow\cPqb\ell\nu$ (\cPqs-channel) & /Tbar\_s-channel\_TuneZ2star\_8TeV-powheg-tauola & 1.76 \\
+$\cPaqt\rightarrow\cPqb\ell\nu$ (\cPqt-channel) & /Tbar\_t-channel\_TuneZ2star\_8TeV-powheg-tauola & 30.7 \\
+$\cPaqt\rightarrow{X}$ (\cPqt\W-channel) & /Tbar\_tW-channel-DR\_TuneZ2star\_8TeV-powheg-tauola & 11.1 \\
+QCD (\Pe-channel) & See table~\ref{tab:dataSamples} for a list of SingleElectron datasets & N/A \\
+QCD (\Pmu-channel) & See table~\ref{tab:dataSamples} for a list of SingleMu datasets & N/A \\
+\hline
+\end{tabular}
+\caption{List of background MC datasets and cross sections used in the analysis. Every dataset name is followed by /Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM. In addition to v1, this analysis also uses v2 of the \Wjets sample.}
+\label{tab:bkgSamples}
+\end{sidewaystable}
+
+The \ttbar, \Wjets, and \Zjets SM background samples are generated using \textsc{Mad}\textsc{Graph} v5.1.3.30~\cite{Alwall:2014hca}.
+The \ttbar sample is inclusive, meaning that it includes all decay modes of the \W boson coming from the top decay.
+The \Wjets and \Zjets samples are also inclusive, but in this case it means that in addition to the leptonic decay of the boson there are any number of final state jets.
+The single top quark samples are modeled using the \textsc{POWHEG} 1.0 r138 ~\cite{POWHEG2,POWHEG:singlet,POWHEG:singletW} generator.
+The diboson processes use the \textsc{pythia} v6.4.24 generator~\cite{1126-6708-2006-05-026}.
+The cross sections for the \ttbar and single top quark processes are calculated at next-to-next-to-leading logarithmic (NNLL) accuracy~\cite{TOPCrossSec} while the inclusive \Wjets and \Zjets processes are calculated at next-to-next-to-leading order (NNLO) accuracy~\cite{FEWZ}.
+The diboson cross sections are calculated at next-to-leading order (NLO) accuracy~\cite{MCFM}.
+
+The \HWW signal samples are generated with \textsc{pythia} v6.4.24~\cite{1126-6708-2006-05-026}, where one \W is required to decay leptonically while the other is required to decay hadronically.
+The cross sections for the Higgs production are calculated at NNLL QCD and NLO EW accuracies.
+The calculations for gluon-gluon fusion and VBF production cross sections use the complex-pole-scheme (CPS) while the associated production cross section are calculated with the zero-width-approximation (ZWA)~\cite{Heinemeyer:2013tqa}.
+These samples were privately produced because the centrally produces samples did not include enough events and had large statistical fluctuations.
+
+\subsection{Multijet-QCD Background}
+\label{sec:QCD_data-driven_sample}
+
+It is well known that the QCD process is difficult to model to the desired level of accuracy.
+Additionally, the event selection in this analysis requires two isolated jets and an isolated lepton, which vastly reduces the number of QCD MC events that pass the selection criteria.
+Although the probability to mis-reconstruct a jet as a lepton is fairly low, the production cross section for the multijet process is extremely high and thus cannot be ignored.
+When using the MC samples we are left with a statistically limited sample that is almost useless for describing this background.
+
+Rather than relying on MC for the QCD background sample, a data-driven sample was created by using the same trigger requirements as the data, but removing the isolation requirement for the lepton and inverting the lepton particle flow isolation cut during selection.
+The main idea of the method is to utilize differences in lepton identification properties that separate prompt, isolated leptons from \W and \Z decays, also known as ``real leptons,'' from non-prompt, non-isolated leptons, also known as ``fake leptons.''
+The normal signal selection requires an isolated lepton, without other particles around it, to limit this sort of ``fake lepton,'' but this is exactly the type of property we want to select for when forming a QCD sample from data.
+This process provides a completely orthogonal sample of QCD events from data that won't, and shouldn't be used for signal extraction.
+Since we make use of the entire 2012 dataset\footnote{The QCD events are scaled slightly to account for failed jobs (missing luminosity) during processing.}, we end up with statistically rich samples containing lots of mis-identified leptons.
+
+A complete description of the event selection will be discussed in section~\ref{ch:event_selection}, but here I will just talk about the isolation requirements.
+The loosest lepton PF isolation requirement used to determine the signal region is $\pfiso<0.2$, which is used to veto on ``loose'' or questionable leptons.
+The assumption is that any lepton with $\pfiso>0.2$ is a mis-reconstructed lepton coming from QCD.
+For electrons we must also turn off the MVA-based identification requirements as they are stringent enough that they won't allow for any fake leptons to pass our selection.
+As mentioned before, the electrons must still pass the ``HLT\_Ele27\_WP80\_v*'' electron trigger used for the data containing our signal.
+On the other hand, the muon trigger is changed to be ``HLT\_Mu24\_eta2p1\_v*'' to remove the isolation requirement that was included in the trigger used to select for the signal.
+
+In order to gain greater separation from the signal selection to ensure as little non-QCD contamination as possible, we actually use a minimum isolation requirement of $\pfiso>0.3$.
+We also put an upper limit on the PF isolation value to keep the sample from having a bias towards high nPV values.
+For electrons the upper limit was 0.7 and for muons it was 2.0.
+The $1\sigma$ systematic uncertainty bands for electrons (muons) were selected to be $0.2<\pfiso<0.3$ on the low side and $>$0.7 (2.0) for the high side
+Fig.~\ref{fig:PFIsolation} shows the pf isolation values contained in the electron multijet and data samples as a function of $\eta$.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.475\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/pfIsoVsEta_DATA.png}
+        \caption{}
+        \label{fig:PFIsolationData}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.475\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/pfIsoVsEta_Full.png}
+        \caption{}
+        \label{fig:PFIsolationFull}
+    \end{subfigure}
+    \caption{The PF isolation for the electron channel as a function of $\eta$ (left) with and (right) without the lepton isolation and electron MVA-based identification requirements.}
+    \label{fig:PFIsolation}
+\end{figure}
+
+\section{Event \& Object Selection}
+\label{ch:event_selection}
+
+The reconstruction algorithms described in chapter~\ref{ch:event_reconstruction} are designed to be fairly generic and applicable to a wide array of physics analyses.
+Specific groups within CMS called physics object groups (POGs) are responsible for developing object quality criteria which must be implemented by each analysis to prevent fake or poorly reconstructed objects.
+This section will discuss the object selection criteria used to identify vertices, electrons, muons, jets, and \VETslash, which all meet or exceed the object requirements as set by the relevant POGs.
+Only events which have the right quality and multiplicities of these objects will be used in the analysis.
+
+Like most analyses, this one selects for a single good quality primary vertex, although the presence of additional vertices (pileup) does not disqualify the event.
+The primary vertex must pass certain additional quality criteria.
+There must be at least four degrees of freedom used to find the vertex, the absolute value of the $z$-coordinate of the vertex must be less than 24\unit{cm}, the absolute value of the $\rho$-coordinate (cylindrical coordinate system) must be less than 2.0\unit{cm}, and the vertex must not be identified as a fake vertex.
+These criteria are summarized in table~\ref{tab:vertex_selection}.
 
 \begin{table}[hbtp]\footnotesize
 \centering
-\begin{tabular}{|c|p{0.65\textwidth}|r|r|}
-\hline\hline
-Sample Name & Dataset & Cross Sect. & BR\\  \hline
-g-g Higgs & /LQ-ggh125\_BIG\_SIM\_ggH125\_part1/aperloff-LQ-ggh125\_AODSIM\_Summer12\_START53\_V7E-768a14b04b0ac2af0d20e6783fbdb759/USER & 19.27pb & 0.0947 \\
-  & /LQ-ggh125\_BIG\_GEN\_part2/aperloff-LQ-ggh125\_BIG\_RECO\_part2-33e909ff21293ad9fa8564de2959fe54/USER & 19.27pb & 0.0947\\
-  & /LQ-ggh125\_BIG\_GEN\_part3/aperloff-LQ-ggh125\_BIG\_RECO\_part3-33e909ff21293ad9fa8564de2959fe54/USER & 19.27pb & 0.0947\\
-  & /LQ-ggh125\_Part6\_SIM/goodell-LQ-qqh125\_RECO\_Part6-33e909ff21293ad9fa8564de2959fe54/USER & 19.27pb & 0.0947\\
-  & /LQ-ggh125\_Part7\_SIM/goodell-LQ-qqh125\_RECO\_Part7-33e909ff21293ad9fa8564de2959fe54/USER & 19.27pb & 0.0947\\
-  & /LQ-ggh125\_Part8\_GENSIM/goodell-LQ-ggh125\_Part8\_RECO-33e909ff21293ad9fa8564de2959fe54/USER & 19.27pb & 0.0947\\ \hline
-VBF Higgs & /LQ-vbf125\_GENSIM/ajkumar-LQ-qqh125\_AODSIM\_Summer12\_{\newline}START53\_V7A-c8f8ed334db8a7d6f56c62266b1dfa5b/USER & 1.578pb & 0.0947\\
-Ass. Prod. Higgs & WH\_ZH\_TTH\_HToWW\_M-125\_8TeV-pythia6/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 1.249pb & 0.215\\ \hline
-\multicolumn{4}{c}{Non signal Higgs Production} \\ \hline
-Ass. Prod. Higgs & WH\_ZH\_TTH\_HToZZ\_M-125\_8TeV-pythia6/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 1.249pb & 0.0264\\
-  & WH\_WToLNu\_HToBB\_M-125\_8TeV-powheg-herwigpp/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 0.7046pb & 0.1879\\
-  & /TTH\_HToBB\_M-125\_8TeV-pythia6/Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM & 0.1293pb & 0.577\\
-\hline\hline
+\begin{tabular}{l l}
+\hline
+Cut & Value \\
+\hline
+N\textsubscript{DOF} & $\geqslant$4 \\
+$|z|$ & $\leqslant$24\unit{cm} \\
+$|\rho|$ & $\leqslant$2.0\unit{cm} \\
+\hline
 \end{tabular}
-\caption{List of Signal datasets and cross sections}
-\label{tab:SignalSamples}
+\caption{The primary vertex selection requirements for this analysis.}
+\label{tab:vertex_selection}
 \end{table}
 
-There are additional MC corrections that go beyond the scope of this proposal, but which are nevertheless used in the analysis.
-The jet energy corrections and jet energy resolution scale factors make sure that the energy and resolution of the jets in MC matches those used in data and that the overall scale is correct.
-The $\ETslash_{\varphi}$ corrections remove a modulation in the \ETslash 4-momentum, which appears as a function of the number of proton-proton interactions.
-There is a reweighting of the events to correct the b-tag discriminant distributions and a reweighting to correct the \pt distributions of the \ttbar MC being used.
-We also correct for a mis-modeling of the $\cos\left(\theta_{l}\right)$ angular variable and to accurately model QCD in the isolated lepton region even when the data-driven QCD sample is taken from the anti-isolated lepton region.
+As mentioned before, this analysis selects for the presence of one lepton, either an electron or muon, at least two jets, and some amount of \VETslash.
+In practical terms this means that we select for one tight electron (muon) as defined in section~\ref{sec:electrons} (\ref{sec:muons}) and veto the event if there are any additional tight or loose electrons and muons (muons and electrons).
+Some additional cuts beyond those of the identification requirements are imposed to cut out some of the background events while maximizing the number of signal events we could use for the multivariate analysis techniques.
+The additional \pt and $\eta$ requirements as specified in the same sections are also applied.
+For the tight electrons this meant raising the \pt requirement from 27\gev to 30\gev, which avoids using events right on the trigger turn on threshold while only removing $\sim$5\% of signal events, as seen in fig.~\ref{fig:electronPt_signal_loss}. 
+Because muon reconstruction and identification in CMS is very good, we only raised the \pt requirement to 25\gev from 24\gev.
 
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter5/electronPt.png}
+    \caption{Histograms of the electron \pt distribution where the gluon-gluon fusion signal is in green and the \Wjets background is in blue. The histograms are normalized to unit area. The red line show the cut on electron \pt where 5\% of the signal is lost.}
+    \label{fig:electronPt_signal_loss}
+\end{figure}
 
-
-
-\end{comment}
-
-\subsection{Data}
-\label{sec:data}
-\subsection{Monte Carlo}
-\subsection{QCD Data-Driven Sample}
-
-\section{Event Selection}
-\subsection{Trigger?}
-\subsection{Vertex Selection?}
-\subsection{Electron Selection}
-\subsection{Muon Selection}
-\subsection{Jet Selection}
-\subsection{Final Selection}
-
-\begin{comment}
-This analysis is searching for a Higgs boson which decays to two W bosons, one of which decays hadronically and the other which decays leptonically.
-Therefore the signal region for the search includes one tight lepton, at least 25\gev of \ETslash, and at least two jets.
-The vertex, jets, and lepton requirements all meet the object requirements as defined by CMS.
-The minimum electron (muon) \pt was set to 30\gev (25\gev) and the minimum jet \pt was set to 25\gev, except for the leading jet, which is required to have a \ptgt{30\gev}.
+Beyond the lepton requirements, this analysis selected for any number of jets as long as they pass the selection criteria found in section~\ref{sec:jets}.
 As the hadronic W decay will have at least two jets, that is the minimum number of jets needed to make it into the signal region, but we do not veto on additional jets which might come from ISR or FSR.
-The \ETslash requirement is there because of the neutrino from the leptonic decay of the W, but is set to a value on the higher side to remove as much QCD as possible without cutting out too much signal.
-Additionally, a b-tag veto is implemented for two reasons.
-The first is because hadronically decaying W only rarely decay to b-jets, but the \ttbar background includes at least two b-jets in its final state.
-The second reason is to keep this analysis orthogonal to the VH(H$\rightarrow${bb}) search~\cite{PhysRevD.89.012003}.
-Table~\ref{tab:FinalYields} shows the expected event yields in the signal region.
+The requirement of the leading jet having a \ptgt{30}\gev was implemented to reduce the impact of the multijet background while minimally impacting the signal.
+Besides the logical splitting of events based on lepton flavor, we also split events into three categories based on the number of jets in the event; exactly two jets, exactly three jets, and four or more jets.
+As stated in section~\ref{sec:MET} we also require at least 25\gev of \VETslash.
 
-Two main control regions are defined based on the aforementioned signal selection criteria.
-The first includes all of the same cuts as the signal region, but only one jets.
+Given that our signal has only one hadronic \W boson, we don't expect the $\W\rightarrow\bbbar$ branching fraction to contribute much to our signal.
+However, we also want to remove as many \ttbar or single top events as possible, which are commonly associated with \cPqb quarks.
+Thus we decided to veto events with b-tagged jets in order to reduce our backgrounds as much as possible.
+An additional reason to do this is to keep the orthogonality between this analysis and another CMS analysis which was looking at the \VH production channel where \Hbb.
+That analysis uses the same final state as this one, but requires two b-tagged jets~\cite{PhysRevD.89.012003}.
+To prevent overlap, we only ever considered events with one or fewer b-tagged jets and then we separate the events into two categories based on the number of b-tags.
+The zero b-tag events are used for signal extraction while the one b-tag events, which have a much larger impact from \ttbar and a higher \Hbb signal yield, are used for validation purposes and to check the volunteer signal contribution.
+
+%Should I show the cut flow tables for 1-btagged category?
+
+\section{MC Corrections}
+
+Although a significant amount of work and time goes into making sure the MC simulation properly models the data, there can still exist discrepancies between the observed data and simulation
+%there are still some corrections which must be made to the reconstructed objects or scale factors which must apply to weight each event in order to accurately mimic the behavior in data.
+Often this occurs because the exact data taking conditions are not known in advance, like the pileup conditions that will exist.
+Another reason the MC might not exactly mimic the data is that even state of the are generators are limited in their precision; much of the physics of hadronization is still unknown and hard physics processes can often only be computed up to NLO precision.
+Data, on the other hand, contains all hadronization effects and all orders of precision.
+I have already discussed some object specific corrections like the jet energy corrections, jet energy resolution, and \VETslash corrections in sections~\ref{sec:jets} and~\ref{sec:MET}.
+For other discrepancies it is often necessary to reweight the full event rather than a specific object.
+
+Broadly speaking these corrections can be separated into two categories: those which are common to all CMS analyses and those which are specific to this analysis.
+The first category includes the b-tagging CSV discriminant weights and top quark \pt spectrum weights for the \ttbar simulation while the second category includes the weights for our multijet sample.
+These event weights are applied after selecting for the events as they do not change the object kinematics.
+
+\subsection{MC Pileup Reweighting}
+
+Pileup is an important quantity as it can affect the reconstruction efficiency and even the observed kinematics of all the objects used in this analysis.
+Up to this point it has been described as additional proton-proton interactions within an event, besides the interaction that produced the physics objects we are interested in studying.
+There are several other properties of pileup which are worth noting.
+I have so far either referred to pileup in a general sense or as relating to additional objects (tracks or energy) which might be found in the same bunch crossing as the event under study.
+In reality there are two different categories of pileup.
+There is indeed the pileup which comes from additional proton-proton interactions within the same bunch crossing, known as ``in-time'' pileup.
+There is also energy from pileup added to objects because it was left in the sub-detectors from bunch crossings before or after the current one.
+This is known as ``out-of-time'' pileup and comes about because the integration window of the sub-detectors can be larger than 25\unit{ns}.
+An additional property is somewhat obvious in that the true number of proton-proton interaction within an event, $\mu$, is related to the instantaneous luminosity, which can vary over the course of data taking and even within a luminosity section (LS) period.
+As a benchmark, the average number of proton-proton interactions per bunch crossing in 2012 was 21~\cite{LumiPublic}.
+
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter5/pileup_pp_2012.pdf}
+    \caption{The mean number of interactions per bunch crossing in 2012. The min-bias cross section used for the calculation is 80\unit{mb}.}
+    \label{fig:pileup_pp_2012}
+\end{figure}
+
+The MC samples used in CMS are usually generated before the data is taken and are thus created with an assumption of what the pileup conditions will look like in data.
+A broad distribution of $\mu$ values, the number of min-bias pileup events overlaid on the hard scatter event, is generally chosen so as to cover all pileup conditions which might be experienced over the course of a data taking period.
+Somewhat unsurprisingly the anticipated $\mu$ distribution rarely matches the one one observed in the data and thus the MC must be reweighted such that the $\mu$ distributions match~\cite{PileupStudiesTwiki}.
+To generate a histogram for the average number of interactions per bunch crossing coming from data we make use of the approved pileupCalc tool provided by CMS.
+This tool takes as input the total inelastic cross section $\sigma_{\text{inelastic}}=69.3\unit{mb}$\footnote{This is the CMS approved best fit value, not the theoretical value.}, a file in JSON format with every run number and luminosity section matched to a given average instantaneous luminosity and integrated luminosity for that given LS, and another JSON formatted file with the run numbers and LS used in the given analysis\footnote{This analysis uses the full 2012 ``golden'' JSON file called\\Cert\_190456-208686\_8TeV\_PromptReco\_Collisions12\_JSON.txt.}.
+All of the MC samples used contain the same $\mu$ distribution scenario denoted by the ``S10'' notation in the dataset name.
+The per event weights as a function of $\mu$ are created by dividing the normalized distribution from data by the normalized MC based distribution.
+The weights are then applied to each MC event by looking up the weight for the mean number of pileup interactions used to generate that specific event~\cite{PileupWeightTwiki}. The distributions of pileup interactions in MC and data a well as the corresponding pileup weights can be seen in fig.~\ref{fig:pileup_reweighting}. Unfortunately, because the weights are not at unity, the statistical precision of the MC samples is reduced.
+Fig.~\ref{fig:npv_comparison} shows the data to MC comparison of the N\textsubscript{PV} distribution before and after the pileup reweighting scheme has been applied.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=0.95\textwidth]{\figpath/Chapter5/PileupDistribution.eps}
+      \caption{}
+      \label{fig:tnpu_distributions}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=0.95\textwidth]{\figpath/Chapter5/PileupWeights.eps}
+      \caption{}
+      \label{fig:pileup_weights}
+    \end{subfigure}
+    \caption{(a) Distributions of the number of pileup interactions in data and in simulation. (b) The derived pileup weights as a function of the number of interactions.}
+    \label{fig:pileup_reweighting}
+\end{figure}
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter5/nPV_noRW__comblep.png}
+      \caption{}
+      \label{fig:npv_no_pileup_reweight}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter5/nPV__comblep.png}
+      \caption{}
+      \label{fig:npv_pileup_reweight}
+    \end{subfigure}
+    \caption{Comparison of the number of primary vertices (N\textsubscript{PV}) in data and in MC (a) before the the pileup weights are applied and (b) after the weights are applied. These distributions correspond to the 19\fbinv collected during the 2012 data taking period and include both the electron and muon categories.}
+    \label{fig:npv_comparison}
+\end{figure}
+
+\subsection{Jet Energy Corrections and Resolution}
+
+The jet energy corrections and jet energy resolution scale factors make sure that the energy and resolution of the jets in MC matches those used in data and that the overall scale is correct.
+
+\subsection{CSV Reweighting}
+Ben: A comparison of the efficiency in data and Monte Carlo is shown in Figure 4.4. The scale factors shown in the figure are applied to the Monte Carlo to correct for the small differences. Scale factors are also applied to correct for differences in the mistag rate.
+
+There is a reweighting of the events to correct the b-tag discriminant distributions and a reweighting to correct the \pt distributions of the \ttbar MC being used.
+
+\subsection{TTbar Reweighting}
+\subsection{\texorpdfstring{cos(theta$_l$)}{CosThetaL} Reweighting}
+We also correct for a mis-modeling of the $\cos\left(\theta_{l}\right)$ angular variable
+
+\subsection{QCD Reweighting}
+
+
+Control region includes all of the same signal selection criteria, but only one jet.
 This region is used for the normalization of the data-driven QCD sample.
-A second control region requires there to be exactly 1 b-jet.
-This region is used to check the volunteer signal contribution and the efficacy of the b-tag veto.
+
+
+The normalization of this background is found by doing a two component fit to the data, allowing only the \Wjets and QCD fractions to float.
+
+
+
+\section{Data-to-MC Comparisons \& Yields}
+
+Table~\ref{tab:FinalYields} shows the expected event yields in the signal region.
 
 \begin{table}[htbp]
   \centering
@@ -289,48 +385,6 @@ Total Signal & 828.33 $\pm$ 28.78 & 359.64 $\pm$ 18.96 & 149.07 $\pm$ 12.21 \\ \
     \caption{Expected event yield in the signal region after combining the lepton channels.}
     \label{tab:FinalYields}
 \end{table}
-\end{comment}
-
-\section{MC Corrections}
-\subsection{MC Pileup Reweighting}
-\subsection{Jet Energy Corrections and Resolution}
-\subsection{\VETslash Phi Corrections}
-\label{sec:met_phi_corrections}
-This is a correction of the \ETslash modulation and some pileup effects.
-\VETslash should be independent of $\varphi$ because the pp collisions are rotationally symetric around the beam axis.
-Observed a sinasoidal modulation of period $2\pi$ in the $\varphi_{\ETslashAsSub}$ after reconstruction.
-Causes: anisotropic detector responses, inactive calorimeter cells, detector misalignment, displacement of the beam spot.
-Amplitude of modulation increases linearly with pileup and can be reduced by using the transformation in equation~\ref{eq:METPhi_transformation}.
-\begin{equation}
-\label{eq:METPhi_transformation}
-{\vec{p}_{T}}^{\text{ }i}\rightarrow{\vec{p}_{T}}^{\text{ }i}-\vec{c}
-\end{equation}
-Thus the \VETslash becomes:
-\begin{equation}
-    \label{eq:METPhi}
-    \begin{aligned}
-\VETslashxy={}&-\sum_{i \in \textrm{all}}\left(\ptvecsub{i}-\vec{c}\right) \\
-={}&-\sum_{i \in \textrm{all}}\ptvecsub{i}+\sum_{i \in \textrm{all}}\vec{c} \\
-={}&\VETslashraw+n\vec{c} \\
-={}&\VETslashraw+{\vec C}_{\mathrm{T}}^{\mathrm{xy}}
-    \end{aligned}
-\end{equation}
-However, instead of applying this correction based on the number of particles, the correction is parameterized based on the number of vertices as a proxy for the number of particles.
-\begin{equation}
-\label{eq:METPhi_correction}
-{\vec C}_{\mathrm{T}}^{\mathrm{xy}}=\vec{c}_{A}+n_{vtx}\vec{c}_{B}
-\end{equation}
-$\vec{c}_{A}$ and $\vec{c}_{B}$ are constant vectors and $n_{vtx}$ is the number of reconstructed primary vertices.
-
-\subsection{CSV Reweighting}
-Ben: A comparison of the efficiency in data and Monte Carlo is shown in Figure 4.4. The scale factors shown in the figure are applied to the Monte Carlo to correct for the small differences. Scale factors are also applied to correct for differences in the mistag rate.
-
-
-\subsection{TTbar Reweighting}
-\subsection{cos(theta$_l$) Reweighting}
-\subsection{QCD Reweighting}
-
-\section{Data-to-MC Comparisons}
 
 \section{Multivariate Analysis: Kinematic Boosted Decision Tree}
 Rishi Thesis pages 76-79
@@ -408,12 +462,13 @@ TURN THESE SUBSECTIONS INTO BOLDED PARAGRAPH HEADERS
 \subsection{Lepton Selection and Trigger Efficiency}
 \subsection{W+jets Shape Uncertainties}
 \subsection{Pileup Weights}
+In order to assess the effect of a systematic uncertainty due to choice of $\sigma_{\text{inelastic}}=69.3\unit{mb}$, a $\pm$7\% variation was used.
 \subsection{CSV Weights}
-\subsection{Top $p_{T}$}
+\subsection{Top \texorpdfstring{$p_{T}$}{pT}}
 \subsection{LHC Luminosity}
 \subsection{Sample Cross Sections}
 \subsection{MET Uncertainty }
-\subsection{QCD $\eta$ Weights Uncertainty}
+\subsection{QCD \texorpdfstring{$\eta$}{eta} Weights Uncertainty}
 \subsection{Summary of Systematics}
 
 \begin{comment}

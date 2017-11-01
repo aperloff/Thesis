@@ -14,7 +14,7 @@
 
 
 
-\chapter{\uppercase {Event Reconstruction}}
+\chapter{\texorpdfstring{\uppercase {Event Reconstruction}}{Event Reconstruction}}
 \label{ch:event_reconstruction}
 
 The CMS detector is designed to identify the various particle species which travel through it after a proton-proton collision.
@@ -265,6 +265,7 @@ After the removal of the PF photons, the remaining excesses are classified as ne
 Clusters which are not matched to any tracks are used to make PF photons in the ECAL and neutral hadrons in the HCAL.
 
 \section{Electrons}
+\label{sec:electrons}
 
 Broadly speaking, the PF electron candidate identification process discussed in section~\ref{sec:particle_flow} can be considered ``tracker-driven''~\cite{CMS-PAS-EGM-10-004}.
 This method is idea for low-\pt electrons and electrons in high multiplicity environments like jets.
@@ -301,9 +302,9 @@ A set of values for the identification requirements is called a working point (W
 This analysis makes use of the tight working point for the selected electron and the loose working point to veto on additional electrons.
 Table~\ref{tab:electron_id_cut} lists the cut based identification requirements for the tight and loose WP.
 Similarly, table~\ref{tab:electron_id_mva} lists the requirements for the MVA based identification.
-In addition to the identification requirements, selected electrons must have a $\pt>27\gev$ and be in the barrel, \absetaltss{1.4442}{sc}, or endcap, \absetass{1.566}{2.5}{sc}.
+In addition to the identification requirements, selected electrons must have a $\pt>30\gev$ and be in the barrel, \absetaltss{1.4442}{sc}, or endcap, \absetass{1.566}{2.5}{sc}.
 The must also pass a conversion veto to make sure the aren't produced by a converted photon.
-Loose electrons have the same $eta$ and conversion requirements, but are only required to have a $\pt>15\gev$.
+Loose electrons have the same $\eta$ and conversion requirements, but are only required to have a $\pt>15\gev$.
 The \pt requirements are selected to match the HLT requirements of the PD listed in section~\ref{sec:data}.
 
 \begin{table}[htbp]
@@ -346,6 +347,7 @@ The \pt requirements are selected to match the HLT requirements of the PD listed
 \end{table}
 
 \section{Muons}
+\label{sec:muons}
 
 In addition to using the PF algorithm to identify muon candidates, CMS uses two supplementary methods to identify high and low-momentum muon candidates~\cite{CMS-PAS-MUO-10-002}. The union of these collections will me used for the final muon reconstruction. To capture the low-momentum muons, charged particle tracks which have a \pt and $p$ above a threshold are extrapolated out to the muon sub-detector. If the track position matched a track segment in the muon sub-detector, then the track is made into ``tracker muon.'' The other method, able to capture the high-momentum muons, is to find a match in the tracker for the standalone muons made by the muon sub-detector, which is the reverse of the previous method. If a match is found, then the candidate is considered a ``global muon'' and a global fit of the two tracks is made to improve the momentum measurement and resolution. The global muons, tracker muons, and standalone muons are then combined into a single collection which avoids double counting.
 
@@ -356,7 +358,7 @@ I_{\mu}^{PF}=\sum_{\Delta{R}<0.4}\pt^{\left(CH\right)}+max\left(\sum_{\Delta{R}<
 \end{equation}
 The variable is very similar to the one used for electrons except that instead of an effective area pileup correction, the muons use a pileup correction based on the sum \pt of the charge particles which don't come from the same vertex as the muon candidate. The $\Delta\beta$ term is set to 0.5 and is the ratio of charged to neutral particles in pileup~\cite{CMS-PAS-PFT-10-002}.
 
-The identification requirements for electrons also rely on two WP, a set of tight cuts to select for muons to use in the analysis and a set of loose cuts to veto on additional muons. One again, additional \pt and $\eta$ requirements are imposed on the tight and loose muons to ensure that they match the requirements of the PD as stated in~\ref{sec:data}. The tight muons must have $\pt>24\gev$ and be within \absetalt{2.1} whereas the loose muons must have $\pt>10\gev$ and be within \absetalt{2.5}. The cuts used to identify good, prompt muons are listed in table~\ref{tab:muon_id_cut}.
+The identification requirements for muons also relies on two WP, a set of tight cuts to select for muons to use in the analysis and a set of loose cuts to veto on additional muons. One again, additional \pt and $\eta$ requirements are imposed on the tight and loose muons to ensure that they match the requirements of the PD as stated in~\ref{sec:data}. The tight muons must have $\pt>25\gev$ and be within \absetalt{2.1} whereas the loose muons must have $\pt>10\gev$ and be within \absetalt{2.5}. The cuts used to identify good, prompt muons are listed in table~\ref{tab:muon_id_cut}.
 
 \begin{table}[htbp]
     \caption{Cut based muon identification requirements for the tight and loose working points.}
@@ -517,9 +519,11 @@ This multiplicative correction will only remove energy from within the jet and w
 The L2Relative correction seeks to correct for the non-linearity in the jet response as a function of $\eta$ while the L3Absolute correction does the same thing as a function of \pt.
 These are again multiplicative corrections that can either increase or decrease the energy of the jet.
 All three corrections are applied to both data and simulation.
-An additional level of correction, termed L2L3Residual, is applied only to data to correct for the difference in scale between the data and simulation. For a more in-depth discussion of pileup mitigation techniques and jet energy corrections see appendix~\ref{appendix:JERC}.
+An additional level of correction, termed L2L3Residual, is applied only to data to correct for the difference in scale between the data and simulation.
+Finally an $\eta$ dependent smearing factor is applied to the jets coming from the MC samples in order to make the jet energy resolution in MC match the jet energy resolution in data~\cite{JetEnergyResolutionTwiki}.
+For a more in-depth discussion of pileup mitigation techniques and jet energy corrections see appendix~\ref{appendix:JERC}.
 
-A set of quality cuts, collectively called PF jet identification, are applied to the resulting collection of jets to ensure that only real, hard scatter PF jets are used during the analysis~\cite{CMS-AN-2010-003}. Several working points are defined at varying levels of efficiency and purity, but this analysis makes use of the loose criteria shown in table~\ref{tab:PFJetID}~\cite{PFJetID}. The variables used in these cuts include the fraction of neutral hadrons in the jet $f_{NH}$, the fraction of neutral EM particles $f_{\gamma}$, the fraction of charged hadrons $f_{CH}$, the fraction of charged EM particles $f_{EM}$, the number of constituents $n_{constituents}$, and the multiplicity of charged particles $n_{charged}$. In addition to the PF jet quality cuts, this analysis requires that all jets be within \abseta{2.4}, the leading jet have $\pt>30\gev$, and all other jets have $\pt>25\gev$. Additionally, all jets are required to be at least ${\Delta}R(\textrm{jet},\textrm{lepton})>0.3$ away from any isolated, selected lepton.
+A set of quality cuts, collectively called PF jet identification, are applied to the resulting collection of jets to ensure that only real, hard scatter PF jets are used during the analysis~\cite{CMS-AN-2010-003}. Several working points are defined at varying levels of efficiency and purity, but this analysis makes use of the loose criteria shown in table~\ref{tab:PFJetID}~\cite{PFJetID}. The variables used in these cuts include the fraction of neutral hadrons in the jet $f_{NH}$, the fraction of neutral EM particles $f_{\gamma}$, the fraction of charged hadrons $f_{CH}$, the fraction of charged EM particles $f_{EM}$, the number of constituents $n_{constituents}$, and the multiplicity of charged particles $n_{charged}$. All cuts on the jet energy fractions are made on the raw jets, before any energy correction are applied. In addition to the PF jet quality cuts, this analysis requires that all jets be within \abseta{2.4}, the leading jet have $\pt>30\gev$, and all other jets have $\pt>25\gev$. Additionally, all jets are required to be at least ${\Delta}R(\textrm{jet},\textrm{lepton})>0.3$ away from any isolated, selected lepton.
 \begin{table}[htbp]
     \caption{Cut based PF jet identification requirements for the loose working point.}
     \centering
@@ -666,10 +670,107 @@ This is shown in equation~\ref{eq:MET_uncorr_PFObjects}, but can be simplified f
 In equation~\ref{eq:MET_uncorr_threshold} the jets are further broken into two classes based on their corrected \pt and in equation~\ref{eq:MET_uncorr} the jets are broken into the pileup corrected jets term and a term for the pileup itself, where $\left(\ptvecsubsup{jet}{uncorr.}-\ptvecsubsup{jet}{L1}\right)$ is the additional energy due to pileup (offset).
 Now that the \VETslash is fully broken down it can be corrected by replacing $\ptvecsubsup{jet}{L1}$ in the first term with $\ptvecsubsup{jet}{L123}$ to give equation~\ref{eq:MET_type1_final}.
 This is a correction on the clustered energy in the event above a given threshold~\cite{METAnalysis}.
-In this analysis the resulting quantity is required to have at least 25\gev in order to reduce the QCD events making it through the selection process.
 
+An additional modification to the \VETslash to remove a modulation in the $\varphi$ component is also used.
+%and is discussed further in appendix~\ref{appendix:met_phi_corrections}.
+\VETslash should be independent of $\varphi$ because the proton-proton collisions are rotationally symetric around the beam axis, so any asymmetry must be due to an error in the simulation or reconstruction.
+However, we observed a sinasoidal modulation of period $2\pi$ in the \ETslashvarphi for both data and simulation after reconstruction, as can be seen in fig.~\ref{fig:METPhi_dataMC_Before}.
+This effect can be caused by an anisotropic detector responses, inactive calorimeter cells, detector misalignment (for even one of the sub-detectors), or a displacement of the beam spot.
+All of these will cause the same effect.
 
-In addition to propagating the JEC to the \VETslash, CMS also filters events and or \VETslash contribution which might introduce noise from the calorimeters or beam halo~\cite{METperf2011}. An additional modification to the \VETslash to correct a $\varphi$ asymmetry is also used, but will be discussed further in section~\ref{sec:met_phi_corrections}. A pileup correction to the \VETslash was also available, but was not implemented in this analysis. It is nevertheless discussed in appendix~\ref{appendix:MET}.
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter4/METPhi_Before-eps-converted-to.pdf}
+      \caption{}
+      \label{fig:METPhi_dataMC_Before}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter4/METxyVsNPV_Before-eps-converted-to.pdf}
+      \caption{}
+      \label{fig:METxyVsNPV_Before}
+    \end{subfigure}
+    \caption{(a) Distribution of the \ETslashvarphi for data (black) and simulation (red). Only the \Wjets simulation is shown here, although all of the simulations suffer from the same modulation. (b) Distributions of \Eslashxy as a function of the number of primary vertices. The black and red markers represent the $x$ and $y$ distributions for simulation, respectively, while the blue and green markers are for data.}
+    \label{fig:METPhi_Before}
+\end{figure}
+
+While the exact cause of the modulation might be unknown, we do know that the amplitude of the modulation increases linearly with the number of proton-proton interactions as each additional particle in the event will increase the $\varphi$ asymmetry.\footnote{Assuming the additional particles are created isotropically.}
+The dependence on the number of primary vertices can be seen in fig.~\ref{fig:METxyVsNPV_Before}, which shows the $x$ and $y$ components of the \ETslash 4-vector as a function of the number of primary vertices.
+Without first correcting this modulation, any cut on the \pt of the \ETslash would preferentially select events on a specific side of the detector.
+Luckily, the amplitude of the modulation can be reduced by using the transformation in equation~\ref{eq:METPhi_transformation}.
+\begin{equation}
+\label{eq:METPhi_transformation}
+{\vec{p}_{T}}^{\text{ }i}\rightarrow{\vec{p}_{T}}^{\text{ }i}-\vec{c}
+\end{equation}
+Thus the \VETslash becomes:
+\begin{equation}
+    \label{eq:METPhi}
+    \begin{aligned}
+\VETslashxy={}&-\sum_{i \in \textrm{all}}\left(\ptvecsub{i}-\vec{c}\right) \\
+={}&-\sum_{i \in \textrm{all}}\ptvecsub{i}+\sum_{i \in \textrm{all}}\vec{c} \\
+={}&\VETslashraw+n\vec{c} \\
+={}&\VETslashraw+{\vec C}_{\mathrm{T}}^{\mathrm{xy}}
+    \end{aligned}
+\end{equation}
+However, instead of applying this correction based on the number of particles, the correction is parameterized based on the number of vertices as a proxy for the number of particles. The correction as a function of the number of vertices is:
+\begin{equation}
+\label{eq:METPhi_correction}
+{\vec C}_{\mathrm{T}}^{\mathrm{xy}}=\vec{c}_{A}+n_{vtx}\vec{c}_{B}
+\end{equation}
+where $\vec{c}_{A}$ and $\vec{c}_{B}$ are constant vectors and $n_{vtx}$ is the number of reconstructed primary vertices.
+
+Practically this corrections is accomplished by fitting the distributions in fig.~\ref{fig:METxyVsNPV_Before} with a first order polynomial to obtain $\vec{c}_{A}$ and $\vec{c}_{B}$.
+Those coefficients can be found in table~\ref.
+Then we use equations~\ref{eq:METx_corr} and~\ref{eq:METy_corr}, which differ from equation~\ref{eq:METPhi} only due to the sign of the coefficients.
+\begin{align}
+E_{\mathrm{x}}^{\mathrm{corrected}}\hspace{-3.5em}/\kern3.1em ={}& E_{\mathrm{x}}^{\mathrm{RECO}}\hspace{-2.7em}/\kern2.4em - \left([0]_{\mathrm{x}}+[1]_{\mathrm{x}}{\cdot}\mathrm{N}_{\mathrm{PV}}\right) \label{eq:METx_corr}\\
+E_{\mathrm{y}}^{\mathrm{corrected}}\hspace{-3.5em}/\kern3.1em ={}& E_{\mathrm{y}}^{\mathrm{RECO}}\hspace{-2.7em}/\kern2.4em - \left([0]_{\mathrm{y}}+[1]_{\mathrm{y}}{\cdot}\mathrm{N}_{\mathrm{PV}}\right) \label{eq:METy_corr}
+\end{align} 
+The results of this correction are shown in fig.~\ref{fig:METPhi_After}, where both the modulation in $\varphi$ and the slope as a function of N\textsubscript{PV} are gone.
+From here we can place a cut on the \pt of the \VETslash object with biasing our selection.
+
+\begin{table}[hbtp]\footnotesize
+\centering
+\begin{tabular}{l l l}
+\hline
+Coordinate & Parameter 0 & Parameter 1 \\
+\hline
+\multicolumn{3}{c}{\textbf{Data}} \\
+\hline
+$x$ & $2.0105E-01$ & $4.2663E-01$ \\
+$y$ & $-9.1350E-01$ & $-2.3120E-01$ \\
+\hline
+\multicolumn{3}{c}{\textbf{MC}} \\
+\hline
+$x$ & $2.9059E-01$ & $-3.5293E-03$ \\
+$y$ & $3.0183E-01$ & $-1.9974E-01$ \\
+\hline
+\end{tabular}
+\caption{The fit parameters for the \VETslashvarphi corrections.}
+\label{tab:METPhi_Correction_Coefficients}
+\end{table}
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter4/METPhi_After-eps-converted-to.pdf}
+      \caption{}
+      \label{fig:METPhi_dataMC_After}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter4/METxyVsNPV_After-eps-converted-to.pdf}
+      \caption{}
+      \label{fig:METxyVsNPV_After}
+    \end{subfigure}
+    \caption{(a) Distribution of the \ETslashvarphi for data (black) and simulation (red) with the correction for the modulation applied. Only the \Wjets simulation is shown here, although all of the simulations suffer from the same modulation. (b) Distributions of \Eslashxy as a function of the number of primary vertices after the $\varphi$ modulation correction has been applied. The black and red markers represent the $x$ and $y$ distributions for simulation, respectively, while the blue and green markers are for data.}
+    \label{fig:METPhi_After}
+\end{figure}
+
+In this analysis the resulting \ETslash is required to have at least 25\gev in order to reduce the QCD events making it through the selection process.
+A pileup correction to the \VETslash was also available, but was not implemented in this analysis.
+It is nevertheless discussed in appendix~\ref{appendix:type_zero_met}.
+In addition to propagating the JEC to the \VETslash, CMS also filters events and or \VETslash contributions which might introduce noise from the calorimeters or beam halo~\cite{METperf2011}.
+These filters are discussed further in appendix~\ref{appendix:met_filters}.
 
 \section{Event Generation}
 \label{sec:event_generation}
