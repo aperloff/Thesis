@@ -333,18 +333,98 @@ Fig.~\ref{fig:npv_comparison} shows the data to MC comparison of the N\textsubsc
     \label{fig:npv_comparison}
 \end{figure}
 
-\subsection{Jet Energy Corrections and Resolution}
-
-The jet energy corrections and jet energy resolution scale factors make sure that the energy and resolution of the jets in MC matches those used in data and that the overall scale is correct.
-
 \subsection{CSV Reweighting}
-Ben: A comparison of the efficiency in data and Monte Carlo is shown in Figure 4.4. The scale factors shown in the figure are applied to the Monte Carlo to correct for the small differences. Scale factors are also applied to correct for differences in the mistag rate.
+Section~\ref{sec:btagging} introduced the criterion for tagging a jet as being produced by a \cPqb quark and the use of the Combined Secondary Vertex (CSV) discriminant.
+The derivation of this discriminant is described in~\cite{Weiser:927399,BTV-12-001}.
+This analysis relies heavily on the identification of \cPqb jets to veto the \ttbar background, so it is absolutely crucial that it behave the same in both data and MC and accurately describe the rate of observing a \cPqb jet.
+\cite{CMS-AN-13-130} notes that the tagging efficiency in data is not the same as that in MC, so a correction to the CSV discriminant must be made.
+The corrections described there both correct the rate of observing a jet in MC with a CSV value above a given threshold as well as the general shape of the CSV distribution.
+If at the end of the procedure the shape of the data and MC distributions agree, then they will also properly assess the rate of events passing a given CSV threshold.
 
-There is a reweighting of the events to correct the b-tag discriminant distributions and a reweighting to correct the \pt distributions of the \ttbar MC being used.
+The method is based on calculating a scale factor for both heavy and light flavor quarks which is parameterized by the CSV value, jet \pt, and, in the case of light flavor quarks, jet $\eta$.
+We first retrieve the truth level jet flavor in order to determine the correct category: \cPqb jet, \cPqc jet, or light flavor (anything else).
+The \cPqc jets are given a flat scale factor of 1, meaning that there is no need to correct the CSV value for this flavor.
+The \cPqb jet scale factors are divided into five \pt bins of \ptlt{40\gev}, \ptrange{40\gev}{60\gev}, \ptrange{60\gev}{100\gev}, \ptrange{100\gev}{160\gev}, and \ptgt{160\gev}.
+The light flavor scale factors are divided into only three \pt bins of \ptlt{40\gev}, \ptrange{40\gev}{60\gev}, and \ptgt{60\gev}, but are also divided into three eta bins of \absetalt{0.8}, \absetaleqlt{0.8}{1.6}, and \absetaleqlt{1.6}{2.4}.
+An individual scale factor is retrieved for each jet, which is then combined as in equation~\ref{eq:CSVWeight_SF_total} in order to create an event weight.
+\begin{equation}\label{eq:CSVWeight_SF_total}
+  SF_{\mathrm{total}}=\prod_{i}^{N_{\mathrm{jets}}}SF_{\mathrm{jet}_{i}}=SF_{\mathrm{jet}_{1}}{\cdot}SF_{\mathrm{jet}_{2}}{\cdot}...
+\end{equation}
+The CSV value for each jet is unchanged, but the event is weighted by $SF_{\mathrm{total}}$.
 
-\subsection{TTbar Reweighting}
+\subsection{\texorpdfstring{\ttbar}{TTbar} Reweighting}
+Differential top-quark-pair analyses have shown that the shape of the \pt spectrum for top quarks is softer in data than predicted by simulation~\cite{Chatrchyan:2012saa,TopPtReweighting}.
+Although it has been shown that NNLO predictions show reasonable agreement~\cite{Kidonakis2014}, this analysis must correct for the discrepancy in the \ttbar simulation.
+Events are reweighted based on the \pt of the generator level \cPqt and \cPaqt in only the \ttbar simulation.
+The weight $w_{\mathrm{TopPt}}$ is calculated as:
+\begin{align}
+  w_{\mathrm{TopPt}} ={}& \sqrt{SF_{\cPqt}{\cdot}SF_{\cPaqt}} \label{eq:TopPtWeight} \\
+  SF\left(\ptsup{gen}\right) ={}& \exp\left(a+b\ptsup{gen}\right) \label{eq:TopPtSF}
+\end{align}
+with $a=0.156$ and $b=-0.00141$.
+Fig.~\ref{fig:top_pt_weights} shows the distribution of weights for electron and muon events separately.
+The bulk of the weights are centered around 1, indicating that no correction is necessary, with a long low side tail, indicating that a good fraction of events require the top \pt to be scaled down.
+Some events do require that the top \pt be increased.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter5/top_weight_ele.png}
+      \caption{}
+      \label{fig:top_pt_weights_ele}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+      \includegraphics[width=\textwidth]{\figpath/Chapter5/top_weight_mu.png}
+      \caption{}
+      \label{fig:top_pt_weights_mu}
+    \end{subfigure}
+    \caption{Top \pt weight distributions for (a) electrons events and (b) muon events.}
+    \label{fig:top_pt_weights}
+\end{figure}
+
 \subsection{\texorpdfstring{cos(theta$_l$)}{CosThetaL} Reweighting}
 We also correct for a mis-modeling of the $\cos\left(\theta_{l}\right)$ angular variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{QCD Reweighting}
 

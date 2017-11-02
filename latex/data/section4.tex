@@ -506,9 +506,9 @@ The result of this process can be seen in fig.~\ref{fig:anti-kT_jets}.
     \label{fig:anti-kT_jets}
 \end{figure}
 
-After CHS and clustering the momentum and energy of the jets still might not be the same as those from the initial parton, whether because of pileup or detector effects.
+After CHS and the clustering procedure, the momentum and energy of the jets still might not be the same as those from the initial parton, whether because of pileup or detector effects.
 To correct for this, CMS uses a factorized approach, wherein each level of correction targets a specific effect and each correction is applied in order.
-The goal is to make sure each jet has a relative response ($RelRsp=\frac{\ptsup{reco}}{\ptsup{gen}}$) of 1.
+The goal is to make sure each jet has a relative response ($\mathcal{R}_{rel}=RelRsp=\frac{\ptsup{reco}}{\ptsup{ref}}$) of 1.0, where $\ptsup{reco}$ is the reconstructed jet \pt and $\ptsup{ref}$ is the true or reference \pt of the jet without all of the deleterious effects.
 This type of scaling is commonly referred to as a jet energy correction (JEC)\footnote{The terms \pt and energy will be used interchangeably only when discussing the jet energy corrections. This is because the corrections will affect both the energy and \pt terms within the jet 4-momentum.}.
 The first level of correction, commonly referred to as the L1FastJet corrections, starts by removing any remaining pileup\footnote{CHS was able to remove pileup energy coming from charged hadrons, but not energy added to the jet from, for example, neutral hadrons or photons as seen in figure~\ref{fig:PFJet_PileupComposition}.} or electronic noise energy that may have made it into the jet reconstruction.
 This multiplicative correction will only remove energy from within the jet and will take the form in equation~\ref{eq:JEC_L1FastJet}, where $\rho$ is the median energy density of the event, $A$ is the jet area, and $f$ is an estimate of the offset inside the jet per unit of jet area~\cite{JINST2011,Cacciari2007}.
@@ -520,8 +520,47 @@ The L2Relative correction seeks to correct for the non-linearity in the jet resp
 These are again multiplicative corrections that can either increase or decrease the energy of the jet.
 All three corrections are applied to both data and simulation.
 An additional level of correction, termed L2L3Residual, is applied only to data to correct for the difference in scale between the data and simulation.
-Finally an $\eta$ dependent smearing factor is applied to the jets coming from the MC samples in order to make the jet energy resolution in MC match the jet energy resolution in data~\cite{JetEnergyResolutionTwiki}.
 For a more in-depth discussion of pileup mitigation techniques and jet energy corrections see appendix~\ref{appendix:JERC}.
+
+A final level of modification to the reconstructed objects is an $\eta$ dependent smearing factor applied to the jet 4-momenta coming from the MC samples.
+The distribution of jet energies within the MC simulation tends to be more sharply peaked and less broad than the same distribution in data.
+In other words, the MC has a smaller jet energy resolution (JER) than we can realistically measure using the CMS detector.
+The deterministic ``smearing'' method recommended by CMS seeks to make the jet energy resolution in MC match the jet energy resolution in data.
+The reconstructed jet \pt is scaled by a correction factor $C_{JER}$ as determined in equation~\ref{eq:C_JER}, where $C_{\eta}$ is a correction factor derived as a function of $\eta$ whose values can be found in table~\ref{tab:JER_Ceta}.
+The multiplicative JER correction factor is then used to modify the jet 4-momentum as in equation~\ref{eq:Jet_JER}.
+\begin{equation}\label{eq:C_JER}
+    C_{JER}=max\left(0.0,\frac{p_{T}^{GEN}}{p_{T}^{RECO}}+C_{\eta}\cdot\left(1-\frac{p_{T}^{GEN}}{p_{T}^{RECO}}\right)\right)
+\end{equation}
+\begin{equation}\label{eq:Jet_JER}
+    \textbf{X}_{Jet}^{corrected}=C_{JER}{\cdot}\textbf{X}_{Jet}^{RECO}
+\end{equation}
+Although the reconstruction of the \VETslash object will not be discussed until section~\ref{sec:MET}, it is important to note that its value is intrinsicaly tied to that of the jets.
+Any modification to the jet energies must also be propogated to the \VETslash.
+The propogation of the corrections due to the JER scaling is shown in equations~\ref{eq:MET_JER_X} and~\ref{eq:MET_JER_Y}.
+The propogation of the JEC, on the other hand, will be discussed in section~\ref{sec:MET}~\cite{JetEnergyResolutionTwiki}.
+\begin{equation}
+    E_{\mathrm{x}}^{\mathrm{corrected}}\hspace{-3.5em}/\kern3.1em = \left(1-C_{JER}\right)Jet_{x}^{RECO}+E_{\mathrm{x}}^{\mathrm{RECO}}\hspace{-2.7em}/\kern3.1em\label{eq:MET_JER_X}
+\end{equation}
+\begin{equation}
+    E_{\mathrm{y}}^{\mathrm{corrected}}\hspace{-3.5em}/\kern3.1em = \left(1-C_{JER}\right)Jet_{y}^{RECO}+E_{\mathrm{y}}^{\mathrm{RECO}}\hspace{-2.7em}/\kern3.1em\label{eq:MET_JER_Y}
+\end{equation}
+
+\begin{table}[htbp]
+    \caption{Jet energy resolution (JER) scale factors.}
+    \centering
+    \begin{tabular}{l l}
+        \hline
+        $|\eta|$ & Correction Factor $C_{\eta}$ \\
+        \hline
+        $<0.5$ & \longmassasym{1.052}{0.012}{0.012}{0.061}{0.062}{} \\
+        $\geqslant0.5$ \& $<1.1$ & \longmassasym{1.057}{0.012}{0.012}{0.055}{0.056}{} \\
+        $\geqslant1.1$ \& $<1.7$ & \longmassasym{1.096}{0.017}{0.017}{0.062}{0.063}{} \\
+        $\geqslant1.7$ \& $<2.3$ & \longmassasym{1.134}{0.035}{0.035}{0.085}{0.087}{} \\
+        $\geqslant2.3$ \& $<5.0$ & \longmassasym{1.288}{0.127}{0.127}{0.153}{0.155}{} \\
+        \hline
+    \end{tabular}
+    \label{tab:JER_Ceta}
+\end{table}
 
 A set of quality cuts, collectively called PF jet identification, are applied to the resulting collection of jets to ensure that only real, hard scatter PF jets are used during the analysis~\cite{CMS-AN-2010-003}. Several working points are defined at varying levels of efficiency and purity, but this analysis makes use of the loose criteria shown in table~\ref{tab:PFJetID}~\cite{PFJetID}. The variables used in these cuts include the fraction of neutral hadrons in the jet $f_{NH}$, the fraction of neutral EM particles $f_{\gamma}$, the fraction of charged hadrons $f_{CH}$, the fraction of charged EM particles $f_{EM}$, the number of constituents $n_{constituents}$, and the multiplicity of charged particles $n_{charged}$. All cuts on the jet energy fractions are made on the raw jets, before any energy correction are applied. In addition to the PF jet quality cuts, this analysis requires that all jets be within \abseta{2.4}, the leading jet have $\pt>30\gev$, and all other jets have $\pt>25\gev$. Additionally, all jets are required to be at least ${\Delta}R(\textrm{jet},\textrm{lepton})>0.3$ away from any isolated, selected lepton.
 \begin{table}[htbp]
@@ -720,7 +759,7 @@ However, instead of applying this correction based on the number of particles, t
 where $\vec{c}_{A}$ and $\vec{c}_{B}$ are constant vectors and $n_{vtx}$ is the number of reconstructed primary vertices.
 
 Practically this corrections is accomplished by fitting the distributions in fig.~\ref{fig:METxyVsNPV_Before} with a first order polynomial to obtain $\vec{c}_{A}$ and $\vec{c}_{B}$.
-Those coefficients can be found in table~\ref.
+Those coefficients can be found in table~\ref{tab:METPhi_Correction_Coefficients}.
 Then we use equations~\ref{eq:METx_corr} and~\ref{eq:METy_corr}, which differ from equation~\ref{eq:METPhi} only due to the sign of the coefficients.
 \begin{align}
 E_{\mathrm{x}}^{\mathrm{corrected}}\hspace{-3.5em}/\kern3.1em ={}& E_{\mathrm{x}}^{\mathrm{RECO}}\hspace{-2.7em}/\kern2.4em - \left([0]_{\mathrm{x}}+[1]_{\mathrm{x}}{\cdot}\mathrm{N}_{\mathrm{PV}}\right) \label{eq:METx_corr}\\
@@ -855,6 +894,8 @@ Event generation simulates the particle kinematics for a given event, but doesn'
 To simulate the response of the CMS detector, the generators are interfaced with a sophisticated detector simulation based on the \textsc{Geant4}~\cite{geant4nim,geant4ieee} software package, which takes into account the exact detector geometry as well as all materials used.
 The alignment, calibration, and other conditions which may change over time are periodically checked and are stored in a database.
 These conditions are used both for offline simulation and reconstruction as well as for online activities.
+A snapshop of the conditions at some point in time is called a global tag.
+For reference, this analysis uses the GR\_R\_53\_V10 and START53\_V7A global tags for data and simulation, respectively~\cite{JETGlobalTag}.
 The final state particles from the event generator are sent to the detector simulation, which tracks the particles as they move through the detector depositing energy into what are called simulated hits (SimHits).
 While the models of electromagnetic interactions are extremely precise, the hadronic interactions have a greater uncertainty associated with them.
 The simulation goes through the data acquisition process, event simulating the responses of the photodetectors and readout electronics.
