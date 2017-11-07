@@ -746,7 +746,7 @@ While it may be tempting to use the 4-vectors of the final state objects as inpu
 Conversely, networks can be subject to sever overtraining if too many high level variables are used as input.
 Instead, the user must choose a select set of input distributions to use, preferably ones that already has some separation between the signal(s) and  background(s).
 It is also a good idea to provide the BDT only the dominant signal and background to train on, so as to develop a classifier with the maximal amount of separation power.
-Given table~\ref{tab:yields_KinMEBDT} we used the normalized \Wjets background and \HWW signal MC as input samples.
+Given table~\ref{tab:yields_KinMEBDT}, we used the normalized \Wjets background and \HWW signal MC as input samples.
 A list of variables with possible separation powers was then created.
 Each variable's separation power was quantified using the two figures of merit (FOM) listed in equation~\ref{eq:BDT_FOM1} and~\ref{eq:BDT_FOM2}, where $i$ denotes the bin number in the distribution.
 \begin{align}
@@ -782,6 +782,104 @@ Fig.~\ref{fig:BDT_FOM} shows several of these distributions with their associate
     \label{fig:BDT_FOM}
 \end{figure}
 
+An additional method for determining useful variables is to calculate the cumulative distribution function (CDF) for each of the variables being tested.
+The CDF histograms are built bin-by-bin from the nominal distributions of each variable.
+The contents of any given bin in the CDF are equal to the sum of that bin and all of the previous bins in the nominal distribution as shown in equation~\ref{eq:CDF}.
+\begin{equation}\label{eq:CDF}
+  C_{i}^{\text{CDF}}=\sum_{\text{bin}=0}^{i}C_{i}^{\text{nominal}}
+\end{equation}
+Fig.~\ref{fig:CDF_example} shows the PDF for the lepton \pt variable and the corresponding CDF.
+We are looking for variables which maximize the difference between the signal and background curves.
+To this end we also calculate FOM1 and FOM2 for the CDF distributions.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_InputVarOpt/lepPt.png}
+        \caption{}
+        \label{fig:lepPt_nominal}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_InputVarOpt/lepPt_cumulative.png}
+        \caption{}
+        \label{fig:lepPt_CDF}
+    \end{subfigure}
+    \caption{(a) Nominal and (b) CDF distributions for the lepton \pt variable. The signal is shown in black and the background in green.}
+    \label{fig:CDF_example}
+\end{figure}
+
+The variables were then ranked based on these four FOM values, separately for each jet bin, and only the top 20 variables in each jet bin were chosen to move on.
+The final ranking was achieved by averaging the rankings of the four methods, the purpose of which was to remove any undue method bias.
+Section~\ref{sec:BDT_input_optimization} will discuss the specific variables chosen for each jet bin.
+However, a list of all variables considered can be found in table~\ref{tab:all_possible_BDT_kinematic_variables}.
+The lepton and jet 4-vectors are denoted with \Pl and \cPj, respectively, with the jets sorted in order of descending \pt.
+Some of the variable definitions are listed below:
+\begin{itemize}
+  \item ${{}\pt}_{x}$: The \pt of object $x$ in the event.
+  \item ${{}\eta}_{x}$: The $\eta$ of object $x$ in the event.
+  \item ${{}\varphi}_{x}$: The $\varphi$ of object $x$ in the event.
+  \item \Mt: The transverse component of the mass of the leptonically decaying \W boson.
+  \item $\Delta{R}\left(\Pl,\cPj_{\text{1}}\right)$: The distance in $R$ between the lepton and the highest \pt jet ($\Delta{R}=\sqrt{\Delta\Phi^{2}+\Delta\eta^{2}}$).
+  \item $HT$: The scalar sum of the \pt of all jets in the event
+  \item $\Mlvjj$: The 4-body mass defined as the mass of the vector sum of the lepton, \VETslash, and the two highest \pt jets in the event.
+  \item ${{}\pt}_{\lvjj}$: The \pt of the 4-body system created by summing the 4-vectors of the lepton, \VETslash, and the two highest \pt jets in the event.
+  \item $\Delta{R}\left(\Pl,\jj\right)$: The $\Delta{R}$, as defined above, between the lepton and the di-jet system formed by the two highest \pt jets in the event. 
+  \item $\Delta\varphi\left(\VETslash,\cPj\right)$: The $\Delta\varphi$ between the leading jet and the \VETslash.
+  \item $\Delta\varphi\left(\cPj,\cPj\right)$: The $\Delta\varphi$ between the two highest \pt jets in the event.
+  \item $\Delta\varphi_{\text{min}}\left(\Pl,\cPj\right)$: The smallest $\Delta\varphi$ between the lepton and any of the jets in the event.
+  \item $\Delta\eta\left(\cPj,\cPj\right)$: The $\eta$ between the two highest \pt jets in the event.
+  \item $\text{CSV}_{disc.}\left(\cPj_{i}\right)$: The CSV discriminant value for jet $i$.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{cc} \hline
+$\cos\left(\Delta\Phi_{\WH}\right)$ & $\cos\left(\Delta\Phi_{\WW}\right)$ \\
+$\cos\left(\theta_{\cPj}\right)$ & $\cos\left(\theta_{\Pl}\right)$ \\
+$\cos\left(\theta_{\WH}\right)$ & $\Delta\eta\left(\cPj,\cPj\right)$ \\
+$\Delta\varphi\left(\cPj,\cPj\right)$ & $\Delta\varphi\left(\VETslash,\cPj\right)$ \\
+$\Delta\varphi\left(\VETslash,\Pl\right)$ & $\Delta{R}\left(\Pl,\jj\right)$ \\
+$\eta\left(\cPj,\cPj\right)$ & $HT$ \\
+$\text{CSV}_{disc.}\left(\cPj_{\text{1}}\right)$ & $\text{CSV}_{disc.}\left(\cPj_{\text{2}}\right)$ \\
+$\Delta{R}\left(\Pl,\cPj_{\text{1}}\right)$ & $\Delta{R}\left(\Pl,\cPj_{\text{2}}\right)$ \\
+$\Delta{R}\left(\Pl,\cPj_{\text{3}}\right)$ & $\Delta{R}\left(\Pl,\cPj_{\text{4}}\right)$ \\
+$\eta_{\cPj_{\text{1}}}$ & $\eta_{\cPj_{\text{2}}}$ \\
+$\varphi_{\cPj_{\text{1}}}$ & $\varphi_{\cPj_{\text{2}}}$ \\
+$\pt\left(\cPj_{\text{1}}\right)$ & $\pt\left(\cPj_{\text{2}}\right)$ \\
+$\text{Charge}_{\Pl}$ & $\eta_{\Pl}$ \\
+${{}\text{Charge}}_{\Pl}\times{{}\eta}_{\Pl}$ & ${{}\pt}_{\Pl}$ \\
+$\ETslash$ & $\varphi_{\ETslash}$ \\
+$\Delta\varphi_{\text{min}}\left(\Pl,\cPj\right)$ & $\Delta\varphi_{\text{min}}\left(\VETslash,\cPj\right)$ \\
+$\Mjj$ & $\Mlvjj$ \\
+$\Mt$ & $\text{nBTag}_{\text{CSV}_{\text{m}}}$ \\
+n\textsubscript{\cPj} & n\textsubscript{\cPj\textsubscript{low}} \\
+n\textsubscript{PV} & ${{}\pt}_{\lvjj}$ \\
+$\sum{{}\ET}_{\cPj}$ & ${{}\pt}_{\jj}$ \\\hline
+\end{tabular}
+\caption{A list of all of the kinematic variables considered for inclusion in the BDT training. The variables are listed in no particular order and thus placement within the table is unimportant.}
+\label{tab:all_possible_BDT_kinematic_variables}
+\end{table}
+
+In additions to the definitions listed above, the are a whole host of angular variables which in part specify the kinematics of the Higgs and \W boson decays.
+When defining these variables, much of which was done in~\cite{Dobrescu2010}, it will help to refer to the diagram in fig.~\ref{fig:XWWDecayAngles}.
+To start with, a kinematic fit is used to calculate the longitudinal momentum of the neutrino, $p_{z}$, and to also constrain the invariant mass of the leptonic \W, \Mlv.
+Because the angle definitions are agnostic as to the type of particle decaying, the initiating particle will be referred to as particle X.
+The angles are as follows:
+\begin{itemize}
+  \item $\theta^{*}$ is the polar angle between the collision axis $z$ and the X decay axis $z'$ as defined in the rest frame of particle X.
+  \item $\Phi_{1}$ is the azimuthal angle between the $zz'$ plane and the decay plane of the hadronic \W.
+  \item $\Phi$ is the angle between the decay planes of the \WW system in the rest frame of particle X.
+  \item $\theta_{1}$ is the angle between the $z'$ axis the highest \pt jet, defined from 0 to $\pi$.
+  \item $\theta_{2}$ is the angle between the $z'$ axis and the lepton.
+\end{itemize}
+Rather than using the bare angles, we have chosen to use the cosine of the angles and have thus named them as:
+\begin{itemize}
+  \item $\Phi{\rightarrow}\cos\left(\Delta\Phi_{\WW}\right)$
+  \item $\Phi_{1}{\rightarrow}\cos\left(\Delta\Phi_{\WH}\right)$
+  \item $\theta_{1}{\rightarrow}\cos\left(\theta_{\cPj}\right)$
+  \item $\theta_{2}{\rightarrow}\cos\left(\theta_{\Pl}\right)$
+  \item $\theta^{*}{\rightarrow}\cos\left(\theta_{\WH}\right)$
+\end{itemize}
 
 \begin{figure}[!hbt]
     \centering
@@ -790,74 +888,198 @@ Fig.~\ref{fig:BDT_FOM} shows several of these distributions with their associate
     \label{fig:XWWDecayAngles}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{BDT Input Optimization}
 \label{sec:BDT_input_optimization}
+
+Remember that only the \Wjets sample is being used to represent the background while a combination of the three \HWW samples is being used to represent the signal.
+When training a BDT the absolute normalization of the signal samples is not what is important.
+Instead, they must be normalized to their expected fractions relative to each other.
+Thus, the two other samples are normalized to the $\cPg\cPg\HWW$ sample as shown in table~\ref{tab:BDT_sample_scale_factors}.
+After setting up the samples the BDTs in each jet bin had to be optimized.
+The procedure in section~\ref{sec:kin_var_sel} was used to select the individual variables with the most discrimination power.
+This section will describe how that list of input variables was optimized for the BDT trainings in each jet bin.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc} \hline
+\textbf{Process} & \textbf{2 Jets} & \textbf{3 Jets} & \textbf{$\geqslant$4Jets} \\\hline
+\ggH; $\MH=\text{125}\gev$, \HWWlvjj       & 1.0   & 1.0   & 1.0   \\
+\qqH; $\MH=\text{125}\gev$, \HWWlvjj       & 0.195 & 0.248 & 0.239 \\
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HWW & 0.256 & 0.416 & 0.608 \\\hline
+\end{tabular}
+\caption{The scale factors used to normalize the input signal samples for the BDT trainings.}
+\label{tab:BDT_sample_scale_factors}
+\end{table}
+
+To begin with, a BDT was trained using the best 20 variables specified in the previous section.
+After that, the BDT was checked for redundant variables by looking at the input variable correlation plots and for overtraining by using the Kolmogorov-Smirnov values between the training and test samples.
+If the Kolmogorov-Smirnov score was too low, this setup was rejected as it would indicate that the training and test samples didn't come from same underlying PDF, which they must.
+The variables used to train the BDT were also ranked by TMVA in order of their importance, which is measured by how much a given variable was used to discriminate signal from background.
+On the next iteration the two lowest performing variables were removed and the BDT was retrained.
+This process continued until only three input variables remained.
+Fig.~\ref{fig:KinBDT_Example_Output} contains an example response curve examining overtraining as well as the correlation plots for signal and background.
+Based on the minimal correlation shown, none of the 11 variables are redundant in this training.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/overtrain_2j0B_11Max4_Original.png}
+        \caption{}
+        \label{fig:KinBDT_Overtrain_Example}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/CorrelationMatrixS_2j0B.png}
+        \caption{}
+        \label{fig:KinBDT_CorrelationMatrixS_Example}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/CorrelationMatrixB_2j0B.png}
+        \caption{}
+        \label{fig:KinBDT_CorrelationMatrixB_Example}
+    \end{subfigure}
+    \caption{Example validation plots after the BDT training. (a) The response distributions for signal and background for both the training (markers) and test samples (filled histograms). The Kolmogorov-Smirnov value is used to decide how much overtraining has occurred. The correlation matrices of the input variables for the (b) signal and (c) background samples.}
+    \label{fig:KinBDT_Example_Output}
+\end{figure}
+
+To quantitatively compare the various trainings we made use of their respective receiver operating characteristic (ROC) curves, an example of which is shown in fig.~\ref{fig:KinBDT_ROC_Output_Example}.
+These curves measure the performance of a binary classification system by testing the signal efficiency and background rejection assuming a cut is placed on the classifier output.
+There are several ways of using the ROC curve to test the overall performance of any one BDT training.
+While a common method is to use the area under the ROC curve (greater area means better performance), we chose to use a different measure.
+Since the point (1,1) represents perfect signal acceptance and background rejection, that is the ideal point.
+A training with a ROC curve whose distance to that point is minimized will perform better than any other training.
+Thus we chose to use this distance as our FOM between the various trainings.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/rejBvsS.png}
+        \caption{}
+        \label{fig:KinBDT_ROC_Output_Example}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/ROC_Overlay_Compare.png}
+        \caption{}
+        \label{fig:KinBDT_ROC_nVarComparison}
+    \end{subfigure}
+    \caption{Example ROC curved produced after the BDT training. (a) A standard ROC curve produced by TMVA. (b) ROC curves from multiple trainings with their associated distances of closest approach calculated. The training using 11 input variables showed the most discrimination power.}
+    \label{fig:KinBDT_ROC_Examples}
+\end{figure}
+
+The ROC curves from the multiple trainings were compared as seen in fig.~\ref{fig:KinBDT_ROC_nVarComparison}.
+Although reducing the number of variables can help to prevent overtraining, there comes a point when this process begins to negatively impact the performance of the BDT.
+By comparing the ROC curves we were able to identify the trainings with the best performance.
+The variables used in these trainings are identified in table~\ref{tab:BDT_variables_optimized}.
+The validation plots for the input variables can be found in appendix~\ref{appendix:BDT_Inputs}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc} \hline
+\textbf{Variable} & \textbf{2 Jets} & \textbf{3 Jets} & \textbf{$\geqslant$4Jets} \\\hline
+${{}\pt}_{\Pl}$                                   & $\bigstar$   & $\checkmark$ &              \\
+${{}\text{Charge}}_{\Pl}\times{{}\eta}_{\Pl}$     &              & $\checkmark$ & $\checkmark$ \\
+$\Mt$                                             & $\checkmark$ &              &              \\
+${{}\pt}_{\lvjj}$                                 & $\checkmark$ &              &              \\
+$\Mlvjj$                                          &              & $\checkmark$ & $\checkmark$ \\
+HT                                                & $\checkmark$ & $\bigstar$   & $\bigstar$   \\
+$\Delta{R}\left(\Pl,\cPj_{\text{1}}\right)$       & $\checkmark$ &              &              \\
+$\Delta{R}\left(\Pl,\cPj_{\text{2}}\right)$       & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+$\Delta{R}\left(\Pl,\cPj_{\text{3}}\right)$       &              & $\checkmark$ & $\checkmark$ \\
+$\Delta{R}\left(\Pl,\jj\right)$                   & $\checkmark$ & $\checkmark$ &              \\
+$\Delta\varphi_{\text{min}}\left(\Pl,\cPj\right)$ &              & $\checkmark$ &              \\
+$\Delta\eta\left(\cPj,\cPj\right)$                &              & $\checkmark$ &              \\
+$\Delta\varphi\left(\VETslash,\cPj\right)$        & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+$\Delta\varphi\left(\VETslash,\Pl\right)$         &              &              & $\checkmark$ \\
+$\Delta\varphi\left(\cPj,\cPj\right)$             & $\checkmark$ &              &              \\
+$\cos\left(\theta_{\Pl}\right)$                   & $\checkmark$ & $\checkmark$ &              \\
+$\cos\left(\theta_{\WH}\right)$                   & $\checkmark$ & $\checkmark$ &              \\
+$\cos\left(\theta_{\cPj}\right)$                  &              & $\checkmark$ &              \\\hline
+\end{tabular}
+\caption{A list of the input variables chosen for each BDT training. The variables are optimized separately in each jet bin. The check marks denote the chosen variables for each jet bin while the stars denote the the best performing variable.}
+\label{tab:BDT_variables_optimized}
+\end{table}
+
 \subsection{BDT Parameter Optimization}
 \label{sec:BDT_parameter_optimization}
-\subsection{Signal Extraction Methods}
+
+Besides the number of input variables, there are several hyper-parameters for the BDT trainings which must also be optimized to extract the maximum amount of performance and reduce the amount of overtraining.
+These hyper-parameters include the maximum number of trees to using in the training (nTrees), the value of $\beta$ used in the boosting procedure (adaBoostBeta), the maximum depth allowed for each tree (MaxDepth), the minimum number of events allowed to remain in a node after splitting (nEventsMin), and the fraction of signal versus background events used during training.
+The trainings optimized for the input variables were used as a baseline for these next trainings.
+Each hyper-parameter was varied individually to see its effect on the performance of the BDT.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/MaxDepthROC.png}
+        \caption{}
+        \label{fig:KinBDT_ROC_MaxDepth}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/overtrain_BDT_Max3.png}
+        \caption{}
+        \label{fig:KinBDT_Ovetrain_MaxDepth3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/overtrain_BDT_Max9.png}
+        \caption{}
+        \label{fig:KinBDT_Ovetrain_MaxDepth9}
+    \end{subfigure}
+    \caption{(a) The ROC curve used to test the performance of five different values of the MaxDepth parameter. The overtraining plots showing the BDT response for MaxDepth values of (b) 3 and (c) 9. The Kolmogorov-Smirnov scores for a MaxDepth of 3 are far superior to those for a MaxDepth of 9.}
+    \label{fig:KinBDT_MaxDepth_Example}
+\end{figure}
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/ROC_Overlay_Compare_AdaBoostBeta.png}
+        \caption{}
+        \label{fig:KinBDT_ROC_AdaBoostBeta}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/BDT_Control_Plots/ROC_Overlay_Compare_nTrees.png}
+        \caption{}
+        \label{fig:KinBDT_ROC_nTrees}
+    \end{subfigure}
+    \caption{The ROC curves used to test the performance of different values of (a) the adaptive boost factor $\beta$ and (b) the number of trees used in the trainings. The best performing value is represented by the dark blue curve.}
+    \label{fig:KinBDT_AdaBoostBeta_nTrees_Example}
+\end{figure}
+
+The ROC curves and overtraining plots for the tests on the MaxDepth parameter are shown in fig.~\ref{fig:KinBDT_MaxDepth_Example}.
+Although increasing the depth of the trees results in improved performance, it also significantly increases the overtraining.
+Thus we chose the largest MaxDepth value that didn't result in overtraining.
+The ROC comparisons for the parameters adaBoostBeta and nTrees is are shown in fig.~\ref{fig:KinBDT_AdaBoostBeta_nTrees_Example}.
+In these cases, the default values turned out to be the best performing.
+The final hyper-parameter values used for our trainings can be found in table~\ref{tab:BDT_hyper-parameter_values}.
+We also found that using the maximum possible amount of signal and background events was best, meaning we fed the trainings all the events that we had.
+The events were then split evenly between the test and training samples.
+The resultant BDT classifier distributions are shown in appendix~\ref{appendix:BDT_Outputs}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc} \hline
+\textbf{Hyper-Parameter} & \textbf{2 Jets} & \textbf{3 Jets} & \textbf{$\geqslant$4Jets} \\\hline
+MaxDepth    & 4   & 3   & 3 \\
+nTrees      & 850 & 850 & 850 \\
+adaBootBeta & 0.5 & 0.5 & 0.5 \\
+nEventsMin  & 100 & 100 & 100 \\\hline
+\end{tabular}
+\caption{}
+\label{tab:BDT_hyper-parameter_values}
+\end{table}
 
 \section{Matrix Element Analysis}
+
+Table~\ref{tab:yields_KinMEBDT} clearly shows that the total signal, in every channel, is at least an order of magnitude smaller than even the statistical uncertainty of the background.
+A cut and count experiment will not lead to any significant results.
+The previous \HWWlnujj analyses have performed a fit to sensitive distributions like the 4-body mass, the mass of the two jet plus lepton plus \ETslash system.
+However, this approach only includes a small amount of available information, leaving out additional sensitive kinematic distributions.
+It is also felt that a BDT analysis using only kinematic variable would be sub-optimal because shallow classifiers are not robust against non-linear correlations and are only as good as the input variables chosen.
+While the BDT classifiers described in the last section show a good amount of signal to background discrimination, there is another method which can also be used to separate signal from background.
+
+
+
+
 Matrix Element Method (MEM)
 
 BDT analyses often rely on shallow networks, which are bad at finding non-linear functions
@@ -866,11 +1088,7 @@ The Matrix Element Method (MEM) takes into account all final state particle kine
 MEMs give an estimate, probability density Pi , that an event with a given final state comes from process i
 
 \begin{comment}
-Table~\ref{tab:FinalYields} clearly shows that the total signal, in every channel, is smaller than even the statistical uncertainty of the background.
-A cut and count experiment will not lead to any significant results.
-The previous \HWWlnujj analyses have performed a fit to sensitive distributions like the 4-body mass, the mass of the two jet plus lepton plus \ETslash system.
-However, this approach only includes a small amount of information available, leaving out additional sensitive kinematic distributions.
-It is also felt that a BDT analysis using only kinematic variable would be sub-optimal because shallow classifiers are not robust against non-linear correlations and are only as good as the input variables.
+
 
 Instead, this analysis uses a matrix element method (MEM), which starts from the differential cross section calculation from quantum field theory to classify how likely and event is to come from a given process~\cite{Canelli2003,Dong2008}.
 The probability $P\left(x;\alpha\right)=P_{evt}$ of a signal is proportional to the differential production cross section, where $\alpha$ is the parameter we wish to measure and x is a set of physical variables.
@@ -894,6 +1112,53 @@ Fifteen probabilities $P(x;\alpha)$, corresponding to the leading order diagrams
 This computation is by far the most time consuming aspect of this analysis, consuming $\sim$12 million CPU hours.
 The information contained in these 15 probabilities must be combined in order to discriminate signal from background.
 \end{comment}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Differential Cross Section}
