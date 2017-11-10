@@ -272,6 +272,7 @@ The first category includes the b-tagging CSV discriminant weights and top quark
 These event weights are applied after selecting for the events as they do not change the object kinematics.
 
 \subsection{Pileup Reweighting}
+\label{sec:pileup_reweighting}
 
 Pileup is an important quantity as it can affect the reconstruction efficiency and even the observed kinematics of all the objects used in this analysis.
 Up to this point it has been described as additional proton-proton interactions within an event, besides the interaction that produced the physics objects we are interested in studying.
@@ -386,6 +387,7 @@ An individual scale factor is retrieved for each jet, which is then combined as 
 The CSV value for each jet is unchanged, but the event is weighted by $SF_{\mathrm{total}}$.
 
 \subsection{\texorpdfstring{\ttbar}{TTbar} Reweighting}
+\label{sec:topPt_reweighting}
 Differential top-quark-pair analyses have shown that the shape of the \pt spectrum for top quarks is softer in data than predicted by simulation~\cite{Chatrchyan:2012saa,TopPtReweighting}.
 Although it has been shown that NNLO predictions show reasonable agreement~\cite{Kidonakis2014}, this analysis must correct for the discrepancy in the \ttbar simulation.
 Events are reweighted based on the \pt of the generator level \cPqt and \cPaqt in only the \ttbar simulation.
@@ -416,6 +418,7 @@ Some events do require that the top \pt be increased.
 \end{figure}
 
 \subsection{\texorpdfstring{cos(theta$_l$)}{CosThetaL} Reweighting}
+\label{sec:costhetal_reweighting}
 
 A linear trend in the data to MC comparison of the \costhetal variable was discovered, indicating a mis-modeling problem in the simulation.
 \costhetal is one of the angular variables involved in the \WW system and is the cosine of the angle between the daughter lepton and the \WW decay plane, which corresponds to $\cos\left(\theta_{2}\right)$ in fig.~\ref{fig:XWWDecayAngles}.
@@ -462,6 +465,7 @@ The corrected distribution is shown in fig.~\ref{fig:cos_theta_l_corrected} wher
 \end{figure}
 
 \subsection{QCD Reweighting}
+\label{sec:QCD_reweighting}
 
 As stated in section~\ref{sec:QCD_data-driven_sample}, the QCD sample is obtained by selecting on anti-isolated leptons, as opposed to the isolated signal selection.
 Although these regions are similar kinematically, the ratio of the number of events in the signal region to the number of events in the anti-isolated region changes significantly as a function of $\eta$.
@@ -820,7 +824,7 @@ Some of the variable definitions are listed below:
   \item ${{}\varphi}_{x}$: The $\varphi$ of object $x$ in the event.
   \item \Mt: The transverse component of the mass of the leptonically decaying \W boson.
   \item $\Delta{R}\left(\Pl,\cPj_{\text{1}}\right)$: The distance in $R$ between the lepton and the highest \pt jet ($\Delta{R}=\sqrt{\Delta\Phi^{2}+\Delta\eta^{2}}$).
-  \item $HT$: The scalar sum of the \pt of all jets in the event
+  \item $HT$: The scalar sum of the lepton \pt and the \ET of all jets in the event
   \item $\Mlvjj$: The 4-body mass defined as the mass of the vector sum of the lepton, \VETslash, and the two highest \pt jets in the event.
   \item ${{}\pt}_{\lvjj}$: The \pt of the 4-body system created by summing the 4-vectors of the lepton, \VETslash, and the two highest \pt jets in the event.
   \item $\Delta{R}\left(\Pl,\jj\right)$: The $\Delta{R}$, as defined above, between the lepton and the di-jet system formed by the two highest \pt jets in the event. 
@@ -1071,171 +1075,537 @@ nEventsMin  & 100 & 100 & 100 \\\hline
 \section{Matrix Element Analysis}
 
 Table~\ref{tab:yields_KinMEBDT} clearly shows that the total signal, in every channel, is at least an order of magnitude smaller than even the statistical uncertainty of the background.
-A cut and count experiment will not lead to any significant results.
-The previous \HWWlnujj analyses have performed a fit to sensitive distributions like the 4-body mass, the mass of the two jet plus lepton plus \ETslash system.
+A simple cut and count experiment will not lead to any significant results.
+The previous \HWWlnujj analyses have performed a fit to sensitive distributions like the 4-body mass, the mass of the system made out of the two jets, lepton, and \ETslash, which is sensitive to the Higgs mass peak.
 However, this approach only includes a small amount of available information, leaving out additional sensitive kinematic distributions.
 It is also felt that a BDT analysis using only kinematic variable would be sub-optimal because shallow classifiers are not robust against non-linear correlations and are only as good as the input variables chosen.
 While the BDT classifiers described in the last section show a good amount of signal to background discrimination, there is another method which can also be used to separate signal from background.
-
-
-
-
-Matrix Element Method (MEM)
-
-BDT analyses often rely on shallow networks, which are bad at finding non-linear functions
-
-The Matrix Element Method (MEM) takes into account all final state particle kinematics and correlations
-MEMs give an estimate, probability density Pi , that an event with a given final state comes from process i
-
-\begin{comment}
-
-
 Instead, this analysis uses a matrix element method (MEM), which starts from the differential cross section calculation from quantum field theory to classify how likely and event is to come from a given process~\cite{Canelli2003,Dong2008}.
-The probability $P\left(x;\alpha\right)=P_{evt}$ of a signal is proportional to the differential production cross section, where $\alpha$ is the parameter we wish to measure and x is a set of physical variables.
+
+\subsection{Differential Cross Section}
+
+The probability $P\left(x;\alpha\right)=P_{evt}$ of a signal is proportional to the differential production cross section, where $\alpha$ is the parameter we wish to measure, like the mass of the Higgs boson, and x is a set of physical variables.
 This is true if the detector resolution is sufficiently small and the beam energies are well known, as it is in the case of CMS.
-In general the differential cross section can be written as~\cite{Olive:2016xmw}:
+For the scattering of two particles the differential cross section can be written as~\cite{Olive:2016xmw}:
 \begin{equation}\label{eq:differential_production_cross_section}
 d\sigma=\frac{\left(2\pi\right)^{4}|\mathcal{M}|^{2}}{4\sqrt{\left(q_{1}\cdot{q_{2}}\right)^{2}-m_{q_{1}}^{2}m_{q_{2}}^{2}}}d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right)
 \end{equation}
-where $|\mathcal{M}|$ is the Lorentz invariant matrix element (ME); $q_{1}$, $q_{2}$ and $m_{1}$, $m_{2}$ are the 4-momenta and masses of the incident particles; $p_{i}$ are the 4-momenta of the final state particles; and $d\Phi_{n}$ is the n-body phase space.
+where $|\mathcal{M}|$ is the Lorentz invariant matrix element (ME)~\cite{Griffiths2008}; $q_{1}$, $q_{2}$ and $m_{1}$, $m_{2}$ are the 4-momenta and masses of the incident particles; $p_{i}$ are the 4-momenta of the $n$ final state particles; and $d\Phi_{n}$ is the n-body phase space.
 The phase space term is written as:
 \begin{equation}
 d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right)=\delta^{4}\left(q_{1}+q_{2}-\sum_{i=1}^{n}p_{i}\right)\prod_{i=1}^{n}\frac{d^{3}p_{i}}{\left(2\pi\right)^{3}2E_{i}}
 \end{equation}
-After accounting for unmeasured or mis-measured particles and normalizing to the total cross section to form an event probability, equation~\ref{eq:differential_production_cross_section} becomes:
+
+If CMS could measure all of the final state particles with 100\% accuracy, no detector effects or uncertainties, and all of the information about the initial state particles was known - including the energy, momentum, and particle type - we could analytically solve this equation and normalize it to the total cross section to define an event probability $P_{evt}\sim\frac{d\sigma}{\sigma}$.
+Using the differential cross sections for each of the processes being tested we could create a perfect discriminant for each event.
+Unfortunately, this is not the case and there are several unknowns which must be accounted for:
+\begin{enumerate}
+  \item Some particles involved in the ME are either not measured at all or not fully measured. The initial state partons are held within protons, making their exact energies unknown. The neutrino in the final state is not fully measured by CMS. We use the \ETslash as a proxy for the neutrino, but we can't measure the $p_{z}$ component of its momentum vector.
+  \item The partons in the final state are only measured after showering and hadronizing to form jets. While every effort is taken to measure the jet energies with great accuracy, this is no substitute for the parton level energies.
+  \item The energy resolution of the CMS sub-detectors cannot be ignored, especially for jets.
+  \item For practical reasons the ME cannot be exactly calculated. The more precise a probability one wants to calculate, the more diagrams one must include in the ME calculation. This increases the computational complexity of the problem significantly. That is why this analysis used mainly tree-level diagrams, with some sub-leading diagrams for our biggest background, \Wjets.
+\end{enumerate}
+Despite our best efforts, each of these effects leads to some loss in sensitivity.
+
+\subsection{Parton Distribution Functions and Phase Space}
+
+if final state fully known (momenta and energies), then can calculate the initial state momenta and energies from conservation of energy and momentum, assuming the transverse momentum of the initial state particles is zero (a fairly good assumption).
+Without knowing the full final state, a set of PDFs will determine the likelihood of a given initial state configuration.
+The PDF scale varies with the process dependent momentum transfer $\text{Q}^{2}$.
+For \Wjets, for example, $\text{Q}^{2}=\MW^{2}+\left(\sum_{\text{jets}}\pt\right)^{2}$ while for Drell-Yan scattering $\text{Q}^{2}=\hat{s}=|q_{1}+q_{2}|^{2}$, where $q_{1}$ and $q_{2}$ are 4-vectors of the initial state quarks.
+Because $\text{Q}^{2}$ comes from perturbative calculations and cannot be measured, its value is not well defined~\cite{Dong2008}.
+
+Taking this into account, the differential cross section calculation becomes:
+\begin{equation}
+d\sigma=\frac{\left(2\pi\right)^{4}|\mathcal{M}|^{2}}{4\sqrt{\left(q_{1}\cdot{q_{2}}\right)^{2}-m_{q_{1}}^{2}m_{q_{2}}^{2}}}f\left(x_{1}\right)f\left(x_{2}\right)d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right),
+\end{equation}
+where $f\left(x_{i}\right)$ are the PDFs for the incoming protons and $x_{i}=E_{q_{i}}/E_{beam}$ is the fraction of the proton momentum carried by the incident parton $i$.
+%Even for diagrams with unique quarks it's still not clear which parton came from which proton.
+%In this case both probabilities are computed and added together.
+
+The differential cross section can be further simplified by using $\sqrt{\left(q_{1}{\cdot}q_{2}\right)^{2}-m_{q_{1}}^{2}m_{q_{2}}^{2}}\simeq2E_{q_{1}}E_{q_{2}}$.
+In other words by considering the input partons to be massless and ignoring any small transverse momentum they may have we arrive at:
+\begin{equation}
+d\sigma=2\pi^{4}|\mathcal{M}|^{2}\frac{f\left(x_{1}\right)}{|E_{q_{1}}|}\frac{f\left(x_{2}\right)}{|E_{q_{2}}|}d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right).
+\end{equation}
+
+\subsection{Transfer Functions}
+
+While leptons in CMS can be measured with a high degree of accuracy, the lepton resolution is relatively small, the jet energies are not the same as the energies of their initiating partons.
+Even worse are the neutrinos which pass all the way through the CMS detector without being measured.
+The solution is to use a transfer function, which maps between the energies and momenta of the final state partons to those of the measured objects.
+Adding a transfer function $W$ into the differential cross section calculation we find:
+\begin{equation}
+d\sigma=2\pi^{4}|\mathcal{M}|^{2}\frac{f\left(x_{1}\right)}{|E_{q_{1}}|}\frac{f\left(x_{2}\right)}{|E_{q_{2}}|}W_{l}^{3}\left(p_{l},p_{l_{\text{meas}}}\right)W_{\nu}^{3}\left(p_{\nu},p_{\nu_{\text{meas}}}\right)\prod_{i=1}^{n_{\text{jets}}}W_{i}^{3}\left(p_{i},p_{i_{\text{meas}}}\right)d\Phi_{n}\left(q_{1}+q_{2};p_{1},...,p_{n}\right)
+\end{equation}
+Here $W^{3}$ refers to the three transfer functions necessary to map the energy, polar angle, and azimuthal angle of the parton to the observed quantity.
+
+Luckily we can start making some simplifications right off the bat.
+The lepton quantities and jet angles are assumed to be measured well enough that the transfer function approaches a Dirac delta function.
+Even if this isn't exactly true it would only reduce the sensitivity of the analysis and would not affect the final result.
+Thus those terms will disappear from the equation.
+Unfortunately, the same assumptions cannot be made about the jet energies.
+The jet energy transfer functions are modeled as a ten parameter double Gaussian fit to the difference in parton and jet energies from a MC sample.
+The underlying distribution of energies can be seen in fig.~\ref{fig:JetEnergyVsUDSGenJetEnergy}.
+While matching parton energies and jet energies might sound a lot like the L5Flavor corrections in CMS, the JEC only correct the jet energies back to the most probable value.
+By using a transfer function we can integrate across all possible jet energies to extract more information.
+Although the transfer functions will vary across $\eta$ we had limited statistics available in out MC sample used to derive these and thus were forced to use a single bin of \absetalt{2.4}.
+Three different sets of TF were derived for \cPqb quark jets, light quark jets, and gluon jets as seen in fig.~\ref{fig:Ep-Ej}.
+All three types of jets will have different kinematics and thus will produce different transfer functions.
+%Can't remember what sample was used to produce these
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/JetEnergyVsUDSGenJetEnergy_0.eps}
+        \caption{}
+        \label{fig:JetEnergyVsUDSGenJetEnergy}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Ep-Ej.eps}
+        \caption{}
+        \label{fig:Ep-Ej}
+    \end{subfigure}
+    \caption{(a) The distribution of parton energy versus jet energy in Monte Carlo events for light flavored jets. (b) Distributions of the difference in parton energy and jet energy for different kinds of jets. This proves that a separate transfer function is necessary for each flavor of jet.}
+    \label{fig:transfer_functions}
+\end{figure}
+
+
+As stated before, the neutrino momentum is not measured; nor can the $z$ component of the neutrino momentum cannot be calculated.
+This stems from the fact that the longitudinal momentum of the initial state partons is not know, only the momentum of the protons.
+We don't know how the momentum is split between the various partons that make up the proton.
+During the computation of the differential cross section we integrate over the unknown quantities, which includes the neutrino's longitudinal momentum.
+The momentum is allowed to vary from 0\gev to 4\tev, the beam energy, which is motivated by the conservation of energy and momentum.
+At this point, assuming a choice for neutrino $p_{z}$ and jet energies, the $x$ and $y$ components of the neutrino momentum as well as the $z$ component of the momenta for the initial partons can be derived from conservation of energy and momentum.
+
+After accounting for all the simplifications, the PDFs, and the transfer functions the differential cross section becomes:
+\begin{equation}
+  d\sigma=\int dp_{z_{\nu}}2\pi^{4}|\mathcal{M}|^{2}\frac{f\left(x_{1}\right)}{|E_{q_{1}}|}\frac{f\left(x_{2}\right)}{|E_{q_{2}}|}\prod_{i=1}^{n_{\text{jets}}}\frac{dE_{i}W\left(E_{i},E_{i_{\text{meas}}}\right)}{E_{i}}\frac{\delta^{4}\left(q_{1}+q_{2}-p_{l}-p_{\nu}-\sum_{i=1}^{n_{\text{jets}}}p_{i}\right)}{E_{l}E_{\nu}}
+\end{equation}
+Ass you can see all of the parton level quantities have been replaces by their measured counterparts, which allows us to perform the calculations with the measurements taken by CMS.
+This equation can then be normalized to the total cross section to form an event probability:
 \begin{equation}
 P(x;\alpha)=\frac{1}{\sigma}\int2\pi^{4}|\mathcal{M}|^{2}\frac{f\left(x_{1}\right)}{|E_{q_{1}}|}\frac{f\left(x_{2}\right)}{|E_{q_{2}}|}W\left(y,x\right)d\Phi_{4}dE_{q_{1}}dE_{q_{2}}
 \end{equation}
-where $f\left(x_{i}\right)$ are the PDFs, $x_{i}=E_{q_{i}}/E_{beam}$ is the fraction of the proton momentum carried by the incident parton $i$, and $W\left(y,x\right)$ is the transfer function mapping measured jet energies $x$ to the parton energies $y$ (accounts for the jet resolution of CMS).
+where $f\left(x_{i}\right)$ are the PDFs, $x_{i}=E_{q_{i}}/E_{beam}$ is the fraction of the proton momentum carried by the incident parton $i$, and $W\left(y,x\right)$ is the transfer function mapping measured jet energies $x$ to the parton energies $y$.
+For simplicity the equation has been returned to a more compact form.
+At this point we can use numerical integration to calculate the the probability densities of interest.
 
-Fifteen probabilities $P(x;\alpha)$, corresponding to the leading order diagrams of the major background and signal processes, are computed for each event. 
-This computation is by far the most time consuming aspect of this analysis, consuming $\sim$12 million CPU hours.
-The information contained in these 15 probabilities must be combined in order to discriminate signal from background.
+\subsection{Matrix Elements}
+
+As I alluded to before, no analytic form for a scattering process matrix element to all orders exists.
+On top of an already computationally difficult problem, the loop corrections in higher-order calculations become too costly, which is why we chose to use mostly leading order diagrams (except for \Wjets).
+The matrix elements were generated by \textsc{Mad}\textsc{Graph} in FORTRAN and then converted by C++ to speed up computation.\footnote{Only the leading diagrams were converted. The C++ code was then run alongside the FORTRAN code to compare the outputs.}
+\textsc{Mad}\textsc{Graph} makes use of a library called HELAS~\cite{Murayama:1992gi} to do the leading-order matrix element calculations.
+Each matrix elements can have contributions from multiple subprocesses (i.e. $\Pp\Pp\rightarrow\WW\rightarrow\lvjj$ includes diagrams from $\cPqu\cPaqu\rightarrow\Pep\PGne\cPaqu\cPqd$, $\cPqu\cPaqu\rightarrow\Pem\PAGne\cPqu\cPaqd$, $\cPqd\cPaqd\rightarrow\Pem\PAGne\cPqu\cPaqd$, etc.).
+Additionally, each subprocess can be generated from a number of diagrams as seen in fig.~\ref{fig:MadGraph5_example_subdiagrams} for the $\cPg\cPqd\rightarrow\Pem\PAGne\cPqu\cPg$ process.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.9\textwidth}
+        \includegraphics[width=\textwidth,page=1,trim={0 3cm 0 2cm},clip]{\figpath/Chapter5/g_d_-_e-_ve_u_g_matrix.pdf}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.9\textwidth}
+        \includegraphics[width=\textwidth,page=2,trim={0 7.25in 0 2cm},clip]{\figpath/Chapter5/g_d_-_e-_ve_u_g_matrix.pdf}
+    \end{subfigure}
+    \caption{Feynman diagrams from the $\cPg\cPqd\rightarrow\Pem\PAGne\cPqu\cPg$ process.}
+    \label{fig:MadGraph5_example_subdiagrams}
+\end{figure}
+
+Matrix elements were calculated for all of the major signals and background in this analysis.
+There were 15 matrix elements which were eventually used: \WW, \WZ, $\WZ\cPqb\cPqb$, $\W\cmsSymbolFace{L}\cPg$, $\W\cmsSymbolFace{L}\cPg$ (second order), $\W\cmsSymbolFace{L}\cmsSymbolFace{L}$, $\W\cmsSymbolFace{L}\cPqb$, $\W\cPqb\cPqb$, ZLight, \ttbar, Single Top T, Single Top S, QCD, \ggH (\joinsym{\MH}{=}{125\gev}), and \WH (\joinsym{\MH}{=}{125\gev}).
+While some matrix element diagrams may be left out, the purpose of calculating the probabilities is to discriminate a signal event from a background event.
+The loss of a diagram will simply reduce the sensitivity of the classifier, not change the answer.
+
+The \ttbar process, and similar diagrams with more than two jets, presents a problem for the matrix element calculations because it doesn't have the same final state as the signal.
+As was stated in section~\ref{sec:higgs_production}, for a \ttbar event to pass as a two jet event it must mean that some of the jets are missed.
+This can happen in two different ways; either both \W bosons decay leptonically and one lepton is not detected or one of the \W bosons decays hadronically and two of the four jets are missed.
+If we really confine the matrix element to two jets, then we can use the diagram with one leptonically decaying \W boson where the other \W is simply not observed (i.e. it decays outside our acceptance).
+In this case there are three additional unknown momentum components coming from the \W boson which must be integrated over.
+If a third jet were allowed, then the the typical semileptonic \W boson decay is used and one of the light quarks is assumed to be missed.
+This also adds three additional integrations to the calculation.
+
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=\textwidth]{\figpath/Chapter5/TTbarMEFeynmanDiagrams.png}
+    \caption{Feynman diagrams used to calculate top pair probabilities for two- and three-jet events. The circled particles are assumed to be unobserved and an integral is taken over their momenta. Figure and caption from~\cite{Dong2008}.}
+    \label{fig:TTbarMEFeynmanDiagrams}
+\end{figure}
+
+
+\subsection{Combinatorial Considerations}
+
+
+\begin{comment}
+Peter:
+Several of the diagrams have ambiguities in their final state: for example, the s-channel has two kinematically distinct bottom quarks in the final state. Choosing which jet should be matched to a given parton is difficult; this analysis solves the problem by calculating the differential cross section under both assumptions and adding the answers together. However, in the case of the t-channel diagram, the tagging information is used to match the final-state bottom quark to the tagged jet, improving the sensitivity of the calculation.
+
+The combinations of matching jets to quarks are chosen based on the principle that heavy quarks should be matched to tagged jets whenever possible. In cases of ambiguity, all different combinations are tried. This is true except in the case of the top pair diagram, which has
+too many ambiguities and is too computationally expensive to try all
+combinations. In this case, only the two combinations of assigning tagged jets to bottom quarks are calculated.
 \end{comment}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Differential Cross Section}
-\subsection{Parton Distribution Functions and Phase Space}
-\subsection{Transfer Functions}
-\subsection{Combinatorial Considerations}
 \subsection{Numerical Integration}
-\subsection{Matrix Element Computation}
-\subsection{Standalone BDT}
+
+
+This computation is by far the most time consuming aspect of this analysis, costing $\sim$12 million CPU hours and spanning over 1.5 years.
+It required the work of several analyzers and the entire Worldwide LHC Computing Grid (WLCG).
+
+\subsection{Standalone Matrix Element Based BDT}
+
+%The Matrix Element Method (MEM) takes into account all final state particle kinematics and correlations to give an estimate, probability density $P_{i}$ , that an event with a given final state comes from process $i$.
+The fifteen probabilities $P(x;\alpha)$, corresponding to the leading order diagrams of the major background and signal processes, were computed for each event in both data and MC.
+Now that all of the leading order kinematics are encoded in these 15 numbers, they must be combined in order to discriminate signal from background.
+A BDT was used rather than combining the ME into a likelihood as in the Matrix Element Likelihood Analysis (MELA) used by $\HZZ\rightarrow\text{4}\Pl$ or the event probability discriminants (EPD) used by the single top analysis done by CDF~\cite{Dong2008}.
+Three new BDTs were trained using the same settings as the BDTs with kinematic variables used as inputs.
+However, this time the inputs consisted of the 15 matrix element probabilities.
+The output discriminant distributions can be found in appendix~\ref{appendix:BDT_Outputs}.
+Unfortunately, these BDTs (MEBDT), on their own, did not out perform the kinematic variable based BDTs (KinBDT).
+This might be due to the fact that we only used leading order diagrams (not even all of the diagrams), it might have to due with the combinatorics of the jets and partons, or it could have to do with sub-optimal transfer functions.
+However, by comparing the KinBDT to the MEBDT, we found that they had complimentary information.
+
 \subsection{Combined BDT}
 
-\begin{comment}
-In order to combine the complimentary information from the kinematic variables and the MEs, with the purpose of discriminating a Higgs event from a background event, we used several Boosted Decision Trees (BDTs).
-An initial BDT was computed which combined the information from 15 of the computed MEs.\footnote{A BDT was used rather than combining the ME into a likelihood as in the Matrix Element Likelihood Analysis (MELA) used by H$\rightarrow$ZZ$\rightarrow$4l or using some basic ratios of signal over background probabilities as was done by CDF.}
+In order to combine the complimentary information from the kinematic variables and the MEs, with the purpose of discriminating a Higgs event from a background event, we combined the two sets of variables.
+An initial BDT was computed which combined the information from 15 of the computed MEs, as noted above.
 This gives a less discriminating shallow network the ability to create a better performing network because the inputs are already non-linear variables.
-The output of this BDT, along with several carefully selected kinematic variables, is then used as the input to a new BDT in order to combine all of this complimentary information.
-While it may seem that the MEs should encode all of the event information perfectly, only the leading MEs were used and the permutations of the jets and partons degrades the discrimination power of the MEs.
-The combined BDT has more discrimination power than either the MEs or the kinematic variables alone. 
+The output of this BDT, along with previously selected kinematic variables, is then used as the input to a new BDT in order to combine all of this complimentary information.
+The combined BDT (KinMEBDT) has more discrimination power than either the MEs or the kinematic variables alone.
+Images of the output discriminant can be found in appendix~\ref{appendix:BDT_Outputs}.
 
-A distribution of the BDT discriminant is produced for every signal, background, and data sample and then passed to the RooStats-based Higgs Combine Tool~\cite{CombineToolTwiki} to compute limits on the Higgs signal strength.
-Given that this analysis has a relatively high number of events in the expected yields we make use of the asymptotic method\footnote{If there had been a lower number of expected events we may have needed to use the full frequentist method rather than the asymptotic method.} for limit setting along with the CL\textsubscript{s} test statistic~\cite{Read:2002hq}.
-Using an Asimov dataset an expected 95\% upper confidence level is obtained and shown in figure~\ref{fig:limits} (left).
-\end{comment}
 
-original bin width 0.02 [-1,1]
-bin must have background events
-stat error must be less than 10\%
-bins merged left to right until all bins meet this criteria
-limited or no background in a bin would lead to an inflated signal significance if data, but no background
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Systematic Uncertainties}
-TURN THESE SUBSECTIONS INTO BOLDED PARAGRAPH HEADERS
 
-\subsection{Jet Energy Scale}
-\subsection{Lepton Selection and Trigger Efficiency}
-\subsection{W+jets Shape Uncertainties}
-\subsection{Pileup Weights}
-In order to assess the effect of a systematic uncertainty due to choice of $\sigma_{\text{inelastic}}=69.3\unit{mb}$, a $\pm$7\% variation was used.
-\subsection{CSV Weights}
-\subsection{Top \texorpdfstring{$p_{T}$}{pT}}
-\subsection{LHC Luminosity}
-\subsection{Sample Cross Sections}
-\subsection{MET Uncertainty }
-\subsection{QCD \texorpdfstring{$\eta$}{eta} Weights Uncertainty}
-\subsection{Summary of Systematics}
-
-\begin{comment}
+The input to the statistical analysis is a set of BDT discriminant histograms and their associated systematic uncertainties.
 Given that this is a shape analysis, it is important to consider systematic uncertainties that may change the expected yields (rate changes), the shape of the discriminating variable, or both.
-This analysis considers all three of these, but decouples the rate and shape changes during limit setting.
-Table~\ref{tab:ListOfSystematics} summarizes all of the systematic uncertainties considered for this analysis.
-Changes to the limits greater than 1\% come from the scheme used to reweight the $\eta$ distribution in the QCD sample, the jet energy scale, the $\cos\left(\theta_{l}\right)$ weights, and the lepton efficiency uncertainty.
-There will be much more detail on each of the systematics in the thesis.
+We consider many sources of uncertainty on both the background estimation and the signal normalization.
+Table~\ref{tab:systematics_summary} summarizes all of the systematic uncertainties considered for this analysis, with one systematic per line.
+The largest uncertainty comes from the \Wjets normalization stemming from the QCD and \Wjets rate estimation.
+Each source of systematic uncertainty will be described in more detail in the sections below.
+
+\begin{sidewaystable}[htbp]
+\centering
+\begin{tabular}{lccl}%
+\hline
+Source                                            & Type  & Rate Uncertainty [\%] & Notes \\
+\hline
+QCD Scale (\ggH)                                  & lnN   & 7-8         & Scale uncertainty for NLO \ggH prediction \\
+QCD Scale (\qqH)                                  & lnN   & 0.2         & Scale uncertainty for NLO \qqH prediction \\
+QCD Scale (\ZH)                                   & lnN   & 1           & Scale uncertainty for NLO \ZH prediction \\
+QCD Scale (\WH)                                   & lnN   & 3.1         & Scale uncertainty for NLO \WH prediction \\
+QCD Scale (\ttH)                                  & lnN   & 4-9         & Scale uncertainty for NLO \ttH prediction \\
+\hline
+PDF ($\cPg\cPg$)                                  & lnN   & 6-7         & PDF uncertainty for $\cPg\cPg$ initiated processes (\ggH, \ttH) \\
+PDF (\qqbar)                                      & lnN   & 2.6-2.8     & PDF uncertainty for \qqbar initiated processes (\qqH, \WH, \ZH) \\
+\hline
+QCD Scale (\ttbar)                                & lnN   & 5.7         & Scale uncertainty for NLO \ttbar prediction \\
+QCD Scale (\Zjets)                                & lnN   & 3.4         & Scale uncertainty for NLO \Zjets prediction \\
+QCD Scale (Single \cPqt)                          & lnN   & 5           & Scale uncertainty for NLO single top prediction \\
+QCD Scale (\VV)                                   & lnN   & 3           & Scale uncertainty for NLO diboson prediction \\
+\hline
+\Wjets Normalization                              & lnN   & 0.4-0.5     & Scale uncertainty for \Wjets prediction \\
+QCD                                               & lnN   & 10          & Scale uncertainty for data-driven QCD prediction \\
+\ttbar                                            & lnN   & 3           & Scale uncertainty for \ttbar prediction \\
+\hline
+Luminosity $8\unit{TeV}$                          & lnN   & 2.6         & Signal and all backgrounds \\
+Lepton Efficiency                                 & lnN   & 2           & Signal and all backgrounds \\
+\ETslash                                          & lnN   & 0.2         & Signal and all backgrounds \\
+Jet Energy Scale                                  & shape & 0-20        & Signal and all backgrounds \\
+Pileup Weight                                     & shape & 0-8         & Signal and all backgrounds \\
+CSV Weight                                        & shape & 0-17        & Signal and all backgrounds \\
+Top \pt Weight                                    & shape & 0.5-2       & \ttbar only \\
+ME Matching                                       & shape & -           & \Wjets only \\
+$\text{Q}^{2}$ Scale                              & shape & -           & \Wjets only \\
+\costhetal Weight                                 & shape & -           & \Wjets only \\
+QCD Multijet $\eta$ Weight                        & shape & 6-30, 0.5-1 & QCD and \Wjets only \\
+\hline
+\end{tabular}
+\caption{Summary of the systematic uncertainties used in this analysis.}
+\label{tab:systematics_summary}
+\end{sidewaystable}
+
+\subsection{LHC Luminosity}
+
+A flat rate uncertainty of 2.6\% is applied to all of the simulated samples to account for the uncertainty on the LHC luminosity and thus the simulation normalizations~\cite{CMS-PAS-LUM-13-001}.
+
+\subsection{Sample Cross Sections}
+
+The uncertainties on the theoretical cross sections used for the normalizations of the background simulations are taken from~\cite{SMCrossSectionsat8TeV}.
+Likewise, the signal cross sections, branching ratios, and uncertainties are taken from CERN Yellow Report 3~\cite{HiggsCrossSectionsAt8TeVRepot3}.
+The uncertainties on the background sample cross sections ranged from 3-5.7\% while the signal cross section uncertainties range from 10-11\% (PDF \& QCDScale).
+The theoretical cross section uncertainties on the signal are broken into two components, the uncertainty on the QCD renormalization and factorization scales and the uncertainty on the PDFs.
+Table~\ref{tab:cross_section_uncertainties} shows a summary of the uncertainties used.
+An additional uncertainty of $\sim$0.5\% is assigned to the \Wjets backgrounds due to the uncertainty from the fit when determining the QCD sample normalization.
+
+\begin{sidewaystable}[htbp]
+\centering
+\begin{tabular}{lccccccccccc}
+\hline
+\multirow{2}{*}{Process} & \multicolumn{2}{|c|}{PDF} & \multicolumn{5}{c|}{QCD Scale} & \multicolumn{4}{c}{QCD Scale} \\
+\cline{2-12}
+& \multicolumn{1}{|c}{\cPg\cPg} & \multicolumn{1}{c|}{\qqbar} & \ggH & \qqH & \WH & \ZH & \multicolumn{1}{c|}{\ttH} & \ttbar & \V & \VV & Single \cPqt \\
+\hline
+Single \cPqt   &         &           &       &       &     &       &         &       &       &     & 5\% \\
+\Zjets         &         &           &       &       &     &       &         &       & 3.4\% &     &     \\
+Diboson        &         &           &       &       &     &       &         &       &       & 3\% &     \\
+\ttbar         &         &           &       &       &     &       &         & 5.7\% &       &     &     \\
+\ggH           & 7-7.5\% &           & 7-8\% &       &     &       &         &       &       &     &     \\
+\qqH           &         & 2.6-2.8\% &       & 0.2\% &     &       &         &       &       &     &     \\
+\WH, \ZH, \ttH &         &           &       &       & 1\% & 3.1\% & 3.8-9\% &       &       &     &     \\
+\hline
+\end{tabular}
+\caption{Uncertainties on the theoretical cross sections of the simulated signals and backgrounds.}
+\label{tab:cross_section_uncertainties}
+\end{sidewaystable}
+
+\subsection{MET Uncertainty}
+
+With respect to \ETslash, this analysis follow along the same line as the high mass \lvjj group.
+Although we lowered the cut to be \joinsym{\ETslash}{\geqslant}{25\gev}, the uncertainty on the \ETslash should be similar.
+Thus we applied the same conservative estimate of a 0.2\% uncertainty.
+
+\subsection{Lepton Selection and Trigger Efficiency}
+
+This analysis makes use of the single lepton triggers and requires a tight electron or muon in the event.
+Consequently we must account for any mis-modeling of the lepton identification or trigger efficiencies.
+A flat 1\% uncertainty on the trigger efficiency is applied per~\cite{CMS-PAS-HIG-13-027}.
+A flat 2\% uncertainty is applied for the lepton selection.
+
+\subsection{Pileup Weights}
+The necessity of the pileup weights were discussed in section~\ref{sec:pileup_reweighting}.
+The number of pileup interactions in a single bunch crossing is given by:
+\begin{equation}
+  N_{i}=\frac{\mathcal{L}\cdot\sigma_{\text{minimum bias}}}{v_{\text{orbit}}},
+\end{equation}
+where $\mathcal{L}$ is the instantaneous luminosity, $\sigma_{\text{minimum bias}}$ is the total minimum bias cross section for an event at the LHC, and $v_{orbit}$ is the LHC orbit frequency (11246\unit{Hz}).
+In this calculation and the calculation of the pileup weights the minimum bias cross sections is used, but it's true value is not known.
+
+In order to asses the effect of a systematic uncertainty due to choice of $\sigma_{\text{minimum bias}}=69.3\unit{mb}$, a $\pm$7\% variation was used and the pileup weights were recalculated.
+Once that was done, the BDT templates were created again.
+As it turns out, the shape changes were negligible, but the rate changes due to this shift can be seen in table~\ref{tab:PUWeight_Uncertainties}.
 
 \begin{table}[htbp]
-  \centering
-  \noindent
-  \small
-    \captionsetup{width=.85\textwidth}
-    \caption*{Systematic Uncertainties for H$\rightarrow$WW$\rightarrow$l$\nu$jj Analysis}
-    \begin{tabular}{|l|c|c|c|} \hline
-Uncertainty & Rate (Y/N) 2 & Shape (Y/N) & Comments \\ \hline
-$Q^{2}$ Scaling & Y & Y & W+jets MC only \\ \hline
-ME/PS Matching & Y & Y & W+jets MC only \\ \hline
-Background xSec & Y & N & All background samples \\  \hline
-Signal xSec & Y & N & All signal MC samples \\  \hline
-Luminosity & Y & N & All samples \\  \hline
-MC Pileup reweighting & Y & N & All MC samples \\  \hline
-Trigger Efficiency & Y & N &  All MC samples\\  \hline
-Lepton Selection Efficiency & Y & N & All MC samples\\  \hline
-JES Uncertainties & Y & Y & All MC samples \\  \hline
-Met Uncertainty & Y & N & All samples\\  \hline
-CSV Reshaping & Y & N &  All MC samples\\  \hline
-Top Pt-reweighting & Y & Y &  TTbar MC only\\  \hline
-QCD $\eta$ Weight & Y & Y & QCD shape, W+jets and QCD rate \\ \hline
-$\cos\left(\theta_{l}\right)$ Weight & N & Y & W+jets MC only \\ \hline
-    \end{tabular}
-    \caption{List of all systematic uncertainties applied in analysis, whether that uncertainty has a rate or shape component to it, and which samples is is applied to.}
-    \label{tab:ListOfSystematics}
+\centering
+\begin{tabular}{lccc} \hline
+Process                                    & 2 Jets    & 3 Jets  & $\geqslant$4Jets \\\hline
+Diboson                                    & 2-5\%     & 3-6\%   & 3.5-7\%   \\
+\Wjets                                     & 3\%       & 4\%     & 4\%       \\
+\Zjets                                     & 7-8\%     & 7-8\%   & 7-8\%     \\
+\ttbar                                     & 2\%       & 2\%     & 2\%       \\
+Single \cPqt                               & 1-3\%     & 2-8\%   & 2-9\%     \\
+Multijet                                   & 0-2\%     & 0-3\%   & 0-4\%     \\\hline
+\ggH; $\MH=\text{125}\gev$, \HWW           & 2-3\%     & 3\%     & 3.5\%     \\
+\qqH; $\MH=\text{125}\gev$, \HWW           & 0.5-3\%   & 1-3.5\% & 2.5-4\%   \\
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HWW & 0-3\%     & 1-3\%   & 2-3.5\%   \\\hline
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HZZ & 0.5-3\%   & 2-4\%   & 2-4\%     \\
+\WH; $\MH=\text{125}\gev$, \Hbb, \Wlv      & 0.5-3\%   & 2-4\%   & 3.5-4.5\% \\
+\ttH; $\MH=\text{125}\gev$, \Hbb           & 1.5-4.5\% & 0-2.5\% & 2-4\%     \\\hline
+\end{tabular}
+\caption{Change in the expected yields due to the pileup weight uncertainties.}
+\label{tab:PUWeight_Uncertainties}
 \end{table}
-\end{comment}
+
+\subsection{Jet Energy Scale (JES)}
+
+The jet energy corrections used to correct the jet energy scale back to the particle level were discussed in section~\ref{sec:jets}.
+The uncertainty on this correction originates from several uncorrelated sources, but for simplicity we use the total combined uncertainty.
+For $M$ uncorrelated sourced the total uncertainty $S\left(\pt,\eta\right)$ is given by:
+\begin{equation}
+  S\left(\pt,\eta\right)=\sqrt{\sum_{i}^{M}s_{i}^{2}\left(\pt,\eta\right)},
+\end{equation}
+where $s_{i}\left(\pt,\eta\right)$ is the uncertainty for a single source $i$.
+To evaluate the effect this uncertainty has on the BDT discriminant we create the same distribution, but with the jet energies shifted by $\pm1\sigma$ using the procedures given in~\cite{JECUncertainties,JECUncertaintySources}.
+This is done before placing a cut on the \pt of the jets so as to allow for migration of events between jet bins.
+Some jets that once failed the \pt cut may not pass and some jets might then fail the \pt cut.
+Fig.~\ref{fig:JESShift_KinMEBDT} shows the the type of variations expected for the signal (\ggH) and background (\Wjets) samples.
+Additionally, table~\ref{tab:JES_Uncertainties} lists the size of the JES uncertainty within each jet bin.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Systematics/JESShift_KinMEBDT_ggH125.eps}
+        \caption{}
+        \label{fig:JESShift_KinMEBDT_ggH125}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Systematics/JESShift_KinMEBDT_WJets.eps}
+        \caption{}
+        \label{fig:JESShift_KinMEBDT_WJets}
+    \end{subfigure}
+    \caption{Combined kinematic and ME BDT discriminant distributions in the 2 jet, electron bin for the (a) \ggH and (b) \Wjets samples. The black line shows the nominal yield while the red and blue lines show the change in shape if the JES is scales up and down by $1\sigma$, respectively. The yields for the shifted samples are normalized to that of the nominal yield.}
+    \label{fig:JESShift_KinMEBDT}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc} \hline
+Process                                    & 2 Jets  & 3 Jets  & $\geqslant$4Jets \\\hline
+Diboson                                    & 1-2\%   & 2\%     & 2\%     \\
+\Zjets                                     & 0-5.5\% & <1\%    & <1\%    \\
+\ttbar                                     & 8-19\%  & 4-7\%   & 2-4\%   \\
+Single \cPqt                               & 2-0\%   & <1\%    & <1\%    \\\hline
+\ggH; $\MH=\text{125}\gev$, \HWW           & 0-5\%   & 0-2\%   & 0-3\%   \\
+\qqH; $\MH=\text{125}\gev$, \HWW           & <1\%    & 4\%     & 7\%     \\
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HWW & 2-3\%   & 0-5\%   & 5-8\%   \\\hline
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HZZ & 1.5\%   & 0-6\%   & 4-5\%   \\
+\WH; $\MH=\text{125}\gev$, \Hbb, \Wlv      & 8-9\%   & 1-10\%  & 2-13\%  \\
+\ttH; $\MH=\text{125}\gev$, \Hbb           & 4-17\%  & 11-24\% & 18-21\% \\\hline
+\end{tabular}
+\caption{Change in the expected yields due to the JES uncertainties.}
+\label{tab:JES_Uncertainties}
+\end{table}
+
+\subsection{CSV Weights}
+
+Recommendation for how to treat the systematic uncertainties on the CSV weights were given by~\cite{CMS-AN-13-130}, which also details their derivation.
+In this analysis, however, the CSV weights were found to be very small and any change in them would have a negligible impact.
+It was decided to use a much simpler, yet conservative approach by.
+We overestimated the error by using $\text{weight}^{2}$ as the $+1\sigma$ variation and the unweighted distributions as the $-1\sigma$ variation.
+The changes to the rate due to this methodology can be seen in table~\ref{tab:CSV_Uncertainties}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccc} \hline
+Process                                    & 2 Jets  & 3 Jets    & $\geqslant$4Jets \\\hline
+Diboson                                    & 0.5-2\% & 1-3.5\%   & 1-5\%   \\
+\Wjets                                     & 0-3\%   & 0-5.5\%   & 0-8.5\% \\
+\Zjets                                     & 2-5\%   & 0-5.5\%   & 2-5\%   \\
+\ttbar                                     & 5-11\%  & 6-14\%    & 6-17\%  \\
+Single \cPqt                               & 4-9\%   & 4-12\%    & 5-16\%  \\\hline
+\ggH; $\MH=\text{125}\gev$, \HWW           & 1-3\%   & 1-5\%     & 1-7\%   \\
+\qqH; $\MH=\text{125}\gev$, \HWW           & 0-2\%   & 1.5-2.5\% & 2-4\%   \\
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HWW & <1\%    & <1\%      & <1\%    \\\hline
+\WH, \ZH, \ttH; $\MH=\text{125}\gev$, \HZZ & <1\%    & <1\%      & <1\%    \\
+\WH; $\MH=\text{125}\gev$, \Hbb, \Wlv      & <1\%    & <1\%      & <1\%    \\
+\ttH; $\MH=\text{125}\gev$, \Hbb           & <1\%    & <1\%      & <1\%    \\\hline
+\end{tabular}
+\caption{Change in the expected yields due to the CSV weight uncertainties.}
+\label{tab:CSV_Uncertainties}
+\end{table}
+
+\subsection{Top \texorpdfstring{\pt}{pT}}
+
+As discussed in section~\ref{sec:topPt_reweighting}, the top-quark-pair cross section analyses found that the \pt spectrum of top quarks in data is softer than those in simulation.
+Thus we needed to reweight the top quark \pt spectrum in the \ttbar sample.
+In order to fully cover any uncertainty on the weights a 100\% uncertainty is assumed.
+This means the one standard deviation up and down variations on the weights are taken to be:
+\begin{align}
+  +1\sigma: {}& ~w_{\text{up}}=w_{\text{TopPt}}{\cdot}w_{\text{TopPt}}, \\
+  -1\sigma: {}& ~w_{\text{down}}=1.
+\end{align}
+This was the recommendation as provided by the TOP PAG~\cite{TopPtReweighting} and results in an uncertainty of 0.5-2.1\% on the \ttbar yield.
+
+\subsection{\texorpdfstring{\costhetal}{CosThetaL} Weight Uncertainty}
+
+Once again we assumed a 100\% uncertainty on the \costhetal weights.
+The one standard deviation up and down variations on the weights are taken to be:
+\begin{align}
+  +1\sigma: {}& ~w_{\text{up}}=w_{\costhetal}{\cdot}w_{\costhetal}, \\
+  -1\sigma: {}& ~w_{\text{down}}=1.
+\end{align}
+These weights are then used as an uncertainty for the \Wjets sample.
+As this is not a cut on the events and no change in selection has been made, this does not correspond to a change in the rate, only the \Wjets shape.
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.31\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Systematics/Shape_KinMEBDT_jets2_electron_CMS_hww_lnujj_CosThetaLWeight_shape_WJets.eps}
+        \caption{}
+        \label{fig:costhetal_uncertainty_jets2}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.31\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Systematics/Shape_KinMEBDT_jets3_electron_CMS_hww_lnujj_CosThetaLWeight_shape_WJets.eps}
+        \caption{}
+        \label{fig:costhetal_uncertainty_jets3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.31\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Chapter5/Systematics/Shape_KinMEBDT_jets3_electron_CMS_hww_lnujj_CosThetaLWeight_shape_WJets.eps}
+        \caption{}
+        \label{fig:costhetal_uncertainty_jets4}
+    \end{subfigure}
+    \caption{Changes to the shape of the BDT discriminant for the \Wjets sample due to variations on the \costhetal weights for the (a) 2 jets bin, (b) 3 jet bin, and (c) $\geqslant$4 jet bin.}
+    \label{fig:costhetal_uncertainty}
+\end{figure}
+
+\subsection{\Wjets Shape Uncertainties}
+
+In order to take into account variations on the $\text{Q}^{2}$ scale and matrix element parton matching new samples are generated, since these uncertainties cannot be applied after the generation stage.
+The samples used are listed in table~\ref{tab:WJets_Shape_Systematic_Samples}.
+Since \Wjets is our dominant background in all jet and lepton bins, it was deemed sufficient to apply the $\text{Q}^{2}$ and matching uncertainties only for this sample; generating new samples and/or processing existing large samples for all of the signals and backgrounds would be time consuming and would result in little to no change in the results.
+
+The centrally produced \Wjets events were generated using \textsc{Mad}\textsc{Graph}, a matrix element level generator, which was then interfaced to \textsc{pythia} to model the parton shower with its soft and collinear radiation.
+Because \textsc{Mad}\textsc{Graph} generates tree-level diagrams a variation of the factorization and renormalization scales has a significant impact on the simulation.
+In this case the scales were varied by a factor of two.
+
+Once the four samples listed in the table were processed, they went through the same selection and weighting procedure as the nominal \Wjets sample.
+The new template histograms include only shape changes as the rate uncertainty for the nominal \Wjets same is included in a different source.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{llr} \hline
+Sample & Dataset Name & Cross Section \\\hline
+ME Matching Up                  & /WJetsToLNu\_matchingup\_8TeV-madgraph-tauola & 37509\unit{pb} \\
+ME Matching Down                & /WJetsToLNu\_matchingdown\_8TeV-madgraph-tauola & 37509\unit{pb} \\
+Q\textsuperscript{2} Scale Up   & /WJetsToLNu\_scaleup\_8TeV-madgraph-tauola & 37509\unit{pb} \\
+Q\textsuperscript{2} Scale Down & /WJetsToLNu\_scaledown\_8TeV-madgraph-tauola & 37509\unit{pb} \\\hline
+\end{tabular}
+\caption{Samples used for \Wjets systematic shape uncertainties. Each dataset name is appended with /Summer12\_DR53X-PU\_S10\_START53\_V7A-v1/AODSIM.}
+\label{tab:WJets_Shape_Systematic_Samples}
+\end{table}
+
+\subsection{QCD \texorpdfstring{$\eta$}{eta} Weights Uncertainty}
+
+The uncertainty on the weights as a function of $\eta$ for the data-driven QCD sample have to do with the choice of selection criteria, which was first discussed in section~\ref{sec:QCD_data-driven_sample}.
+The motivation for the chosen isolation windows was more practical than due to some deeper, underlying physics.
+Therefore the uncertainties for the weights are generated by varying the isolation criteria and creating alternate QCD samples with a modified set of events.
+One side of the isolation region was relaxed at a time to generate four new samples, two each for the electron and muon channels.
+These samples were then used to generate four new sets of weights, just as done in section~\ref{sec:QCD_reweighting}.
+The resulting samples lead to a small variation in the QCD template shapes, but also lead to an uncertainty on the QCD yield of 6-30\% and on the \Wjets yield of 0.1-0.5\%.

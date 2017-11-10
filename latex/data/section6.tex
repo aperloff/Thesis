@@ -13,22 +13,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\chapter{\texorpdfstring{\uppercase {Limits and Results}}{Limits and Results}}
+\chapter{\texorpdfstring{\uppercase {Results}}{Results}}
 \label{ch:results}
 
-\section{Event Yields}
-\section{Impact of Systematic Uncertainties}
-
-TTbar reweighting:
-The uncertainty associated with this reweighting is taken to be equal to the full size of the reweighting, which gives
-for the one standard deviation up and down variations of the event weight
-$+1\sigma$: $w_{\mathrm{up}}=w_{\mathrm{TopPt}}{\cdot}w_{\mathrm{TopPt}}$
-$-1\sigma$: $w_{\mathrm{down}}=1$
-
-
-\section{Limits}
 
 \begin{comment}
+
+
+
+A distribution of the BDT discriminant is produced for every signal, background, and data sample and then passed to the RooStats-based Higgs Combine Tool~\cite{CombineToolTwiki} to compute limits on the Higgs signal strength.
+Given that this analysis has a relatively high number of events in the expected yields we make use of the asymptotic method\footnote{If there had been a lower number of expected events we may have needed to use the full frequentist method rather than the asymptotic method.} for limit setting along with the CL\textsubscript{s} test statistic~\cite{Read:2002hq}.
+Using an Asimov dataset an expected 95\% upper confidence level is obtained and shown in figure~\ref{fig:limits} (left).
+
+
+original bin width 0.02 [-1,1]
+bin must have background events
+stat error must be less than 10\%
+bins merged left to right until all bins meet this criteria
+limited or no background in a bin would lead to an inflated signal significance if data, but no background
+
+
+
+effect on the limit calculation if that uncertainty is removed from the calculation.
+
+
+
+
+
+
+
 begin{figure}[!hbt]
 	\centering
 	\begin{subfigure}[t]{0.46\textwidth}
