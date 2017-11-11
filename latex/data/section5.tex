@@ -1203,28 +1203,57 @@ Additionally, each subprocess can be generated from a number of diagrams as seen
 \begin{figure}[!hbt]
     \centering
     \begin{subfigure}[t]{0.9\textwidth}
-        \includegraphics[width=\textwidth,page=1,trim={0 3cm 0 2cm},clip]{\figpath/Chapter5/g_d_-_e-_ve_u_g_matrix.pdf}
+        \includegraphics[width=\textwidth,page=1,trim={0 3cm 0 2cm},clip]{\figpath/Chapter5/MadGraph/g_d_-_e-_ve_u_g_matrix.pdf}
     \end{subfigure}
 
     \begin{subfigure}[t]{0.9\textwidth}
-        \includegraphics[width=\textwidth,page=2,trim={0 7.25in 0 2cm},clip]{\figpath/Chapter5/g_d_-_e-_ve_u_g_matrix.pdf}
+        \includegraphics[width=\textwidth,page=2,trim={0 7.25in 0 2cm},clip]{\figpath/Chapter5/MadGraph/g_d_-_e-_ve_u_g_matrix.pdf}
     \end{subfigure}
     \caption{Feynman diagrams from the $\cPg\cPqd\rightarrow\Pem\PAGne\cPqu\cPg$ process.}
     \label{fig:MadGraph5_example_subdiagrams}
 \end{figure}
 
 Matrix elements were calculated for all of the major signals and background in this analysis.
-There were 15 matrix elements which were eventually used: \WW, \WZ, $\WZ\cPqb\cPqb$, $\W\cmsSymbolFace{L}\cPg$, $\W\cmsSymbolFace{L}\cPg$ (second order), $\W\cmsSymbolFace{L}\cmsSymbolFace{L}$, $\W\cmsSymbolFace{L}\cPqb$, $\W\cPqb\cPqb$, ZLight, \ttbar, Single Top T, Single Top S, QCD, \ggH (\joinsym{\MH}{=}{125\gev}), and \WH (\joinsym{\MH}{=}{125\gev}).
+There were 15 matrix elements which were eventually used: \WW, \WZ, $\WZ\cPqb\cPqb$, $\W\cmsSymbolFace{L}\cPg$, $\W\cmsSymbolFace{L}\cPg$ (second order), $\W\cPg\cPg$, $\W\cmsSymbolFace{L}\cmsSymbolFace{L}$, $\W\cmsSymbolFace{L}\cPqb$, $\W\cPqb\cPqb$, ZLight, Single Top \cPqt-channel, Single Top \cPqs-channel, QCD, \ggH (\joinsym{\MH}{=}{125\gev}), and \WH (\joinsym{\MH}{=}{125\gev}).
 While some matrix element diagrams may be left out, the purpose of calculating the probabilities is to discriminate a signal event from a background event.
 The loss of a diagram will simply reduce the sensitivity of the classifier, not change the answer.
+The some of the Feynman diagrams used for calculating the matrix elements can be found in figs.~\ref{fig:MadGraph5_example_signal} and~\ref{fig:MadGraph5_example_Wjj}.
 
-The \ttbar process, and similar diagrams with more than two jets, presents a problem for the matrix element calculations because it doesn't have the same final state as the signal.
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth,trim={0.5in 7.25in 4in 2cm},clip]{\figpath/Chapter5/MadGraph/matrix_ggH_WW_lvjj.pdf}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth,trim={0.5in 7.25in 4in 2cm},clip]{\figpath/Chapter5/MadGraph/matrix_WH.pdf}
+    \end{subfigure}
+    \caption{Feynman diagrams used to calculate the matrix element probabilities for the \ggH and \WH signals for two-jet events.}
+    \label{fig:MadGraph5_example_signal}
+\end{figure}
+
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.9\textwidth}
+        \includegraphics[width=\textwidth,page=1,trim={0 3cm 0 2cm},clip]{\figpath/Chapter5/MadGraph/matrix_Wjj.pdf}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.9\textwidth}
+        \includegraphics[width=\textwidth,page=2,trim={0 7.25in 0 2cm},clip]{\figpath/Chapter5/MadGraph/matrix_Wjj.pdf}
+    \end{subfigure}
+    \caption{A sampling of Feynman diagrams used to calculate the $\W+\cPj\cPj$ matrix element probabilities for two-jet events.}
+    \label{fig:MadGraph5_example_Wjj}
+\end{figure}
+
+Diagrams with more than two jets present a problem for the matrix element calculations because they doesn't have the same final state as the signal.
 As was stated in section~\ref{sec:higgs_production}, for a \ttbar event to pass as a two jet event it must mean that some of the jets are missed.
 This can happen in two different ways; either both \W bosons decay leptonically and one lepton is not detected or one of the \W bosons decays hadronically and two of the four jets are missed.
 If we really confine the matrix element to two jets, then we can use the diagram with one leptonically decaying \W boson where the other \W is simply not observed (i.e. it decays outside our acceptance).
 In this case there are three additional unknown momentum components coming from the \W boson which must be integrated over.
 If a third jet were allowed, then the the typical semileptonic \W boson decay is used and one of the light quarks is assumed to be missed.
 This also adds three additional integrations to the calculation.
+Although it would have been nice to include a \ttbar matrix element probability for discrimination purposes, the additional integrals proved too costly to compute.
+Each \ttbar probability took over two minutes to compute, even using accelerated numerical integration packages.
+Therefore we did not compute the \ttbar probability and we rely on the signal probabilities being relatively low for \ttbar events.
 
 \begin{figure}[!hbt]
     \centering
@@ -1232,7 +1261,6 @@ This also adds three additional integrations to the calculation.
     \caption{Feynman diagrams used to calculate top pair probabilities for two- and three-jet events. The circled particles are assumed to be unobserved and an integral is taken over their momenta. Figure and caption from~\cite{Dong2008}.}
     \label{fig:TTbarMEFeynmanDiagrams}
 \end{figure}
-
 
 \subsection{Combinatorial Considerations}
 
@@ -1250,9 +1278,86 @@ combinations. In this case, only the two combinations of assigning tagged jets t
 
 \subsection{Numerical Integration}
 
+Obviously the differential cross section must be calculated many times for every in both the data and MC samples.
+The integration is performed over the neutrino longitudinal momentum, the jet energies, and in some cases over the momenta of missing particles, as in the case of \ttbar.
+The result is an integral with dimensionality of anywhere between three and seven dimensions; six in the case of top pair production with a two-jet final state.
+These types of equations can't be solved analytically, so we must instead use numerical integration techniques. 
 
-This computation is by far the most time consuming aspect of this analysis, costing $\sim$12 million CPU hours and spanning over 1.5 years.
-It required the work of several analyzers and the entire Worldwide LHC Computing Grid (WLCG).
+for simpler integrals (3 dimensions) without missing particles
+For the simpler cases involving three integrals and without any missing particles, integration is performed using the adaptive quadrature~\cite{VANDOOREN1976207} method based on the CERNLIB~\cite{CERNLIB} RADMUL~\cite{GENZ1980295} routine, adapted for ROOT~\cite{Brun:1997pa}, then adapted again for the CDF single top analysis~\cite{Dong2008}.
+The algorithm iteratively divides the n-dimensional region to be integrated into equal-sized regions.
+At each iteration the uncertainty in each region is estimated and the region with the largest uncertainty is divided in half.
+The iterations continue until all of the regions have an error less than a user specified amount.
+In this analysis we used 1\% for all of the matrix elements except for ZLight, where a 5\% uncertainty is allowed.
+After the stopping condition is met, the integral in each region is estimated and returned.
+This methodThe benefit of using this method is that it is stable and its answers are reproducible; its calculations are deterministic and do not reply on pseudo random number generators (PRNG).
+Table~\ref{tab:ME_computation_time_per_event} lists the computation times for each matrix element averaged over 1000 events computed in both the \Wjets and \ggH samples.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrr} \hline
+Diagram                                & \Wjets Sample [s] & \ggH \joinsym{\MH}{=}{125\gev} Sample [s] \\\hline
+\ggH                                   & 2.9               & 3.2   \\
+\WH                                    & 4.5               & 3.8   \\
+QCD                                    & 0.4               & 0.5   \\
+Single Top \cPqs-channel               & 4.2               & 4.3   \\
+Single Top \cPqt-channel               & 2.9               & 3.3   \\
+$\W\cPqb\cPqb$                         & 1.9               & 1.3   \\
+$\W\cmsSymbolFace{L}\cmsSymbolFace{L}$ & 7.4               & 4.8   \\
+$\W\cmsSymbolFace{L}\cPqb$             & 2.9               & 2.3   \\
+$\W\cmsSymbolFace{L}\cPg$ (LO and NLO) & 3.5               & 2.7   \\
+\WW                                    & 1.5               & 1.1   \\
+\WZ                                    & 3.9               & 2.9   \\
+$\WZ\cPqb\cPqb$                        & 2.5               & 1.9   \\
+ZLight                                 & 39.1              & 26.3  \\\hline
+Total                                  & 77.7              & 58.5  \\
+Total ($\ggH\times35$, $\WH\times14$)  & 233.7             & 217.9 \\\hline
+\end{tabular}
+\caption{The computations times for each probability averaged over 1000 events and computed in both the \Wjets and \ggH samples. The $\W\cPg\cPg$ diagram was not included in this test. The integration for each of these probabilities was performed using the ROOT integrator.}
+\label{tab:ME_computation_time_per_event}
+\end{table}
+
+Although the ROOT integrator is deterministic and stable, good qualities in a numerical integrator, it starts to become prohibitively slow for higher dimensional integrals.
+Ref.~\cite{Dong2008} performed a test on the \ttbar computation and the ROOT integrator did not converge for a single integration even after running for an entire day.
+Instead, the DIVONNE algorithm from the CUBA integration library~\cite{Hahn:2004fe}, which is based on CERNLIB’s DIVON4~\cite{Friedman:1981:NPP:355934.355939} function, is used.
+
+
+
+
+
+
+\begin{comment}
+DIVONNE is a Monte-Carlo-based integrator using stratified sampling to subdivide its regions. Stratified sampling minimizes the variance of the Monte Carlo events thrown in a given subregion. The Koksma-Hlawka inequality [90] shows that the variance is bounded by half the volume of the subregion times the difference of the supremum and infimum of the function in that subregion. The borders of the subregion are adjusted to reduce this spread. Once a requested variance is reached, the integral is estimated by adding the total of randomly generated points in each subregion.
+
+The implementation of the algorithm in CUBA also samples the subregions independently with the same number of Monte Carlo events in each region. If this result is not consistent with the integral derived already, the regions are subdivided further and the process is repeated.
+
+The DIVONNE algorithm gave results consistent with RADMUL when tested on an
+ensemble of a thousand events. It is also very stable: running it repeatedly on an identical event was never observed to change the result by more than 0.001\%.
+\end{comment}
+
+
+
+
+
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrr} \hline
+Diagram                                & \Wjets Sample [s] & \ggH \joinsym{\MH}{=}{125\gev} Sample [s] \\\hline
+Single Top \cPqt\W-channel             & 100.9             & 68.0  \\
+\ttbar                                 & 134.7             & 133.6 \\\hline
+Total                                  & 235.6             & 201.6 \\\hline
+\end{tabular}
+\caption{The computation times for the unused single top and \ttbar diagrams. Including these would have doubled the overall computation time. The integration for each of these probabilities was performed using the DIVONNE integrator.}
+\label{tab:ME_computation_time_per_event_not_used}
+\end{table}
+
+Even with the DIVONNE algorithm, the computation times for the \ttbar and single top $\cPqt\W$ channel ME probabilities were prohibitively large (see table~\ref{tab:ME_computation_time_per_event_not_used}) and were thus dropped from the list of computations.
+Besides the \joinsym{\MH}{=}{125\gev} \ggH and \WH diagrams, 34 additional \ggH and 13 additional \WH probabilities were calculated corresponding to different Higgs mass hypotheses.
+In the end, however, these probabilities were not used.
+The total computation time for a single event was around four minutes, give or take some time for computing cluster overhead.
+This computation is by far the most time consuming aspect of this analysis, especially with tens of millions of events to process.
+The total computation time ended up costing $\sim$12 million CPU hours and spanned over 1.5 years, requiring the work of several analyzers and the entire Worldwide LHC Computing Grid (WLCG).
 
 \subsection{Standalone Matrix Element Based BDT}
 
