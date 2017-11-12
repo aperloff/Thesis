@@ -133,7 +133,7 @@
         \label{fig:KinBDT_jets3_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with only kinematic variables in the 3 jet bin for the combined lepton channel. Validation plot for the BDT in the 3 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:KinBDT_Comparison_jets2}
+    \label{fig:KinBDT_Comparison_jets3}
 \end{figure}
 
 \begin{figure}[!hbt]
@@ -154,7 +154,7 @@
         \label{fig:KinBDT_jets4_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with only kinematic variables in the $\geqslant$4 jet bin for the combined lepton channel. Validation plot for the BDT in the $\geqslant$4 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:KinBDT_Comparison_jets2}
+    \label{fig:KinBDT_Comparison_jets4}
 \end{figure}
 
 \begin{figure}[!hbt]
@@ -196,7 +196,7 @@
         \label{fig:MEBDT_jets3_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with only matrix element probabilities in the 3 jet bin for the combined lepton channel. Validation plot for the BDT in the 3 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:MEBDT_Comparison_jets2}
+    \label{fig:MEBDT_Comparison_jets3}
 \end{figure}
 
 \begin{figure}[!hbt]
@@ -217,7 +217,7 @@
         \label{fig:MEBDT_jets4_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with only matrix element probabilities in the $\geqslant$4 jet bin for the combined lepton channel. Validation plot for the BDT in the $\geqslant$4 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:MEBDT_Comparison_jets2}
+    \label{fig:MEBDT_Comparison_jets4}
 \end{figure}
 
 \begin{figure}[!hbt]
@@ -259,7 +259,7 @@
         \label{fig:KinMEBDT_jets3_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with the kinematic variables and the ME BDT in the 3 jet bin for the combined lepton channel. Validation plot for the BDT in the 3 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:KinMEBDT_Comparison_jets2}
+    \label{fig:KinMEBDT_Comparison_jets3}
 \end{figure}
 
 \begin{figure}[!hbt]
@@ -280,7 +280,7 @@
         \label{fig:KinMEBDT_jets4_muon_noSys}
     \end{subfigure}
     \caption{(a) The BDT response plot from TMVA for the training with the kinematic variables and the ME BDT in the $\geqslant$4 jet bin for the combined lepton channel. Validation plot for the BDT in the $\geqslant$4 jet bin for the (b) electron and (c) muon channels. Only statistical uncertainties are shown in the validation plots.}
-    \label{fig:KinMEBDT_Comparison_jets2}
+    \label{fig:KinMEBDT_Comparison_jets4}
 \end{figure}
 \clearpage
 
@@ -436,4 +436,70 @@
     \caption{Correlation plots for (a) signal and (b) background for the BDT trained with both the kinematic variables and the ME BDT in the $\geqslant$4 jet bin.}
     \label{fig:KinMEBDT_jets4_Correlations}
 \end{figure}
+\clearpage
+
+
+
+
+
+
+
+\section{ROC Curves}
+\label{appendix:BDT_ROC_curves}
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets2/2015_07_17_TMVA_output_jets2_eq0tag_both_HToWW_WJets_noEvtProbs_11KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinBDT_ROC_jets2}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets3/2015_07_17_TMVA_output_jets3_eq0tag_both_HToWW_WJets_noEvtProbs_13KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinBDT_ROC_jets3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets4/2015_07_17_TMVA_output_jets4_eq0tag_both_HToWW_WJets_noEvtProbs_7KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinBDT_ROC_jets4}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets2/2015_07_17_TMVA_output_jets2_eq0tag_both_HToWW_WJets_allEvtProbs_0KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:MEBDT_ROC_jets2}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets3/2015_07_17_TMVA_output_jets3_eq0tag_both_HToWW_WJets_allEvtProbs_0KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:MEBDT_ROC_jets3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets4/2015_07_17_TMVA_output_jets4_eq0tag_both_HToWW_WJets_allEvtProbs_0KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:MEBDT_ROC_jets4}
+    \end{subfigure}
+
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets2/2015_07_17_TMVA_output_jets2_eq0tag_both_HToWW_WJets_noEvtProbs_12KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinMEBDT_ROC_jets2}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets3/2015_07_17_TMVA_output_jets3_eq0tag_both_HToWW_WJets_noEvtProbs_14KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinMEBDT_ROC_jets3}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.316\textwidth}
+        \includegraphics[width=\textwidth]{\figpath/Appendix5/jets4/2015_07_17_TMVA_output_jets4_eq0tag_both_HToWW_WJets_noEvtProbs_8KinVar/rejBvsS_BDT_simple.pdf}
+        \caption{}
+        \label{fig:KinMEBDT_ROC_jets4}
+    \end{subfigure}
+    \caption{The receiver operating characteristic (ROC) curves for the various BDT trainings. The plots are ordered by jet bin from left to right, with the leftmost plot being the two-jet bin and the rightmost plot being the four-jet bin. The top row contains the KinBDT plots while the middle and bottom rows contain the MEBDT and KinMEBDT plots, respectively.}
+    \label{fig:BDT_ROC_all}
+\end{figure}
+
+
+
+
 \clearpage
