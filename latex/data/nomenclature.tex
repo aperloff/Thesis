@@ -29,24 +29,15 @@
 %themselves according to the ampersand (&).
 %No extra spaces are needed, as seen in some of
 %the entries below.
-\vspace{-0.5in}
-	%next two lines remove a problem of adding too much space to the first line
-	%\vspace{-\baselineskip}
+\hspace*{-1.25in}
+\vspace{12pt}
+\begin{spacing}{1.0}
 	\vspace{-\convertto{in}{2ex}in} 
-    \begin{longtable}{@{}p{0.33\textwidth} p{0.62\textwidth}@{}}
+    \begin{longtable}{@{}p{0.35\textwidth} p{0.62\textwidth}@{}}
     \DTLforeach*{mynomen}{}{%
     \\[2ex]\gdef\doamp{\gdef\doamp{&}}%
     \DTLforeachkeyinrow{\thisValue}{\doamp\thisValue}}%
     \end{longtable}%
-
-	%\begin{table}[htbp]
-	%    \begin{tabular}{@{}p{0.33\textwidth} p{0.62\textwidth}@{}}
-	%	OGAPS	&	Office of Graduate and Professional Studies at Texas A\&M University\\	[2ex]
-	%	B/CS		&	Bryan and College Station\\	[2ex] %[2ex] provides double space between each row
-	%	TAMU			&	Texas A\&M University\\	[2ex]
-	%	AOD     & Analysis Object Data\\ [2ex]
-	%	%XXXXXXXX		&	This is an optional page. Random word to test how long the sentence can be? This is just for test purpose. The current setting aims to align left/right margin same as all other pages.\\	[2ex]
-	%    \end{tabular}%
-	%\end{table}
+\end{spacing}
 
 \pagebreak{}

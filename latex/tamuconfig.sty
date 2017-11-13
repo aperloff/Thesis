@@ -1,17 +1,65 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  New template code for TAMU Theses and Dissertations starting Fall 2012.  
-%  For more info about this template or the 
-%  TAMU LaTeX User's Group, see http://www.howdy.me/.
+%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
 %
-%  Author: Wendy Lynn Turner 
-%	 Version 1.7
-%  Last updated 7/8/2013
+%
+%  Author: Sean Zachary Roberson
+%	 Version 3.17.09
+%  Last updated 09/01/2017
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ProvidesPackage{tamuconfig}
 
+% Default packages have moved here from the preamble.
+%
+% September 2017: Margins are required to be at least one inch on all sides. If binding, a left margin of 1.4 inches
+% is recommended.
+%
+% The settings below reflect the minimum.
+\usepackage[letterpaper]{geometry}
+% Margins must be a minimum of one inch on all sides.
+\geometry{verbose, margin = 1in}
+	\usepackage[doublespacing]{setspace}
+	\usepackage{tocloft}
+		\renewcommand{\cftdotsep}{1.00} % Adjusts the size of the leader dot separation.
+	\usepackage[rm, tiny, center, compact]{titlesec}
+	\usepackage{indentfirst}
+	\usepackage{etoolbox}
+
+\usepackage{tocvsec2}
+ \usepackage[titletoc]{appendix}
+ \usepackage{appendix}
+ \usepackage{tamuconfig}
+
+\usepackage{rotating}
+
+% These are common AMS packages. Many LaTeX documents
+% have these packages declared in their preambles.
+\usepackage{amsmath, amsthm}
+
+% If needed, this will allow you to add the word "Page"
+% to extra pages on your front matter lists.
+\usepackage{afterpage}
+
+% This is from the mdwtools package; it fixes some
+% footnote commands and allows you to have footnotes in
+% tables via the savenotes environment.
+\usepackage{footnote}
+
+% If you have a table that spans multiple pages, this
+% package allows for the use of the longtable
+% environment.
+\usepackage{longtable}
+
+%For the Nomenclature. Test.
+\usepackage{setspace}
+
+%For figures and tables.
+\usepackage{float}
+
+%To customize captions in floats.
+\usepackage{caption}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   Titlepage Commands
@@ -38,10 +86,9 @@
 \titleformat{\chapter}{\centering\normalsize}{\thechapter.}{1em}{}
 \titleformat{\section}{\bf}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bf}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\justify\normalsize\bf}{\thesubsubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\it}{\thesubsubsection}{1em}{}
 
 \setcounter{secnumdepth}{5}
-%\setcounter{tocdepth}{5}
 
 \addtocontents{toc}{\protect\renewcommand{\protect\cftchapleader}
         {\protect\cftdotfill{\cftsecdotsep}}}  % puts leader dots on chapters.

@@ -24,7 +24,7 @@ The Large Hadron Collider (LHC) \cite{Breskin:1244506} is, in many people's esti
 The main accelerator at the European Organization for Nuclear Research (CERN), the LHC is located both in France and Switzerland due to its enormous size (Fig.~\ref{fig:LHC_schematic}).
 It was built between 1998 and 2008 and installed in the 26.7\unit{km} tunnel dug for its predecessor, the Large Electron-Positron Collider (LEP), which is located between 50\unit{m} and 170\unit{m} underground.
 It is the highest energy collider in the world, eclipsing the previous record holder, the Tevatron at Fermilab in Batavia, IL.
-The following section is a description of the LHC and CERN accelerator complex based on \cite{LHCmachine} and \cite{Breskin:1244506}.
+The following section is a description of the LHC and CERN accelerator complex, a more detailed description can be found in~\cite{Breskin:1244506} and~\cite{LHCmachine}.
 
 \begin{figure}[!hbt]
     \vspace*{-0.5cm}
@@ -34,7 +34,7 @@ The following section is a description of the LHC and CERN accelerator complex b
     \label{fig:LHC_schematic}
 \end{figure}
 
-The LHC provides beams for four main experiments located along its beam line (Fig.~\ref{fig:LHC_schematic}):
+The LHC provides beams for several experiments located along its beam line, though we will only concern ourselves with the four highest profile experiments (Fig.~\ref{fig:LHC_schematic}):
 \begin{itemize}
     \item The CMS (Compact Muon Solenoid)~\cite{Chatrchyan:2008aa} and ATLAS (A Toroidal LHC ApparatuS)~\cite{1748-0221-3-08-S08003} experiments are both general purpose detectors. Their goals include precision measurements to test the Standard Model and searches for new physics, including the Higgs boson.
     \item LHCb (Large Hadron Collider beauty)~\cite{Alves:2008zz} was designed to do precision measurements of CP-violation and the physics of B-mesons.
@@ -149,15 +149,15 @@ Figures~\ref{fig:LHC_int_lumi_pp} and~\ref{fig:LHC_lumi_per_day_pp} show the tot
 
 \section{The CMS Detector}
 
-TALK ABOUT THE PHYSICS GOALS?
-%"The physics program of the experiment covers a wide range of goals: precision study of Standard Model processes, study of properties of the recently discovered Higgs boson, searches for physics beyond the Standard Model, and study of quark-gluon plasma." - Aysen Tatarinov
-
-The CMS experiment is one of two general purpose detectors at the LHC; ATLAS being the other one.
-The detector is located 100\unit{m} underground near Cessy, France on the opposite side of the LHC from the main CERN site in Meyrin (see figure~\ref{fig:LHC_schematic}).
-It was largely built on the surface and then lowered into the collision cavern in 15 pieces, which then had to be painstakingly assembled.
+The CMS experiment is one of two general purpose detectors at the LHC tasked with a wide variety of physics analyses.
+The goals of the physics program range from precision Standard Model measurements to the search for physics beyond the Standard Model and even includes a hugely successful heavy ion program.
+The detector itself is located 100\unit{m} underground near Cessy, France on the opposite side of the LHC from the main CERN site in Meyrin (see figure~\ref{fig:LHC_schematic}).
+It was largely built on the surface and then lowered into the collision cavern in 15 pieces, which then had to be assembled. %painstakingly
 The detector has a cylindrical design which is 22\unit{m} in length, 15\unit{m} in diameter, and weights 14000 tonnes.
 The shape and positioning of the detector around the interaction point (IP) gives the experiment nearly $4\pi$ coverage of the proton-proton collisions.
+In total, there are ${\sim}10^8$ data channels checked in each bunch crossing owing to the high granularity of the CMS sub-detectors.
 The layout of the detector can be seen in fig.~\ref{fig:CMS_schematic}.
+The following sections will describe each of the sub-detectors and its properties~\cite{Chatrchyan:2008aa}.
 
 \begin{figure}[!hbt]
     \centering
@@ -166,16 +166,14 @@ The layout of the detector can be seen in fig.~\ref{fig:CMS_schematic}.
     \label{fig:CMS_schematic}
 \end{figure}
 
-Fig.~\ref{fig:CMS_transverse} shows how various types of particles interact within the CMS sub-detectors.
-In total, there are ${\sim}10^8$ data channels checked in each bunch crossing owing to the high granularity of the CMS sub-detectors.
-The following sections will describe each of the sub-detectors and its properties and is based largely on Ref.~\cite{Chatrchyan:2008aa}.
-
+\begin{comment}
 \begin{figure}[!hbt]
     \centering
     \includegraphics[width=0.95\textwidth]{\figpath/Chapter3/CMS_slice.png}
     \caption{Transverse slice of the CMS experiment with the major sub-detectors and components represented. The different colored lines represent how various types of particles interact with the sub-detectors~\cite{CMSSlice}.}
     \label{fig:CMS_transverse}
 \end{figure}
+\end{comment}
 
 \subsection{Coordinate System}
 
@@ -225,7 +223,6 @@ The BPIX contains 48 million pixels and the FPIX contains another 18 million pix
 In total it consists of 1440 hybrid silicon detector modules, each with a dimension of $100\times150\mum^{2}$.
 The small pixel size enables track resolutions of 10\mum in the transverse plane and 20\mum in the $z$-direction.
 The pixel detector is what gives CMS its excellent secondary vertex tagging ability in addition to producing seed tracks for the strip tracker and the high level trigger.
-NOT SURE I LIKE THIS LAST SENTENCE
 
 Just as the pixel detector was made up of the BPIX and FPIX subsystems, the silicon strip detector is made up of four subsystems.
 The Tracker Inner Barrel
@@ -428,7 +425,7 @@ The fibers make use of Cherenkov light read out by photomultiplier tubes (PMTs),
 
 \subsection{Solenoid}
 
-The central feature of the CMS apparatus is a superconducting solenoid of 6\unit{m} internal diameter, providing a magnetic field of 3.8\unit{T}.
+One of the namesake features of the CMS apparatus is a superconducting solenoid of 6\unit{m} internal diameter, providing a magnetic field of 3.8\unit{T}.
 The solenoid thus surrounds both the barrel and endcap parts of the silicon pixel and strip tracker, the ECAL, and the HCAL.
 The high magnetic field allows CMS to have a relatively small size while also having sufficiently high bending of the high energy charged particles to measure their momenta in the tracker.
 
@@ -504,7 +501,7 @@ In order to provide as many collisions as possible to the experiments, the LHC m
 At the proposed LHC center-of-mass energies the p-p collision cross section is about 100\unit{mb}.
 This, combined with the luminosity, gives us a collision rate of approximately 1\unit{MHz}.
 At this rate it would be impossible for the experiment to store and process all of the raw information coming from the detector.
-Thus a trigger system is implemented to reduce this rate and keep only the most interesting, and hopefully relevant, events.
+A trigger system is implemented to reduce this rate and keep only the most interesting, and hopefully relevant, events.
 %Keeping events most likely to contain new physics
 CMS has implemented a two-tiered trigger system~\cite{Khachatryan:2016bia}.
 The first level (L1), composed of custom hardware processors, uses information from the calorimeters and muon detectors to select events at a rate of around 100\unit{kHz} within a time interval of less than 4\mus.

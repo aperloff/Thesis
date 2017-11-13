@@ -17,39 +17,21 @@
 \chapter{\texorpdfstring{\uppercase {Conclusions}}{Conclusions}}
 \label{ch:conclusion}
 
-\begin{comment}
-Joey:
+This dissertation has presented a search for the 125\gev Standard Model Higgs boson in th the \HWWlvjj decay channel.
+The search used 19.7\fbinv of 8\tev proton-proton collision data from the CMS experiment collected during the 2012 run of the LHC.
+The background predictions used in the analysis were derived from both simulation and data-driven techniques and a significant amount of time was put into validating the background modeling.
+The event selection was chosen based on the signal kinematics, but kept relatively loose to ensure enough of a training ensemble for an analysis using a boosted decision tree (BDT).
+Besides the BDT based discriminant, a matrix element technique was used to increase the sensitivity of the analysis.
+No direct observation of the Standard Model Higgs boson can be made at this time, though limits on its production cross section have been made at the 95\% confidence level using a modified frequentist approach.
+A limit of 13.9 times the standard model cross section was set after combining all lepton and jet categories.
+This limit is the first to be set in the \HWWlvjj channel for a Higgs mass of \joinsym{\MH}{=}{125\gev} at either the CMS or ATLAS experiments.
 
-Using the entire 19.1 fb−1 of data collected at 8TeV no direct observation of the Higgs was seen
-2520 in the H → WW → lνjj decay channel. Due to the large amount of background, while Higgs 2521 events certainly exist in our data, we do not achieve the sensitivity needed to discriminate it 2522 from our backgrounds. Thus, in the absence of a significant excess of events in data indicative of
-2523 our signal, we can set upper limits on the production rate of H → WW → lνjj. Two methods 2524 of setting limits were employed using the information from our trained and optimized Boosted 2525 Decision Tree (BDT)s. By placing a cut on the BDT discriminant output we were able to set 2526 an upper limit on the production cross section of 16.42, using the statistical methods described 2527 above. From simulations alone the expected factor was 13.91, a difference of less than 1-σ from 2528 the observed value.
-2529
-Using the full BDT output shape we were also able to set limits on the production cross 2530 section. As noted above, a large uncertainty in the shape between data and simulation produced
-2531 some curious results. By using the combined information in the 2, 3, and ≥ 4 jet bin shapes, 2532 this uncertainty was better constrained. Using this method an upper limit of 8.86 times the 2533 production cross section is measured, which falls within 2-sigma of the expected value of 4.98 2534 seen from simulations alone.
+Now that Run2 of the LHC has collected significantly more data and at a center of mass energy of \CM{13\tev}, it is possible to perform a similar analysis to this one with improved results.
+This increase in energy corresponds to an increase in gluon-gluon fusion Higgs production of approximately 2.4 times~\cite{Baglio:2015wcg}, while the \Wjets production cross section will only increase by approximately 1.7 times~\cite{SMCrossSectionsat13TeV}.
+%ggH production cross section: 46.68/19.27=2.4224182667
+%WJets production cross section: (20508.9*3)/(12234*3)=1.6763854831
+This will lead to a higher signal fraction, which should be visible given improvements in background modeling and reconstruction techniques.
+Even now there have been advances in high performance computing which will reduce the time to perform a matrix element analysis by orders of magnitude~\cite{1742-6596-664-9-092009}.
+Additionally, advances in machine learning will significantly speed up analyses relying on Monte Carlo integration techniques~\cite{Bendavid:2017zhk}.
 
-
-
-
-
-
-Joey:
-
-The results for a search for the Higgs Boson in the H→WW→lνjj in pp collisions at √s = 8 TeV 2538 center of mass energy have been presented. This analysis begins with the production of protons in
-2539 the LHC accelerator complex, traveling through many complex systems on their way to a collision 2540 at √s = 8 TeV at the center of the CMS detector. The superior tracking and reconstruction of 2541 particles in CMS led to over 19 fb−1 of data collected in 2012 that was used in this analysis.
-2542
-Once collected, a search was performed for our signal in a final state that included one isolated
-2543
-lepton, one neutrino (indicated by E
-/T ), and two jets. We further required that the jets not be
-2544 b-tagged, restricting our sample to light flavor jets that are more common from a W decay. 2545 The search region was divided into categories based on the number of jets in the event, using
-2546 categories of 2, 3, or ≥4 jets. For each category we trained a Boosted Decision Tree (BDT) by 2547 using kinematic variables as inputs, with each category optimized for maximum signal extraction 2548 potential. 2549 We looked at two methods for signal extraction, a counting experiment that took advantage 2550 of the BDT by using it as a superior discrimination variable to cut away background, and as 2551 a shape analysis using the entire BDT output shape to separate signal from background. No 2552 significant excess was seen seen using either method, so an upper limit on the production cross 2553 section was placed. Using a counting experiment we set a limit of 16.4 times the standard model, 2554 and using shape based signal extraction we were able to lower this limit to 8.86.
-
-Though this analysis did not have the sensitivity to observe the Higgs directly, I am optimistic
-2556 that in the future the increase of data will make this possible. With Run II at the LHC just 2557 beginning, and an increase in the Higgs production cross section at √s = 13 TeV, there will 2558 definitely be more signal out there to find. The increase in luminosity and pileup will require new 2559 and unique ways to reduce the backgrounds seen in this channel, but though careful background 2560 modeling I believe it’s possible.
-142
-143 2561 Finally, combining this analysis with others looking for the same final state could increase the
-2562 sensitivity. Use of Matrix Element values for particle production could serve as a good addition 2563 to the kinematic information of the event, producing a result more sensitive to probing the limits 2564 of the Standard Model.
-\end{comment}
-
-
-\section{Updates For Future Searches}
+Although it may seem that the Run1 discovery of the Standard Model Higgs boson was the final say on the matter, I am optimistic that even more stringent measurements of this Higgs decay channel can be made in the coming years.

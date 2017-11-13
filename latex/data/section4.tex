@@ -19,7 +19,7 @@
 
 The CMS detector is designed to identify the various particle species which travel through it after a proton-proton collision.
 As discussed in chapter~\ref{ch:LHC_CMS}, the sub-detector technologies were chosen so that particles could be identified by where they deposit their energy as well as how their trajectories change in a magnetic field.
-Fig.~\ref{fig:particle_flow} shows how various types of particles interact with the CMS detector.
+Fig.~\ref{fig:particle_flow} shows how various types of particles interact within the CMS sub-detectors.
 All of the charged particles (\ie electrons, muons, and charged hadrons) will deposit some energy in the tracker, while neutral particles (\ie photons and neutral hadrons) will not.
 Electrons and photons will deposit all of their energy inside of the ECAL while hadrons, both charged and neutral, will deposit most of their energy in the HCAL.
 Muons are the only visible particle which will be able to travel to the muon chambers.
@@ -28,7 +28,7 @@ Neutrinos will pass through all layers of the detector unseen and their presence
 \begin{figure}[!hbt]
     \centering
     \includegraphics[width=0.95\textwidth]{\figpath/Chapter4/ParticleFlow}
-    \caption{Cross-sectional view of the CMS detector with all of the sub-detectors labeled.The colored lines correspond to different particle species, which interact with different pieces of the detector and may or may not be bent by the magnetic field.}
+    \caption{Cross-sectional view of the CMS detector with all of the sub-detectors labeled.The colored lines correspond to different particle species, which interact with different pieces of the detector and may or may not be bent by the magnetic field~\cite{CMSSlice}.}
     \label{fig:particle_flow}
 \end{figure}
 t
@@ -520,7 +520,7 @@ The L2Relative correction seeks to correct for the non-linearity in the jet resp
 These are again multiplicative corrections that can either increase or decrease the energy of the jet.
 All three corrections are applied to both data and simulation.
 An additional level of correction, termed L2L3Residual, is applied only to data to correct for the difference in scale between the data and simulation.
-For a more in-depth discussion of pileup mitigation techniques and jet energy corrections see appendix~\ref{appendix:JERC}.
+%For a more in-depth discussion of pileup mitigation techniques and jet energy corrections see appendix~\ref{appendix:JERC}.
 
 A final level of modification to the reconstructed objects is an $\eta$ dependent smearing factor applied to the jet 4-momenta coming from the MC samples.
 The distribution of jet energies within the MC simulation tends to be more sharply peaked and less broad than the same distribution in data.
@@ -815,8 +815,8 @@ These filters are discussed further in appendix~\ref{appendix:met_filters}.
 \label{sec:event_generation}
 
 In the search for new physics, a signal will generally appear as a small deviation from the SM prediction.
-In order to disentangle the SM background from a rare signal the SM and new physics prediction must be extremely accurate.
-The predictions are samples made by Monte Carlo (MC) event generators which are broken up by physics process and final state and then recombined during the analysis~\cite{Siegert:2010cru,Mangano:2005dj,Dobbs:2004qw}.
+In order to disentangle the SM background from a rare signal, the SM and new physics prediction must be extremely accurate.
+These predictions are ensembles of simulated events made by Monte Carlo (MC) event generators which are broken up by physics process and final state and then recombined during the analysis~\cite{Siegert:2010cru,Mangano:2005dj,Dobbs:2004qw}.
 These generators are able to simulate a full event (bunch crossing) at the parton level, which is nicely illustrated in fig.~\ref{fig:ttH_event}.
 The image shows a $t\bar{t}h$ final state including final state gluons (QCD) and hadronization.
 While the entire event from hard scatter production to hadronization cannot be described using perturbation theory, the hard process can be calculated using fixed order perturbation theory and matrix elements (ME).

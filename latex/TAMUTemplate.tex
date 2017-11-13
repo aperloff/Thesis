@@ -1,16 +1,27 @@
 %!TEX options = --shell-escape
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  New template code for TAMU Theses and Dissertations starting Fall 2016.  
+%  New template code for TAMU Theses and Dissertations starting Spring 2018.  
 %
 %
 %  Author: Sean Zachary Roberson
-%  Version 3.16.10
-%  Last Updated: 9/29/2016
+%  Version 3.17.09
+%  Last Updated: 9/21/2017
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% NOTE: THE ONLY MAJOR CHANGE IS IN THE RELAXATION
+% OF MARGIN REQUIREMENTS. THIS TEMPLATE IS THE MOST
+% CURRENT. SEE THE FILES README.TXT AND NEWCHANGES.TXT
+% FOR MORE INFORMATION.
+
 \documentclass[12pt]{report}
+
+\usepackage{tamuconfig}
+
+% Most of the packages that set the default settings
+% for the document have moved to the style file
+% tamuconfig.sty. This includes
 
 %These next lines change the font. Fixes for certain
 %fonts will be implemented in a future release.
@@ -22,34 +33,12 @@
 %\usepackage{cmbright}
 \usepackage[T1]{fontenc}
 
-%Do not change these settings. The geometry package
-%Adjusts the margins to those specified by the Thesis
-%Manual. 
-\usepackage[letterpaper]{geometry}
-\geometry{verbose,tmargin=1.25in,bmargin=1.25in,lmargin=1.4in,rmargin=1.15in}
- \usepackage[doublespacing]{setspace}
- \usepackage{tocloft}
- \usepackage[rm, tiny, center, compact]{titlesec}
- \usepackage{indentfirst}
- \usepackage{etoolbox}
-
-\usepackage{tocvsec2}
- \usepackage[titletoc]{appendix}
- \usepackage{appendix}
- \usepackage{tamuconfig}
-
-\usepackage{rotating}
-
-%These are common AMS packages. Many LaTeX documents
-%have these packages declared in their preambles.
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
+% For natbib-style references, uncomment this.
+%\usepackage{natbib}
 
 %This package allows for the use of graphics in the
 %document.
 \usepackage{graphicx}
-\usepackage{subcaption}
 
 %If you have JPEG format images, add .jpg as an
 %allowed file extension below. Same for Bitmaps (.bmp).
@@ -63,14 +52,29 @@
 \graphicspath{ {./graphic/} }
 \newcommand\figpath{/Users/aperloff/Documents/TAMU-Graduate/Thesis/latex/figures/}
 
-%If needed, this will allow you to add the word "Page"
-%to extra pages on your front matter lists.
-\usepackage{afterpage}
+% For quick document navigation.
+\usepackage[hidelinks]{hyperref}
 
-%This is from the mdwtools package; it fixes some
-%footnote commands and allows you to have footnotes in
-%tables via the savenotes environment.
-\usepackage{footnote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Please place all your personal packages here. Check to
+%see if the packages you wish to use are not already
+%declared above. Placing all your personal packages
+%here allows me to determine if there are any package
+%issues in compilation, as well as any conflicts
+%that may arise by the order of loading.
+%--Sean Zachary Roberson
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Begin student defined packages.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{comment}
+\usepackage{standalone}
+\usepackage{mathtools}
+\usepackage{xcolor,colortbl}
+\definecolor{mygray}{gray}{0.7}
 
 %This is for sorting tables and displaying their content
 \usepackage{datatool}
@@ -85,52 +89,25 @@
 \usepackage{multirow}
 \usepackage[utf8]{inputenc}
 
-% Added to fix issues with pdf searching in some versions of LaTeX
-%\usepackage[T1]{fontenc}\usepackage{lmodern}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Hyperref setup below.  You should be able to get away with using uncommenting just the first line.
-\usepackage[hidelinks]{hyperref}
-
-% if \usepackage[hidelinks]{hyperref} doesn't work try this.
-% \usepackage{hyperref}  % Hidelinks is an option that removes link visiability.  TAMU Thesis Offices prefers to not see the links. But often doesn't work.  
-% 
-% \hypersetup{
-%     colorlinks=true,
-%     linkcolor=black,
-%     citecolor=black,
-%     filecolor=black,
-%     urlcolor=black,
-% }
-%%%%%%%  End of hyperref setup.  One of these two options should work, but my motto with hyperref is when in doubt, comment it out!
-%%%%%%%%%  This hopefully fixes the problem with vertical spacing of section headings at the top of the page..  Commented out in 1.0.7
-% \preto\section{%
-% \ifnum\value{section}>0\addtocontents{toc}{\vskip-6pt}\fi
-% }
-% \preto\subsection{%
-% \ifnum\value{subsection}=0\addtocontents{toc}{\vskip-6pt}\fi
-% \ifnum\value{subsection}>0\addtocontents{toc}{\vskip-6pt}\fi
-% } 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
+% ptdr definitions 
 \usepackage{xspace}
 \usepackage{ptdr-definitions}
-%\usepackage{cmscommands}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,shapes.multipart,backgrounds,calc,decorations.text,decorations.pathreplacing,matrix,shadings}
 \tikzstyle{every picture}+=[remember picture]
 \tikzstyle{na} = [baseline=-.5ex]
 \tikzstyle{arrow} = [draw, -latex']
 \usepackage{tikzsymbols}
-\usepackage{url}
-\usepackage{comment}
-\usepackage{standalone}
-\usepackage{mathtools}
-\usepackage{doi}
-\usepackage{color,colortbl}
-\definecolor{mygray}{gray}{0.7}
 
+%These are for the bibliography
+\usepackage{url}
+\usepackage{doi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%End student defined packages.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% End preamble. Document begins below.
 
 \begin{document}
 
@@ -184,7 +161,6 @@
 \include{data/section5}
 \include{data/section6}
 \include{data/section7}
-
 %The next line is the format for inserting new sections.
 %Replace the name "newsection"  with the name of your
 %new section file.
