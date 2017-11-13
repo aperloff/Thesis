@@ -627,6 +627,7 @@ Its expected yield is by far much larger than all of the other backgrounds.
 From table~\ref{tab:percent_yields_KinMEBDT} one can also see that the sum of the volunteer signal is at most 7\% of the \HWW signal, which means the b-tag cut is keeping the non-\HWW contamination to a minimum.
 If the b-tag cut was not used the \ttbar background would become much more significant, even becoming the dominant background in the $\geqslant$4 jet bin.
 Additionally, the volunteer signal would become as high as 87\% of the \HWW signal, which means that there would be a lot of overlap between this analysis and other CMS analyses.
+Comparison plots for several kinematic variables can be found in appendix~\ref{appendix:comparison_plots}.
 
 \section{Multivariate Analysis}
 
@@ -1375,10 +1376,24 @@ An initial BDT was computed which combined the information from 15 of the comput
 This gives a less discriminating shallow network the ability to create a better performing network because the inputs are already non-linear variables.
 The output of this BDT, along with previously selected kinematic variables, is then used as the input to a new BDT in order to combine all of this complimentary information.
 The combined BDT (KinMEBDT) has more discrimination power than either the MEs or the kinematic variables alone.
-The distribution of the KinMEBDT discriminant was chosen as the template for our limit setting procedure.
 Images of the output discriminant can be found in appendix~\ref{appendix:BDT_Outputs}.
 Additionally, the ROC curves used to compare the various BDTs can be found in appendix~\ref{appendix:BDT_ROC_curves}.
 Table~\ref{tab:BDT_FOM_comparison} shows the FOM used to compare the BDTs.
+
+The distribution of the KinMEBDT discriminant was chosen as the template for our limit setting procedure.
+However, before actually processing the limits, which will be discussed in chapter~\ref{ch:results}, the best way to bin the templates needed to be determined.
+There are two conditions which needed to be satisfied for for every bin:
+\begin{enumerate}
+  \item There cannot be a bind which contains an observed count, but no background estimation. This would lead to an artificially high significance and an artificially low upper confidence level.
+  \item The sum of the background templates must have a statistical uncertainty of $\leqslant$10\% in each bin. This limits the effects of statistical fluctuations in any one bin.
+\end{enumerate}
+To accomplish this optimization, we first started with a finely binned KinMEBDT distribution, bounded between \leqslantrange{-1}{\text{KinMEBDT}}{1}.
+Starting with the lowest bin, we checked that each bin passed the two aforementioned conditions.
+If a bin failed either condition, then that bin and the next highest bin were merged.
+If both conditions were met, then the next highest bin was checked.
+The process continued until reaching the last bin, which could be merged into the previous bin if necessary.
+This resulted in leaving the maximum number of variable width bins reasonably allowable, a desirable property which leads to having the greatest discrimination power possible.
+Additionally, there were a different number of bins for each of the BDT trainings; 37, 29, and 20 bins for the two-jet, three-jet, and four of more jet categories, respectively.
 
 \begin{table}[htbp]
 \centering
@@ -1532,11 +1547,12 @@ For $M$ uncorrelated sourced the total uncertainty $S\left(\pt,\eta\right)$ is g
   S\left(\pt,\eta\right)=\sqrt{\sum_{i}^{M}s_{i}^{2}\left(\pt,\eta\right)},
 \end{equation}
 where $s_{i}\left(\pt,\eta\right)$ is the uncertainty for a single source $i$.
+The JES uncertainty varies as a function of \pt and $\eta$ and is $<$4\% in all regions of phase space~\cite{Khachatryan:2198719}.
 To evaluate the effect this uncertainty has on the BDT discriminant we create the same distribution, but with the jet energies shifted by $\pm1\sigma$ using the procedures given in~\cite{JECUncertainties,JECUncertaintySources}.
 This is done before placing a cut on the \pt of the jets so as to allow for migration of events between jet bins.
 Some jets that once failed the \pt cut may not pass and some jets might then fail the \pt cut.
 Fig.~\ref{fig:JESShift_KinMEBDT} shows the the type of variations expected for the signal (\ggH) and background (\Wjets) samples.
-Additionally, table~\ref{tab:JES_Uncertainties} lists the size of the JES uncertainty within each jet bin.
+Additionally, table~\ref{tab:JES_Uncertainties} lists the size of the yield uncertainty within each jet bin due to the JES.
 
 \begin{figure}[!hbt]
     \centering

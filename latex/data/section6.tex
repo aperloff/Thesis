@@ -16,6 +16,12 @@
 \chapter{\texorpdfstring{\uppercase {Results}}{Results}}
 \label{ch:results}
 
+The KinMEBDT distributions showing the background predictions and the observed data are shown in fig.~\ref{fig:KinMEBDT_final_templates}.
+The Higgs signal hypothesis with \joinsym{\MH}{=}{125\gev} is enlarged and shown using a red line to indicate where in the distribution the signal would lie.
+There is good agreement between the observed data and simulated background estimate; certainly well withing the systematic errors shown using the gray hashed areas.
+These distributions contain one histogram for each signal, background, and data sample.
+These template histograms are used as the input for our shape based limit setting procedure, each bin acting as a counting experiment, but with correlated systematics.
+
 \begin{figure}[!hbtp]
     \centering
     \begin{subfigure}[t]{0.316\textwidth}
@@ -53,54 +59,53 @@
     \label{fig:KinMEBDT_final_templates}
 \end{figure}
 
+Because no significant excess of signal events was observed, the best we can do is set an upper limit on the production cross sections of \HWWlvjj.
+The results are reported as an upper bound on $\sigma/\sigma_{\text{SM}}$ at the 95\% confidence level (CL), made by using the modified-frequentist limit setting method with the CL\textsubscript{S} test statistic~\cite{Read:presentation,Junk,LHC-HCG}.
+Although it is more rigorous to use the toy-based frequentist limit setting procedures, these methods are known to take an exceedingly long time to converge.
+However, when not in a low statistics regime, the toy-based methods and the asymptotic approximation return roughly equivalent answers.
+Therefore, we used the asymptotic approximation as we do indeed have copious amounts of background and data in our templates.
+The computations were done using the Higgs Combine Tool~\cite{HiggsCombineTwiki}, which is a RooStats~\cite{Schott:2012zb} based limit setting package.
+Appendix~\ref{appendix:limit_setting} contains a more detailed discussion on the computation of the CL\textsubscript{S} limits.
+The expected and observed upper limits on $\sigma/\sigma_{\text{SM}}$ are shown in fig.~\ref{fig:limits_withSys_muon}, with the actual values listed in table~\ref{tab:95percent_upper_confidence_levels}.
+
+\begin{comment}
+Rishi:
+The p-value of the excess at 125 GeV is 3.2σ.
+
+To quantify, how probable the observed excess of events is above the background fluctuations the combined p-value is computed for the best-fit Higgs mass of 124.7GeV with a statistical significance of 5.65σ
+\end{comment}
+
 \begin{figure}[!hbt]
     \centering
-    \includegraphics[width=0.95\textwidth]{\figpath/Chapter6/2017_10_05_combinedSM_KinMEBDT_muon.pdf}
-    \caption{Expected 95\% upper confidence level on the Higgs signal strength for only the muon channel.}
+    \includegraphics[width=0.95\textwidth]{\figpath/Chapter6/2017_11_13_combinedSM_KinMEBDT.pdf}
+    \caption{Median expected and observed 95\% upper confidence level on the cross-section ratio to the expected Standard Model Higgs cross-section ($\mu$) for only the muon channel. The green and yellow uncertainty bands represent the 68\% and 95\% CL intervals on the expected limit, respectively. The values were found using the Asymptotic CL\textsubscript{S} approximation.}
     \label{fig:limits_withSys_muon}
 \end{figure}
 
-
 \begin{table}[htbp]
 \centering
-\begin{tabular}{lrrr|r} \hline
-Lepton Channel      & 2 Jets  & 3 Jets  & $\geqslant$4 Jets & Combined Jet \\\hline
-Electron            &         &         &                   &              \\
-Muon                &         &         &                   &              \\\hline
-Combined Lepton     &         &         &                   &              \\\hline
+\begin{tabular}{lrr} \hline
+Category                            & Observed & Expected               \\
+\hline\\[-2.45ex]
+$\geqslant$4 Jets (\Pe)             & $90.6$   & $51.9_{-14.1}^{+17.6}$ \\
+3 Jets (\Pe)                        & $45.6$   & $17.7_{-5.0}^{+6.7}$   \\
+2 Jets (\Pe)                        & $25.4$   & $10.3_{-2.9}^{+4.2}$   \\
+$\geqslant$4 Jets (\Pmu)            & $19.4$   & $12.6_{-3.6}^{+5.0}$   \\
+3 Jets (\Pmu)                       & $4.7$    & $6.8_{-1.9}^{+2.8}$    \\
+2 Jets (\Pmu)                       & $28.2$   & $11.5_{-3.3}^{+4.6}$   \\
+\hline\\[-2.45ex]
+%2 Jets (Combined Lepton)            &          & $7.2_{-5.2}^{+10.0}$  \\
+%3 Jets (Combined Lepton)            &          & $4.7_{-3.4}^{+6.6}$   \\
+%$\geqslant$4 Jets (Combined Lepton) &          & $8.2_{-5.8}^{+11.4}$  \\
+%\hline\\[-2.45ex]
+%Combined Jets (\Pe)                 &          & $4.0_{-1.1}^{+1.6}$   \\
+%Combined Jets (\Pmu)                & $4.1$    & $5.4_{-1.5}^{+2.2}$   \\
+%\hline\\[-2.45ex]
+Combined                            & 12.7      & $3.9_{-1.1}^{+1.6}$   \\
+%Significance: 4.08718
+%       (p-value = 2.1832e-05)
+\hline
 \end{tabular}
-\caption{}
+\caption{Observed and median expected and 95\% CLs upper limits on $\mu$ calculated with the Asymptotic CL\textsubscript{S} method. The $\pm1\sigma$ confidence interval is quoted for the expected limits.}
 \label{tab:95percent_upper_confidence_levels}
 \end{table}
-
-
-\begin{comment}
-A distribution of the BDT discriminant is produced for every signal, background, and data sample and then passed to the RooStats-based Higgs Combine Tool~\cite{CombineToolTwiki} to compute limits on the Higgs signal strength.
-Given that this analysis has a relatively high number of events in the expected yields we make use of the asymptotic method\footnote{If there had been a lower number of expected events we may have needed to use the full frequentist method rather than the asymptotic method.} for limit setting along with the CL\textsubscript{s} test statistic~\cite{Read:2002hq}.
-Using an Asimov dataset an expected 95\% upper confidence level is obtained and shown in figure~\ref{fig:limits} (left).
-
-
-original bin width 0.02 [-1,1]
-bin must have background events
-stat error must be less than 10\%
-bins merged left to right until all bins meet this criteria
-limited or no background in a bin would lead to an inflated signal significance if data, but no background
-
-
-effect on the limit calculation if that uncertainty is removed from the calculation.
-
-
-begin{figure}[!hbt]
-	\centering
-	\begin{subfigure}[t]{0.46\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/Chapter4/2015_08_01_combinedSM_KinMEBDT_StatsOnly.pdf}
-		\label{fig:limits_stats_only}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.46\textwidth}
-		\includegraphics[width=\textwidth]{\figpath/Chapter4/2015_08_01_combinedSM_KinMEBDT.pdf}
-		\label{fig:limits_with_sys}
-	\end{subfigure}
-	\caption{Expected 95\% upper confidence level on the Higgs signal strength (left) without including systematic uncertainties and (right) with systematic uncertainties included. The median combined limit is found to be 2.01 without systematics and 3.48 with them.}
-	\label{fig:limits}
-\end{figure}
-\end{comment}
